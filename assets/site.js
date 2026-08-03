@@ -5,18 +5,21 @@ document.querySelectorAll('[data-copy-text]').forEach((button) => {
     const text = button.dataset.copyText;
 
     try {
-      if (navigator.clipboard?.writeText) {
+      const helper = document.createElement('textarea');
+      helper.value = text;
+      helper.style.position = 'fixed';
+      helper.style.opacity = '0';
+      document.body.append(helper);
+      helper.select();
+      let copied = document.execCommand('copy');
+      helper.remove();
+
+      if (!copied && navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(text);
-      } else {
-        const helper = document.createElement('textarea');
-        helper.value = text;
-        helper.style.position = 'fixed';
-        helper.style.opacity = '0';
-        document.body.append(helper);
-        helper.select();
-        document.execCommand('copy');
-        helper.remove();
+        copied = true;
       }
+
+      if (!copied) throw new Error('Copy is unavailable');
       button.textContent = 'Скопировано ✓';
       button.classList.add('copied');
     } catch {
