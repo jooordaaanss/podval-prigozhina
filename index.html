@@ -12,6 +12,7 @@
     body { margin:0; color:var(--text); background:var(--bg); font:16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
     .glow { position:fixed; z-index:-1; width:480px; height:480px; border-radius:50%; filter:blur(95px); opacity:.21; pointer-events:none; }
     .glow.one { background:var(--cyan); top:-180px; left:-160px; } .glow.two { background:var(--violet); right:-180px; top:300px; }
+    .background-mark { position:fixed; z-index:-2; top:50%; left:50%; transform:translate(-50%,-50%) rotate(-8deg); color:rgba(96,230,255,.11); font-size:clamp(250px,48vw,620px); font-weight:900; line-height:1; letter-spacing:-.12em; filter:blur(7px); pointer-events:none; user-select:none; }
     .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
     header { padding:20px 0; border-bottom:1px solid var(--line); background:rgba(11,16,32,.72); backdrop-filter:blur(14px); position:sticky; top:0; z-index:3; }
     .nav { display:flex; justify-content:space-between; align-items:center; gap:22px; }
@@ -36,7 +37,7 @@
   </style>
 </head>
 <body>
-  <div class="glow one"></div><div class="glow two"></div>
+  <div class="glow one"></div><div class="glow two"></div><div class="background-mark" aria-hidden="true">67</div>
   <header><nav class="wrap nav"><a class="brand" href="#top"><img class="brand-logo" src="assets/podval-earth-cube-logo.png" alt="Логотип Подвала Пригожина">ПОДВАЛ<b>.</b></a><div class="links"><a href="#about">Важно</a><a href="#rules">Discord</a><a href="#rp">RP</a><a href="#help">Ссылки</a></div></nav></header>
   <main id="top" class="wrap">
     <section class="hero">
