@@ -15,7 +15,7 @@
     .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
     header { padding:20px 0; border-bottom:1px solid var(--line); background:rgba(11,16,32,.72); backdrop-filter:blur(14px); position:sticky; top:0; z-index:3; }
     .nav { display:flex; justify-content:space-between; align-items:center; gap:22px; }
-    .brand { font-size:20px; font-weight:850; letter-spacing:.13em; text-decoration:none; color:#fff; } .brand b { color:var(--cyan); }
+    .brand { display:inline-flex; align-items:center; gap:10px; font-size:20px; font-weight:850; letter-spacing:.13em; text-decoration:none; color:#fff; } .brand b { color:var(--cyan); } .brand-logo { width:32px; height:32px; border-radius:9px; object-fit:cover; box-shadow:0 0 16px rgba(96,230,255,.3); }
     .links { display:flex; gap:24px; } .links a { color:var(--muted); text-decoration:none; font-size:14px; } .links a:hover { color:#fff; }
     .hero { min-height:500px; padding:92px 0 72px; display:grid; align-items:center; grid-template-columns:1.45fr .9fr; gap:60px; }
     .eyebrow { color:var(--cyan); font-size:13px; font-weight:750; text-transform:uppercase; letter-spacing:.12em; }
@@ -37,7 +37,7 @@
 </head>
 <body>
   <div class="glow one"></div><div class="glow two"></div>
-  <header><nav class="wrap nav"><a class="brand" href="#top">ПОДВАЛ<b>.</b></a><div class="links"><a href="#about">Важно</a><a href="#rules">Discord</a><a href="#rp">RP</a><a href="#help">Ссылки</a></div></nav></header>
+  <header><nav class="wrap nav"><a class="brand" href="#top"><img class="brand-logo" src="assets/podval-logo.png" alt="Логотип Подвала Пригожина">ПОДВАЛ<b>.</b></a><div class="links"><a href="#about">Важно</a><a href="#rules">Discord</a><a href="#rp">RP</a><a href="#help">Ссылки</a></div></nav></header>
   <main id="top" class="wrap">
     <section class="hero">
       <div><div class="eyebrow">Официальные правила сервера</div><h1>Подвал <span>Пригожина.</span></h1><p class="lead">Правила Discord и RP-мира, чтобы всем было комфортно общаться, играть и развивать свои страны.</p><a class="button" href="#rules">Правила Discord <span>↓</span></a></div>
