@@ -1,7 +1,24 @@
 document.querySelectorAll('[data-copy-text]').forEach((button) => {
   const originalLabel = button.textContent;
+  const resetLabel = () => {
+    window.setTimeout(() => {
+      button.textContent = originalLabel;
+      button.classList.remove('copied');
+    }, 2200);
+  };
 
-  button.addEventListener('click', async () => {
+  const showCopied = () => {
+    button.textContent = 'Скопировано ✓';
+    button.classList.add('copied');
+    resetLabel();
+  };
+
+  const failed = () => {
+    button.textContent = 'Не удалось скопировать';
+    resetLabel();
+  };
+
+  button.addEventListener('click', () => {
     const text = button.dataset.copyText;
 
     try {
@@ -11,24 +28,23 @@ document.querySelectorAll('[data-copy-text]').forEach((button) => {
       helper.style.opacity = '0';
       document.body.append(helper);
       helper.select();
-      let copied = document.execCommand('copy');
+      const wasCopied = document.execCommand('copy');
       helper.remove();
 
-      if (!copied && navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(text);
-        copied = true;
+      if (wasCopied) {
+        showCopied();
+        return;
       }
 
-      if (!copied) throw new Error('Copy is unavailable');
-      button.textContent = 'Скопировано ✓';
-      button.classList.add('copied');
-    } catch {
-      button.textContent = 'Не удалось скопировать';
-    }
+      if (navigator.clipboard?.writeText) {
+        button.textContent = 'Копируем…';
+        navigator.clipboard.writeText(text).then(showCopied).catch(failed);
+        return;
+      }
 
-    window.setTimeout(() => {
-      button.textContent = originalLabel;
-      button.classList.remove('copied');
-    }, 2200);
+      failed();
+    } catch {
+      failed();
+    }
   });
 });
