@@ -505,20 +505,46 @@ const atlasMoonWrap = document.querySelector('.atlas-moon-wrap');
 const atlasMoon = atlasMoonWrap?.querySelector('.atlas-moon');
 
 if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCount) {
-  const clickLimit = 250;
+  const clickLimit = 100;
   let clicks = 0;
   let missionLaunched = false;
+  let missionFinished = false;
 
   const updateWarning = () => {
     atlasClickCount.textContent = String(clicks);
     atlasDoNotClick.setAttribute('aria-label', `Не кликай. Нажато ${clicks} из ${clickLimit}`);
 
-    if (clicks >= 225 && clicks < clickLimit) {
+    if (clicks >= 85 && clicks < clickLimit) {
       atlasDanger.classList.add('is-critical');
       atlasDoNotClick.textContent = 'ПОСЛЕДНИЙ ОТСЧЁТ';
-    } else if (clicks >= 150) {
+    } else if (clicks >= 60) {
       atlasDoNotClick.textContent = 'ТРАЕКТОРИЯ ГОТОВА?';
     }
+  };
+
+  const showCelebration = () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    document.querySelector('.atlas-celebration')?.remove();
+    const celebration = document.createElement('div');
+    celebration.className = 'atlas-celebration';
+    celebration.setAttribute('aria-hidden', 'true');
+
+    for (let index = 0; index < 34; index += 1) {
+      const piece = document.createElement('span');
+      piece.className = 'atlas-celebration-piece';
+      piece.textContent = index % 2 === 0 ? '🎉' : '🎊';
+      piece.style.setProperty('--x', `${3 + ((index * 37) % 94)}%`);
+      piece.style.setProperty('--size', `${26 + ((index * 5) % 18)}px`);
+      piece.style.setProperty('--delay', `${(index % 9) * 0.09}s`);
+      piece.style.setProperty('--duration', `${3.65 + ((index % 5) * 0.22)}s`);
+      piece.style.setProperty('--drift', `${-88 + ((index * 43) % 177)}px`);
+      piece.style.setProperty('--spin', `${360 + ((index % 6) * 90)}deg`);
+      celebration.append(piece);
+    }
+
+    document.body.append(celebration);
+    window.setTimeout(() => celebration.remove(), 5600);
   };
 
   const launchMission = () => {
@@ -530,9 +556,12 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
     atlasPlanet.classList.add('is-rocket-launch');
 
     const finishMission = () => {
+      if (missionFinished) return;
+      missionFinished = true;
       atlasScene.classList.add('has-lunar-flag');
       atlasDoNotClick.textContent = 'ФЛАГ УСТАНОВЛЕН';
       atlasDanger.classList.add('is-complete');
+      showCelebration();
     };
 
     const rocket = atlasPlanet.querySelector('.atlas-rocket');
@@ -547,12 +576,15 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
     if (clicks >= clickLimit) launchMission();
   });
 
-  const addClickReaction = (control, animatedElement, className, animationName) => {
+  const addClickReaction = (control, animatedElement, className, animationName, onPlay, onFinish) => {
     if (!control || !animatedElement) return;
 
     const playReaction = () => {
       animatedElement.classList.remove(className);
-      window.requestAnimationFrame(() => animatedElement.classList.add(className));
+      window.requestAnimationFrame(() => {
+        animatedElement.classList.add(className);
+        onPlay?.();
+      });
     };
 
     control.addEventListener('click', playReaction);
@@ -562,11 +594,23 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
       playReaction();
     });
     animatedElement.addEventListener('animationend', (event) => {
-      if (event.animationName === animationName) animatedElement.classList.remove(className);
+      if (event.animationName !== animationName) return;
+      animatedElement.classList.remove(className);
+      onFinish?.();
     });
   };
 
-  addClickReaction(atlasEarth, atlasEarth, 'is-clicked', 'atlas-earth-click');
+  addClickReaction(
+    atlasEarth,
+    atlasEarth,
+    'is-clicked',
+    'atlas-earth-click',
+    () => {
+      atlasPlanet.classList.remove('is-earth-clicked');
+      window.requestAnimationFrame(() => atlasPlanet.classList.add('is-earth-clicked'));
+    },
+    () => atlasPlanet.classList.remove('is-earth-clicked'),
+  );
   addClickReaction(atlasMoonWrap, atlasMoon, 'is-clicked', 'atlas-moon-click');
 }
 
