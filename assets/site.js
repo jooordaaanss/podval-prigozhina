@@ -635,14 +635,31 @@ const supportCustomAmount = document.querySelector('#support-custom-amount');
 const supportSummaryValue = document.querySelector('#support-summary-value');
 const supportConfirm = document.querySelector('#support-confirm');
 const supportResult = document.querySelector('#support-result');
+const supportBalanceValue = document.querySelector('#support-balance-value');
+const supportDonatedValue = document.querySelector('#support-donated-value');
 const supportSheet = supportDialog?.querySelector('.support-sheet');
 
 if (supportDialog && supportOpen && supportSummaryValue && supportConfirm && supportResult) {
+  const exchangeRates = { RUB: 1, USD: 100, EUR: 100 };
   let selectedCurrency = 'RUB';
   let selectedSymbol = '₽';
   let selectedAmount = 100;
+  let testBalanceRubles = 148800;
+  let testDonatedRubles = 0;
 
-  const formattedSupportValue = () => `${selectedAmount.toLocaleString('ru-RU')} ${selectedSymbol}`;
+  const formatNumber = (amount) => Number(amount.toFixed(2)).toLocaleString('ru-RU', { maximumFractionDigits: 2 });
+  const formattedSupportValue = (amount = selectedAmount) => `${formatNumber(amount)} ${selectedSymbol}`;
+  const formattedRubles = (rubles) => `${formatNumber(rubles / exchangeRates[selectedCurrency])} ${selectedSymbol}`;
+  const selectedAmountInRubles = () => selectedAmount * exchangeRates[selectedCurrency];
+
+  const updateSupportLedger = () => {
+    if (supportBalanceValue) supportBalanceValue.textContent = formattedRubles(testBalanceRubles);
+    if (supportDonatedValue) supportDonatedValue.textContent = formattedRubles(testDonatedRubles);
+    if (!supportWallet.hidden) {
+      supportWallet.dataset.currency = selectedSymbol;
+      supportWallet.setAttribute('aria-label', `Открыть тестовый баланс: ${formattedRubles(testBalanceRubles)}`);
+    }
+  };
 
   const updateSupportChoices = () => {
     supportCurrencies.forEach((currency) => {
@@ -656,6 +673,7 @@ if (supportDialog && supportOpen && supportSummaryValue && supportConfirm && sup
       symbol.textContent = selectedSymbol;
     });
     supportSummaryValue.textContent = formattedSupportValue();
+    updateSupportLedger();
   };
 
   const openSupportDialog = () => {
@@ -673,7 +691,6 @@ if (supportDialog && supportOpen && supportSummaryValue && supportConfirm && sup
   const showMoneyBurst = () => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    document.querySelector('.support-money-burst')?.remove();
     const burst = document.createElement('div');
     burst.className = 'support-money-burst';
     burst.setAttribute('aria-hidden', 'true');
@@ -693,7 +710,7 @@ if (supportDialog && supportOpen && supportSummaryValue && supportConfirm && sup
     }
 
     document.body.append(burst);
-    window.setTimeout(() => burst.remove(), 2800);
+    window.setTimeout(() => burst.remove(), 5600);
   };
 
   supportOpen.addEventListener('click', openSupportDialog);
@@ -719,19 +736,32 @@ if (supportDialog && supportOpen && supportSummaryValue && supportConfirm && sup
   supportCustomAmount?.addEventListener('input', () => {
     const amount = Math.floor(Number(supportCustomAmount.value));
     if (amount > 0) {
-      selectedAmount = Math.min(amount, 100000);
+      selectedAmount = amount;
       updateSupportChoices();
     }
   });
 
   supportConfirm.addEventListener('click', () => {
     supportResult.hidden = false;
-    supportResult.textContent = `Выбрано: ${formattedSupportValue()}. Безопасная оплата появится после подключения платёжной ссылки.`;
+    supportResult.classList.remove('is-success', 'is-error');
+
+    if (selectedAmountInRubles() > testBalanceRubles) {
+      supportResult.classList.add('is-error');
+      supportResult.textContent = `Недостаточно средств. Доступно: ${formattedRubles(testBalanceRubles)}; вы пытаетесь отправить ${formattedSupportValue()}.`;
+      return;
+    }
+
+    testBalanceRubles -= selectedAmountInRubles();
+    testDonatedRubles += selectedAmountInRubles();
+    supportResult.classList.add('is-success');
+    supportResult.textContent = `Тестовая поддержка ${formattedSupportValue()} отправлена. Остаток: ${formattedRubles(testBalanceRubles)}.`;
     supportWallet.hidden = false;
     supportWallet.dataset.currency = selectedSymbol;
-    supportWallet.setAttribute('aria-label', `Открыть поддержку: выбрано ${formattedSupportValue()}`);
+    supportWallet.setAttribute('aria-label', `Открыть тестовый баланс: ${formattedRubles(testBalanceRubles)}`);
     supportWallet.classList.remove('is-ready');
-    window.requestAnimationFrame(() => supportWallet.classList.add('is-ready'));
+    void supportWallet.offsetWidth;
+    supportWallet.classList.add('is-ready');
+    updateSupportChoices();
     showMoneyBurst();
   });
 
