@@ -35,16 +35,16 @@ document.querySelectorAll('[data-copy-text]').forEach((button) => {
   };
 
   button.addEventListener('click', () => {
-    button.textContent = 'ÐšÐ¾Ð¿Ð¸Ñ€ÑƒÐµÐ¼â€¦';
+    button.textContent = 'Копируем…';
     copyText(
       button.dataset.copyText,
       () => {
-        button.textContent = 'Ð¡ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾ âœ“';
+        button.textContent = 'Скопировано ✓';
         button.classList.add('copied');
         reset();
       },
       () => {
-        button.textContent = 'ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ';
+        button.textContent = 'Не удалось скопировать';
         reset();
       },
     );
@@ -52,9 +52,9 @@ document.querySelectorAll('[data-copy-text]').forEach((button) => {
 });
 
 const statuses = {
-  active: 'Ð¡ÐµÑ€Ð²ÐµÑ€ Ð°ÐºÑ‚Ð¸Ð²ÐµÐ½',
-  maintenance: 'Ð¢ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹',
-  soon: 'Ð¡ÐºÐ¾Ñ€Ð¾ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ',
+  active: 'Сервер активен',
+  maintenance: 'Технические работы',
+  soon: 'Скоро открытие',
 };
 
 document.querySelectorAll('[data-server-status]').forEach((status) => {
@@ -173,8 +173,8 @@ if (ruleSearch && searchResult) {
     });
 
     searchResult.textContent = found
-      ? `ÐÐ°Ð¹Ð´ÐµÐ½Ð¾ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¾Ð²: ${found}. ÐŸÐ¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ðµ Ð¿ÑƒÐ½ÐºÑ‚Ñ‹ Ñ€Ð°ÑÐºÑ€Ñ‹Ñ‚Ñ‹.`
-      : 'ÐÐ¸Ñ‡ÐµÐ³Ð¾ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾. ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ ÑÐ»Ð¾Ð²Ð¾ Ð¸Ð»Ð¸ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°.';
+      ? `Найдено разделов: ${found}. Подходящие пункты раскрыты.`
+      : 'Ничего не найдено. Попробуйте другое слово или номер правила.';
   });
 
   ruleSearch.addEventListener('keydown', (event) => {
@@ -220,4 +220,3 @@ window.addEventListener('scroll', revealVisibleTargets, { passive: true });
 window.addEventListener('resize', revealVisibleTargets, { passive: true });
 window.requestAnimationFrame(revealVisibleTargets);
 window.setTimeout(revealVisibleTargets, 180);
-
