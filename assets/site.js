@@ -495,71 +495,59 @@ if (worldStage && worldCube) {
 }
 
 const atlasScene = document.querySelector('.atlas-scene');
-const atlasRocket = document.querySelector('.atlas-rocket');
+const atlasPlanet = document.querySelector('.atlas-planet');
+const atlasDanger = document.querySelector('[data-atlas-danger]');
+const atlasDoNotClick = document.querySelector('[data-atlas-do-not-click]');
+const atlasClickCount = document.querySelector('[data-atlas-click-count]');
+const atlasResult = document.querySelector('[data-atlas-result]');
 
-if (atlasScene && atlasRocket && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  let rocketX = 120;
-  let rocketY = 380;
-  let rocketVX = 0.32;
-  let rocketVY = -0.22;
-  let rocketReady = false;
+if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCount && atlasResult) {
+  const clickLimit = 1000;
+  let clicks = 0;
+  let destroyed = false;
 
-  const positionRocket = () => {
-    const bounds = atlasScene.getBoundingClientRect();
-    const width = bounds.width;
-    const height = bounds.height;
-    const edge = 12;
+  const updateWarning = () => {
+    atlasClickCount.textContent = String(clicks);
+    atlasDoNotClick.setAttribute('aria-label', `Не кликай. Нажато ${clicks} из ${clickLimit}`);
 
-    if (!rocketReady) {
-      rocketX = width * 0.17;
-      rocketY = height * 0.68;
-      rocketReady = true;
+    if (clicks >= 900 && clicks < clickLimit) {
+      atlasDanger.classList.add('is-critical');
+      atlasDoNotClick.textContent = 'ПОСЛЕДНИЙ ШАНС';
+    } else if (clicks >= 500) {
+      atlasDoNotClick.textContent = 'ТЫ УВЕРЕН?';
     }
-
-    rocketX += rocketVX;
-    rocketY += rocketVY;
-    rocketVX *= 0.998;
-    rocketVY *= 0.998;
-
-    if (Math.hypot(rocketVX, rocketVY) < 0.12) {
-      rocketVX += Math.sin(Date.now() / 1000) * 0.018;
-      rocketVY += Math.cos(Date.now() / 1160) * 0.018;
-    }
-
-    if (rocketX < edge || rocketX > width - 42 - edge) {
-      rocketX = Math.max(edge, Math.min(width - 42 - edge, rocketX));
-      rocketVX *= -1;
-    }
-    if (rocketY < 62 || rocketY > height - 58) {
-      rocketY = Math.max(62, Math.min(height - 58, rocketY));
-      rocketVY *= -1;
-    }
-
-    const tilt = Math.max(-20, Math.min(20, rocketVX * 22)) + Math.sin(Date.now() / 640) * 2;
-    atlasRocket.style.transform = `translate3d(${rocketX}px, ${rocketY}px, 0) rotate(${tilt}deg)`;
-    window.requestAnimationFrame(positionRocket);
   };
 
-  const kickRocket = (event, boost) => {
-    const bounds = atlasScene.getBoundingClientRect();
-    const cursorX = event.clientX - bounds.left;
-    const cursorY = event.clientY - bounds.top;
-    const dx = rocketX + 21 - cursorX;
-    const dy = rocketY + 21 - cursorY;
-    const distance = Math.hypot(dx, dy);
+  const destroyEarth = () => {
+    if (destroyed) return;
+    destroyed = true;
+    atlasDoNotClick.disabled = true;
+    atlasDoNotClick.textContent = 'СЛИШКОМ ПОЗДНО';
+    atlasDanger.classList.remove('is-critical');
+    atlasDanger.classList.add('is-spent');
+    atlasResult.textContent = 'ЗЕМЛЯ РАЗРУШЕНА';
+    atlasPlanet.classList.add('is-exploding');
 
-    if (distance > 125) return;
+    let finished = false;
+    const finishDestruction = () => {
+      if (finished) return;
+      finished = true;
+      atlasPlanet.classList.add('is-destroyed');
+      atlasScene.classList.add('is-destroyed');
+      atlasResult.textContent = 'ЗЕМЛЯ РАЗРУШЕНА · ОБНОВИ СТРАНИЦУ';
+    };
 
-    const angle = distance > 0.1 ? Math.atan2(dy, dx) : Math.random() * Math.PI * 2;
-    const force = (1 - distance / 125) * boost;
-    rocketVX += Math.cos(angle) * force;
-    rocketVY += Math.sin(angle) * force;
+    const explosion = atlasPlanet.querySelector('.atlas-explosion');
+    explosion?.addEventListener('animationend', finishDestruction, { once: true });
+    window.setTimeout(finishDestruction, 980);
   };
 
-  atlasScene.addEventListener('pointermove', (event) => kickRocket(event, 1.15), { passive: true });
-  atlasScene.addEventListener('pointerdown', (event) => kickRocket(event, 4.3), { passive: true });
-  window.addEventListener('resize', () => { rocketReady = false; }, { passive: true });
-  window.requestAnimationFrame(positionRocket);
+  atlasDoNotClick.addEventListener('click', () => {
+    if (destroyed) return;
+    clicks += 1;
+    updateWarning();
+    if (clicks >= clickLimit) destroyEarth();
+  });
 }
 
 const backToTop = document.querySelector('#back-to-top');
