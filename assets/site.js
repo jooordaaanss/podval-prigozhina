@@ -494,6 +494,7 @@ if (worldStage && worldCube) {
   showCountry('earth');
 }
 
+// Финальная сцена атласа: метеорит и превращение Земли в лавовый мир.
 const atlasScene = document.querySelector('.atlas-scene');
 const atlasPlanet = document.querySelector('.atlas-planet');
 const atlasDanger = document.querySelector('[data-atlas-danger]');
