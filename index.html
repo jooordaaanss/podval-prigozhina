@@ -163,6 +163,11 @@
     .atlas-planet { position:relative; isolation:isolate; width:min(438px,74vw); aspect-ratio:1; animation:atlas-levitate 7s ease-in-out infinite; }
     .atlas-earth { position:absolute; z-index:3; inset:0; display:block; width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 34px 28px rgba(0,0,0,.52)) drop-shadow(18px -18px 25px rgba(118,220,255,.17)); user-select:none; }
     .atlas-earth-glow { position:absolute; z-index:2; inset:11%; border-radius:50%; background:radial-gradient(circle at 75% 21%,rgba(162,232,255,.36),transparent 36%),radial-gradient(circle,rgba(39,126,205,.12),transparent 63%); filter:blur(20px); }
+    .atlas-meteor { position:absolute; z-index:12; top:-98px; left:calc(100% + 58px); width:64px; height:64px; opacity:0; border:1px solid rgba(255,234,171,.78); background:radial-gradient(circle at 61% 32%,#fffbed 0 7%,#ffd26d 9% 19%,#d66228 38%,#641b18 68%,#19070b 100%); box-shadow:0 0 17px rgba(255,190,79,.95),0 0 39px rgba(255,78,25,.48); clip-path:polygon(51% 0,86% 21%,100% 61%,68% 100%,23% 86%,0 44%,19% 13%); filter:drop-shadow(0 0 8px rgba(255,235,159,.88)); transform:translate(0,0) rotate(-35deg) scale(.55); transform-origin:center; pointer-events:none; } .atlas-meteor::before { content:""; position:absolute; top:27px; left:42px; width:205px; height:22px; border-radius:100%; background:linear-gradient(90deg,rgba(255,241,187,.9),rgba(255,139,54,.7) 20%,rgba(255,68,28,.25) 56%,transparent); filter:blur(3px); transform:rotate(-35deg); transform-origin:left center; } .atlas-meteor::after { content:"✦  ·  ✦"; position:absolute; top:11px; left:47px; width:76px; color:#fff5c9; font:900 13px/1 ui-sans-serif,sans-serif; letter-spacing:8px; text-shadow:0 0 8px #ffcf6f; transform:rotate(25deg); }
+    .atlas-impact-flash { position:absolute; z-index:10; top:34%; left:43%; width:108px; height:108px; opacity:0; border-radius:50%; background:radial-gradient(circle,#fffce3 0 6%,#ffd36d 12%,#ff7b28 29%,rgba(235,61,25,.53) 44%,transparent 70%); mix-blend-mode:screen; pointer-events:none; transform:scale(.12); } .atlas-impact-flash::before,.atlas-impact-flash::after { content:""; position:absolute; inset:-26%; border:2px solid rgba(255,185,71,.78); border-radius:50%; opacity:.6; } .atlas-impact-flash::after { inset:-55%; border-color:rgba(255,78,31,.42); }
+    .atlas-impact-crater { position:absolute; z-index:7; top:37%; left:45%; width:85px; height:72px; opacity:0; background:radial-gradient(ellipse at 48% 50%,#030304 0 18%,rgba(18,8,7,.92) 20% 29%,rgba(255,116,29,.82) 31% 37%,rgba(83,17,11,.86) 39% 47%,transparent 49%); filter:drop-shadow(0 0 11px rgba(255,85,27,.53)); mix-blend-mode:multiply; transform:rotate(-17deg) scale(.2); transform-origin:center; pointer-events:none; }
+    .atlas-molten-surface { position:absolute; z-index:6; inset:3%; opacity:0; background:radial-gradient(ellipse at 57% 46%,rgba(255,245,184,.95) 0 1.5%,rgba(255,105,24,.95) 2% 13%,transparent 14%),linear-gradient(137deg,transparent 0 15%,rgba(255,104,25,.9) 16% 20%,transparent 21% 33%,rgba(246,70,17,.88) 34% 39%,transparent 40% 59%,rgba(255,152,39,.84) 60% 64%,transparent 65%),linear-gradient(24deg,transparent 0 20%,rgba(255,122,26,.9) 21% 25%,transparent 26% 46%,rgba(250,78,18,.85) 47% 51%,transparent 52% 74%,rgba(255,174,48,.76) 75% 79%,transparent 80%),radial-gradient(ellipse at 27% 73%,rgba(255,87,22,.85) 0 8%,transparent 9%),radial-gradient(ellipse at 78% 68%,rgba(255,135,31,.82) 0 9%,transparent 10%); clip-path:polygon(50% 1%,96% 23%,96% 75%,50% 99%,4% 75%,4% 23%); filter:saturate(1.5) contrast(1.23) drop-shadow(0 0 12px rgba(255,93,18,.7)); mix-blend-mode:screen; transform:scale(.72); pointer-events:none; }
+    .atlas-planet.is-meteor-impact .atlas-meteor { animation:atlas-meteor-fall 1.45s cubic-bezier(.1,.82,.3,1) forwards; } .atlas-planet.is-meteor-impact .atlas-impact-flash { animation:atlas-impact-flash 1.05s cubic-bezier(.18,.84,.26,1) 1.15s forwards; } .atlas-planet.is-meteor-impact .atlas-impact-crater { animation:atlas-crater-form .74s cubic-bezier(.18,.88,.28,1) 1.22s forwards; } .atlas-planet.is-meteor-impact .atlas-cloud { animation:atlas-cloud-vaporise 1.05s ease-in 1.18s forwards!important; } .atlas-planet.is-meteor-impact .atlas-earth { animation:atlas-earth-char 3.2s cubic-bezier(.2,.76,.28,1) 1.22s forwards; } .atlas-planet.is-meteor-impact .atlas-earth-glow { animation:atlas-glow-overheat 3.1s ease 1.15s forwards; } .atlas-planet.is-meteor-impact .atlas-molten-surface { animation:atlas-lava-spread 2.75s cubic-bezier(.2,.82,.25,1) 1.38s forwards; }
     .atlas-explosion { position:absolute; z-index:9; top:50%; left:50%; width:78px; height:78px; border-radius:50%; opacity:0; pointer-events:none; background:radial-gradient(circle,#fffde4 0 7%,#ffcf65 11%,#ff7b4c 28%,rgba(255,82,53,.55) 42%,transparent 70%); transform:translate(-50%,-50%) scale(.15); mix-blend-mode:screen; }
     .atlas-explosion::before,.atlas-explosion::after { content:""; position:absolute; inset:-35%; border:2px solid rgba(255,212,105,.86); border-radius:50%; opacity:0; } .atlas-explosion::after { inset:-66%; border-color:rgba(255,106,72,.5); }
     .atlas-ruined-earth { position:absolute; z-index:3; inset:13%; opacity:0; background:url('assets/earth-atlas-cube.png') center/100% 100% no-repeat; clip-path:polygon(20% 8%,78% 1%,95% 28%,76% 49%,88% 70%,57% 93%,29% 78%,8% 54%,19% 36%); filter:saturate(.48) brightness(.64) contrast(1.12) drop-shadow(0 25px 23px rgba(0,0,0,.58)); transform:scale(.55) rotate(-12deg); pointer-events:none; }
@@ -202,6 +207,13 @@
     @keyframes atlas-moon-impact { 0% { opacity:0; transform:translate(-34px,-78px) rotate(-53deg); } 70% { opacity:1; transform:translate(5px,0) rotate(-18deg); } 100% { opacity:1; transform:translate(-2px,-1px) rotate(-23deg); } }
     @keyframes atlas-moon-crack-appear { 0% { opacity:0; transform:rotate(38deg) scaleX(.08); } 68% { opacity:.92; transform:rotate(38deg) scaleX(1.08); } 100% { opacity:.84; transform:rotate(38deg) scaleX(1); } }
     @keyframes atlas-moon-hit { 0%,100% { filter:drop-shadow(0 0 0 rgba(255,162,87,0)); } 35% { translate:12px -7px; filter:drop-shadow(0 0 16px rgba(255,162,87,.75)); } 68% { translate:-7px 4px; } }
+    @keyframes atlas-meteor-fall { 0% { opacity:0; transform:translate(0,0) rotate(-35deg) scale(.55); } 9% { opacity:1; } 76% { opacity:1; transform:translate(-270px,195px) rotate(37deg) scale(1); } 100% { opacity:0; transform:translate(-284px,206px) rotate(58deg) scale(.34); } }
+    @keyframes atlas-impact-flash { 0% { opacity:0; transform:scale(.12); } 16% { opacity:1; transform:scale(.78); } 55% { opacity:.74; transform:scale(2.15); } 100% { opacity:0; transform:scale(3.35); } }
+    @keyframes atlas-crater-form { 0% { opacity:0; transform:rotate(-17deg) scale(.2); } 62% { opacity:.94; transform:rotate(-17deg) scale(1.12); } 100% { opacity:.79; transform:rotate(-17deg) scale(1); } }
+    @keyframes atlas-cloud-vaporise { 0% { opacity:var(--cloud-opacity,.9); filter:brightness(1) drop-shadow(0 3px 5px rgba(101,190,255,.2)); } 36% { opacity:1; filter:brightness(2.4) drop-shadow(0 0 10px rgba(255,177,92,.85)); } 100% { opacity:0; filter:brightness(3.5) blur(5px); translate:0 -38px; } }
+    @keyframes atlas-earth-char { 0% { filter:drop-shadow(0 34px 28px rgba(0,0,0,.52)) drop-shadow(18px -18px 25px rgba(118,220,255,.17)); } 22% { filter:sepia(.5) saturate(2) hue-rotate(330deg) brightness(1.05) drop-shadow(0 0 21px rgba(255,102,31,.72)); } 58% { filter:grayscale(.45) sepia(.78) saturate(2.5) hue-rotate(332deg) brightness(.58) contrast(1.34) drop-shadow(0 0 25px rgba(255,84,23,.76)); } 100% { filter:grayscale(.95) sepia(.28) saturate(.36) brightness(.23) contrast(1.72) drop-shadow(0 0 24px rgba(255,73,20,.68)); } }
+    @keyframes atlas-glow-overheat { 0% { background:radial-gradient(circle at 75% 21%,rgba(162,232,255,.36),transparent 36%),radial-gradient(circle,rgba(39,126,205,.12),transparent 63%); transform:scale(1); } 38% { background:radial-gradient(circle at 54% 44%,rgba(255,236,152,.65),transparent 20%),radial-gradient(circle,rgba(255,75,22,.35),transparent 63%); transform:scale(1.08); } 100% { background:radial-gradient(circle at 54% 44%,rgba(255,104,25,.24),transparent 23%),radial-gradient(circle,rgba(255,48,15,.2),transparent 70%); transform:scale(1.02); } }
+    @keyframes atlas-lava-spread { 0% { opacity:0; transform:scale(.72); filter:saturate(1.1) contrast(1); } 28% { opacity:.36; transform:scale(.84); } 70% { opacity:.9; transform:scale(1.03); filter:saturate(1.7) contrast(1.34) drop-shadow(0 0 16px rgba(255,93,18,.85)); } 100% { opacity:.84; transform:scale(1); } }
     @media (max-width:760px) { .atlas-world { grid-template-columns:1fr; } .atlas-scene,.atlas-side { min-height:530px; } .atlas-side { border-top:1px solid rgba(133,217,255,.14); border-left:0; padding:28px 21px; } .atlas-planet { width:min(382px,90vw); } .atlas-moon-wrap { right:2%; top:21%; transform:scale(.78); } .atlas-topline { top:20px; left:21px; font-size:8px; } .atlas-caption { bottom:20px; left:21px; } .atlas-caption strong { font-size:27px; } .atlas-danger { right:20px; bottom:19px; } .atlas-danger button { padding:9px 10px; font-size:9px; } .atlas-country-lock { min-height:275px; } }
   </style>
 </head>
@@ -598,22 +610,12 @@
 <span class="atlas-cloud seven"></span>
 <span class="atlas-cloud eight"></span>
 <span class="atlas-cloud nine"></span>
-<span class="atlas-explosion" aria-hidden="true"></span>
-<span class="atlas-ruined-earth" aria-hidden="true"></span>
-<span class="atlas-ruin-plate one" aria-hidden="true"></span>
-<span class="atlas-ruin-plate two" aria-hidden="true"></span>
-<span class="atlas-ruin-plate three" aria-hidden="true"></span>
-<span class="atlas-ruin-plate four" aria-hidden="true"></span>
-<span class="atlas-debris one" aria-hidden="true"></span>
-<span class="atlas-debris two" aria-hidden="true"></span>
-<span class="atlas-debris three" aria-hidden="true"></span>
-<span class="atlas-debris four" aria-hidden="true"></span>
-<span class="atlas-debris five" aria-hidden="true"></span>
-<span class="atlas-debris six" aria-hidden="true"></span>
-<span class="atlas-debris seven" aria-hidden="true"></span>
-<span class="atlas-debris eight" aria-hidden="true"></span>
+<span class="atlas-meteor" aria-hidden="true"></span>
+<span class="atlas-impact-flash" aria-hidden="true"></span>
+<span class="atlas-impact-crater" aria-hidden="true"></span>
+<span class="atlas-molten-surface" aria-hidden="true"></span>
 </div>
-<div class="atlas-moon-wrap"><span class="atlas-moon"></span><span class="atlas-moon-crack" aria-hidden="true"></span><span class="atlas-moon-shard" aria-hidden="true"></span><span class="atlas-moon-label">ЛУНА</span></div>
+<div class="atlas-moon-wrap"><span class="atlas-moon"></span><span class="atlas-moon-label">ЛУНА</span></div>
 </div>
 <div class="atlas-danger" data-atlas-danger>
 <button type="button" data-atlas-do-not-click aria-describedby="atlas-click-note">НЕ КЛИКАЙ!</button>
@@ -642,7 +644,7 @@
   </main>
 <footer class="wrap">© 2026 Подвал Пригожина · Версия правил 1.2</footer>
 <button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button>
-  <script src="assets/site.js?v=3.0" defer></script>
+  <script src="assets/site.js?v=3.1" defer></script>
 </body>
 </html>
 
