@@ -82,6 +82,15 @@
     .country-selected.is-development { border-color:rgba(121,214,255,.31); color:#c4efff; background:rgba(96,213,255,.09); } .country-selected.is-development::before { background:#75ddff; box-shadow:0 0 10px #75ddff; } .country-selected.is-world { border-color:rgba(93,232,156,.29); color:#c9f6d9; background:rgba(63,208,123,.09); } .country-selected.is-world::before { background:#5ce89b; box-shadow:0 0 10px #5ce89b; }
     .world-controls { flex-wrap:wrap; } .world-zoom { display:flex; align-items:center; gap:8px; margin-left:auto; color:#a7c8da; font-size:10px; font-weight:760; letter-spacing:.05em; } .world-zoom button { display:grid; width:29px; height:29px; place-items:center; border:1px solid rgba(123,224,255,.27); border-radius:8px; color:#d8f7ff; background:rgba(96,230,255,.08); font:900 18px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .16s ease,border-color .16s ease,background .16s ease; } .world-zoom button:hover, .world-zoom button:focus-visible { border-color:rgba(123,224,255,.68); background:rgba(96,230,255,.16); transform:translateY(-1px); } .world-zoom input { width:92px; accent-color:#69e9ff; cursor:pointer; } .world-controls .world-reset { margin-left:2px; } .world-info[data-active-country="earth"] .country-laws { border-color:rgba(93,232,156,.2); background:linear-gradient(135deg,rgba(30,83,65,.2),rgba(11,20,42,.46)); } .world-info[data-active-country="earth"] .country-laws h4 { color:#c9f6d9; } .world-info[data-active-country="earth"] .country-laws li::before { background:#5ce89b; box-shadow:0 0 8px rgba(92,232,155,.7); }
     @media (max-width:760px) { .map-development { top:15px; left:15px; } .world-controls { align-items:flex-start; } .world-controls p { width:100%; } .world-zoom { margin-left:0; } .world-controls .world-reset { margin-left:auto; } }
+    /* Космическая сцена и каталог стран */
+    .planet-stage { overflow:visible; background:radial-gradient(circle at 72% 21%,rgba(255,214,106,.08),transparent 23%),radial-gradient(circle at 37% 67%,rgba(78,203,244,.08),transparent 35%); } .planet-stage::before { opacity:.62; } .cube-scene { z-index:3; } .planet-cube { z-index:2; } .face-front { filter:brightness(1.18) saturate(1.09); } .face-right { filter:brightness(.82) saturate(.94); } .face-back,.face-left { filter:brightness(.46) saturate(.76); } .face-top { filter:brightness(1.02); } .face-bottom { filter:brightness(.5); } .face-front::after { background:linear-gradient(118deg,rgba(255,244,180,.28),transparent 42% 67%,rgba(2,13,33,.38)); } .face-right::after { background:linear-gradient(118deg,rgba(255,229,147,.12),transparent 34% 56%,rgba(1,10,29,.56)); } .face-left::after,.face-back::after { background:linear-gradient(118deg,rgba(5,12,34,.22),rgba(1,8,25,.78)); }
+    .square-sun { position:absolute; z-index:0; top:42px; right:44px; width:78px; height:78px; border:1px solid rgba(255,246,189,.9); background:radial-gradient(circle at 34% 28%,#fffdd2 0 5%,transparent 6%),linear-gradient(135deg,#fff1a2,#ffbf55 55%,#e97a3d); box-shadow:0 0 0 9px rgba(255,207,93,.05),0 0 32px rgba(255,184,63,.7),0 0 90px rgba(255,174,61,.34); animation:sun-pulse 5.8s ease-in-out infinite; } .square-sun::before,.square-sun::after { content:""; position:absolute; inset:-18px; border:1px solid rgba(255,216,114,.26); animation:sun-rays 9s linear infinite; } .square-sun::after { inset:-34px; border-color:rgba(255,216,114,.13); animation-direction:reverse; animation-duration:14s; } .sun-caption { position:absolute; z-index:1; top:128px; right:28px; color:#ffefb2; font-size:9px; font-weight:850; letter-spacing:.15em; text-shadow:0 0 12px rgba(255,197,75,.68); }
+    .moon-orbit { position:absolute; z-index:4; width:388px; height:388px; border:1px dashed rgba(211,232,255,.22); border-radius:50%; transform:rotateX(64deg) rotateZ(-22deg); transform-style:preserve-3d; pointer-events:none; animation:moon-orbit 38s linear infinite; } .square-moon { position:absolute; top:-19px; left:50%; width:42px; height:42px; border:1px solid rgba(243,249,255,.7); background:radial-gradient(circle at 29% 30%,rgba(122,138,164,.48) 0 9%,transparent 10%),radial-gradient(circle at 68% 66%,rgba(112,127,155,.5) 0 12%,transparent 13%),linear-gradient(135deg,#e9f2fb,#9baabe 66%,#718199); box-shadow:0 0 0 5px rgba(212,229,255,.06),0 0 20px rgba(206,225,255,.42); transform:translateX(-50%) rotateX(-64deg) rotateZ(22deg); } .square-moon::after { content:"ЛУНА"; position:absolute; left:50%; top:calc(100% + 12px); color:#d5e8ff; font:850 8px/1 Inter,ui-sans-serif,system-ui,sans-serif; letter-spacing:.13em; text-shadow:0 0 11px rgba(207,228,255,.6); transform:translateX(-50%) rotateX(64deg) rotateZ(-22deg); }
+    .cloud-belt { position:absolute; z-index:5; top:17%; left:-11%; width:122%; height:66%; transform-style:preserve-3d; pointer-events:none; animation:clouds-travel 23s linear infinite; } .cloud-belt::before,.cloud-belt::after { content:""; position:absolute; width:100%; height:38%; left:0; border-radius:50%; opacity:.75; background:radial-gradient(ellipse at 10% 55%,rgba(255,255,255,.78) 0 6%,transparent 7%),radial-gradient(ellipse at 20% 44%,rgba(237,251,255,.66) 0 8%,transparent 9%),radial-gradient(ellipse at 49% 66%,rgba(255,255,255,.68) 0 7%,transparent 8%),radial-gradient(ellipse at 71% 38%,rgba(225,248,255,.74) 0 8%,transparent 9%),radial-gradient(ellipse at 91% 58%,rgba(255,255,255,.62) 0 6%,transparent 7%); filter:blur(.8px); transform:translateZ(calc(var(--cube-size) / 2 + 5px)); } .cloud-belt::before { top:3%; } .cloud-belt::after { bottom:3%; opacity:.56; transform:rotateY(180deg) translateZ(calc(var(--cube-size) / 2 + 5px)); }
+    .object-type { display:inline-flex; align-items:center; gap:7px; margin:0 0 10px; color:#a8c8dc; font-size:10px; font-weight:850; letter-spacing:.13em; } .object-type::before { content:""; width:7px; height:7px; border-radius:2px; background:#62e4ff; box-shadow:0 0 11px #62e4ff; }
+    .country-directory { margin-top:16px; border:1px solid rgba(137,208,255,.18); border-radius:14px; background:rgba(3,13,31,.36); overflow:hidden; } .country-directory summary { display:flex; align-items:center; gap:9px; padding:14px 16px; color:#e7f7ff; font-size:13px; font-weight:820; list-style:none; } .country-directory summary::-webkit-details-marker { display:none; } .country-directory summary::before { content:"☷"; color:#76e5ff; font-size:15px; } .country-directory summary::after { content:"+"; margin-left:auto; color:#8fe8ff; font-size:19px; line-height:1; } .country-directory[open] summary::after { content:"−"; } .country-count { display:inline-grid; min-width:20px; height:20px; place-items:center; border-radius:6px; color:#b9f1ff; background:rgba(96,230,255,.11); font-size:10px; } .country-directory-list { display:grid; gap:7px; padding:0 12px 13px; } .country-directory-item { display:flex; align-items:center; gap:10px; width:100%; border:1px solid rgba(223,246,255,.08); border-radius:10px; padding:9px 10px; color:#cfdae6; background:rgba(10,24,48,.52); text-align:left; font:700 12px/1.25 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .16s ease,border-color .16s ease,background .16s ease; } .country-directory-item:hover,.country-directory-item:focus-visible,.country-directory-item[aria-pressed="true"] { border-color:rgba(111,225,255,.48); background:rgba(74,179,214,.13); color:#f0fbff; transform:translateX(2px); } .directory-flag { width:19px; height:15px; flex:0 0 19px; border:1px solid rgba(255,255,255,.2); border-radius:3px; } .directory-france { background:linear-gradient(90deg,#2f60bb 0 33.33%,#f4f6ff 33.33% 66.66%,#d84c59 66.66%); } .directory-england { background:linear-gradient(90deg,transparent 42%,#e55a63 42% 58%,transparent 58%),linear-gradient(#eef5ff 42%,#e55a63 42% 58%,#eef5ff 58%),#3c6ebf; } .directory-empire { background:linear-gradient(135deg,#202732 0 33%,#e4bf64 33% 66%,#b94250 66%); } .directory-egypt { background:linear-gradient(135deg,#d1b557,#e8eff6 50%,#39856c); } .country-directory-item small { margin-left:auto; color:#8fc4dc; font-size:9px; font-weight:820; letter-spacing:.06em; } .country-directory-item small.ready { color:#ffdf8a; }
+    @keyframes sun-pulse { 0%,100% { transform:scale(1); filter:brightness(1); } 50% { transform:scale(1.08); filter:brightness(1.16); } } @keyframes sun-rays { to { transform:rotate(360deg); } } @keyframes moon-orbit { to { transform:rotateX(64deg) rotateZ(-22deg) rotate(360deg); } } @keyframes clouds-travel { from { transform:rotateY(0deg); } to { transform:rotateY(360deg); } }
+    @media (max-width:760px) { .square-sun { top:24px; right:23px; width:52px; height:52px; } .sun-caption { top:84px; right:11px; font-size:7px; } .moon-orbit { width:300px; height:300px; } .square-moon { width:33px; height:33px; top:-15px; } .object-type { margin-top:0; } }
   </style>
 </head>
 <body>
@@ -446,7 +455,7 @@
 <div class="history-date">04.08.2026</div>
 <div>
 <h3>Открыта интерактивная карта мира <span class="history-new">НОВОЕ</span></h3>
-<p>Внизу сайта появилась квадратная планета Земля XIII века н. э.: Французская Империя, тестовые страны «в разработке», выбор океана и масштабирование карты.</p>
+<p>Внизу сайта появилась космическая сцена Земли XIII века н. э.: квадратные Солнце и Луна, облака, вращение, страны «в разработке», выбор океана и масштабирование карты.</p>
 </div>
 </article>
 <article class="history-entry">
@@ -475,6 +484,9 @@
 <div class="planet-stage" data-world-stage>
 <div class="planet-orbit" aria-hidden="true"></div>
 <div class="map-development" aria-hidden="true"><b>АТЛАС 0.2</b> тестовые страны</div>
+<div class="square-sun" aria-label="Квадратное Солнце" role="img"></div>
+<span class="sun-caption" aria-hidden="true">СОЛНЦЕ</span>
+<div class="moon-orbit" aria-hidden="true"><span class="square-moon"></span></div>
 <div class="cube-scene">
 <div class="planet-cube" data-world-cube tabindex="0" role="group" aria-label="Интерактивная квадратная планета. Потяните, чтобы повернуть карту.">
 <div class="cube-face face-front">
@@ -491,11 +503,13 @@
 <div class="cube-face face-left"><span class="land" aria-hidden="true"></span></div>
 <div class="cube-face face-top"></div>
 <div class="cube-face face-bottom"></div>
+<div class="cloud-belt" aria-hidden="true"></div>
 </div>
 </div>
 <div class="planet-hint"><i aria-hidden="true"></i>Потяните · выберите страну · нажмите океан</div>
 </div>
 <aside class="world-info" data-country-panel aria-live="polite">
+<p class="object-type">ОБЪЕКТ · КВАДРАТНАЯ ПЛАНЕТА</p>
 <span class="country-selected" data-country-status>ТЕРРИТОРИЯ ВЫБРАНА</span>
 <div class="country-name">
 <span class="country-flag" data-country-flag aria-label="Флаг Франции" role="img"></span>
@@ -517,6 +531,15 @@
 <li>Споры решаются через дипломатию; при конфликте окончательное слово — за Императором и администрацией проекта.</li>
 </ul>
 </div>
+<details class="country-directory" open>
+<summary>Список стран <span class="country-count">4</span></summary>
+<div class="country-directory-list">
+<button class="country-directory-item" type="button" data-world-country-select="france" aria-pressed="true"><span class="directory-flag directory-france"></span>Французская Империя <small class="ready">ОТКРЫТА</small></button>
+<button class="country-directory-item" type="button" data-world-country-select="england" aria-pressed="false"><span class="directory-flag directory-england"></span>Королевство Англия <small>ТЕСТ</small></button>
+<button class="country-directory-item" type="button" data-world-country-select="empire" aria-pressed="false"><span class="directory-flag directory-empire"></span>Священная Римская Империя <small>ТЕСТ</small></button>
+<button class="country-directory-item" type="button" data-world-country-select="egypt" aria-pressed="false"><span class="directory-flag directory-egypt"></span>Мамлюкский Султанат <small>ТЕСТ</small></button>
+</div>
+</details>
 </aside>
 </div>
 <div class="world-controls">
@@ -534,7 +557,7 @@
   </main>
 <footer class="wrap">© 2026 Подвал Пригожина · Версия правил 1.2</footer>
 <button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button>
-<script src="assets/site.js?v=2.3" defer></script>
+<script src="assets/site.js?v=2.4" defer></script>
 </body>
 </html>
 
