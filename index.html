@@ -14,7 +14,7 @@
     body { margin:0; color:var(--text); background:var(--bg); font:16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
     .glow { position:fixed; z-index:-1; width:480px; height:480px; border-radius:50%; filter:blur(95px); opacity:.21; pointer-events:none; }
     .glow.one { background:var(--cyan); top:-180px; left:-160px; } .glow.two { background:var(--violet); right:-180px; top:300px; }
-    .cursor-sevens { position:fixed; z-index:-1; inset:0; overflow:hidden; pointer-events:none; user-select:none; } .cursor-seven { position:absolute; color:rgba(165,202,255,.23); font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-weight:850; line-height:1; letter-spacing:-.1em; text-shadow:0 0 18px rgba(116,172,255,.14); will-change:transform; transition:transform .34s cubic-bezier(.2,.7,.22,1),color .25s ease,text-shadow .25s ease; } .cursor-seven-symbol { display:block; animation:seven-levitate var(--float-duration,4.8s) ease-in-out var(--float-delay,0s) infinite; } .cursor-sevens.is-active .cursor-seven { color:rgba(184,216,255,.31); text-shadow:0 0 21px rgba(116,172,255,.26); }
+    .cursor-sevens { position:fixed; z-index:-1; inset:0; overflow:hidden; pointer-events:none; user-select:none; } .cursor-seven { position:absolute; font-family:"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif; font-weight:400; line-height:1; letter-spacing:0; filter:drop-shadow(0 2px 7px rgba(69,145,255,.17)); will-change:transform; transition:transform .34s cubic-bezier(.2,.7,.22,1),filter .25s ease; } .cursor-seven-symbol { display:block; animation:seven-levitate var(--float-duration,4.8s) ease-in-out var(--float-delay,0s) infinite; } .cursor-sevens.is-active .cursor-seven { filter:brightness(1.08) drop-shadow(0 0 11px rgba(102,184,255,.4)); }
     .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
     header { padding:20px 0; border-bottom:1px solid var(--line); background:rgba(11,16,32,.72); backdrop-filter:blur(14px); position:sticky; top:0; z-index:3; }
     .nav { display:flex; justify-content:space-between; align-items:center; gap:22px; }
@@ -331,7 +331,7 @@
 <h3>iordans <span class="chief-jordan">(Jordan)<span class="chief-crown" aria-hidden="true">♛</span></span>
 </h3>
 <p>Главное руководство проекта.</p>
-<div class="team-cloud jordan-cloud" aria-hidden="true"><span>&#x1F1EB;&#x1F1F7;</span><span>67</span><span>67</span><span>67</span><span>67</span></div>
+<div class="team-cloud jordan-cloud" aria-hidden="true"><span>&#x1F1EB;&#x1F1F7;</span><span>&#x1F1EB;&#x1F1F7;</span><span>&#x1F1EB;&#x1F1F7;</span><span>&#x1F1EB;&#x1F1F7;</span></div>
 </article>
 <article class="card team-card yulia-card">
 <div class="number">CHIEF</div>
@@ -661,7 +661,7 @@
   </main>
 <footer class="wrap">© 2026 Подвал Пригожина · Версия правил 1.2</footer>
 <button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button>
-<script src="assets/site.js?v=4.4" defer></script>
+<script src="assets/site.js?v=4.5" defer></script>
 </body>
 </html>
 
