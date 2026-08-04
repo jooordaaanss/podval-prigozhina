@@ -107,6 +107,21 @@
     @media (max-width:760px) { .static-world-head { display:block; padding:26px 22px 0; } .development-sign { display:flex; width:max-content; margin-top:16px; } .static-world-content { grid-template-columns:1fr; } .static-space { min-height:445px; border-right:0; border-bottom:1px solid rgba(255,229,146,.12); } .static-world-info { padding:29px 21px; } .static-earth-wrap { transform:scale(.83); } .static-moon-orbit { transform:scale(.82) rotateX(64deg) rotateZ(-22deg); } .static-sun { top:26px; right:25px; width:57px; height:57px; } .static-sun-label { top:98px; right:13px; font-size:7px; } }
     .static-earth { z-index:3; } .static-clouds-back { z-index:2; } .static-clouds-front { z-index:5; }
     @media (max-width:760px) { .static-earth-wrap { width:255px; height:255px; transform:none; } .static-earth { --static-size:210px; } .static-moon-orbit { width:330px; height:330px; transform:rotateX(64deg) rotateZ(-22deg); } }
+
+    /* Земля: единая 3D-иллюстрация с облаками, переходящими через грани */
+    .static-world-development { border-color:rgba(255,215,108,.68); }
+    .static-world-content { position:relative; }
+    .static-space { border-right-color:rgba(255,229,146,.08); }
+    .static-earth-wrap { width:410px; height:410px; perspective:none; transform-style:flat; }
+    .static-earth-planet { position:absolute; inset:0; isolation:isolate; animation:static-earth-float 7.2s ease-in-out infinite; }
+    .static-earth-image { position:absolute; z-index:3; inset:0; display:block; width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 28px 24px rgba(0,0,0,.48)) drop-shadow(0 0 28px rgba(68,181,255,.16)); user-select:none; }
+    .static-earth-cloud-flow { position:absolute; z-index:4; inset:0; overflow:hidden; opacity:.27; pointer-events:none; mix-blend-mode:screen; -webkit-mask-image:url('assets/earth-cube-v2.png'); mask-image:url('assets/earth-cube-v2.png'); -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-size:contain; mask-size:contain; -webkit-mask-position:center; mask-position:center; }
+    .static-earth-cloud-flow::before,.static-earth-cloud-flow::after { content:""; position:absolute; left:-40%; width:190%; height:48px; background:linear-gradient(90deg,transparent 0 3%,rgba(255,255,255,.03) 3% 6%,transparent 6% 10%,rgba(255,255,255,.78) 10% 17%,rgba(222,244,255,.94) 17% 22%,rgba(255,255,255,.83) 22% 27%,transparent 27% 34%,rgba(255,255,255,.72) 34% 40%,rgba(219,243,255,.91) 40% 45%,transparent 45% 52%,rgba(255,255,255,.8) 52% 59%,rgba(225,246,255,.94) 59% 64%,transparent 64% 72%,rgba(255,255,255,.74) 72% 78%,transparent 78% 100%); filter:blur(.25px) drop-shadow(0 0 6px rgba(234,252,255,.52)); animation:clouds-cross-cube 13s linear infinite; }
+    .static-earth-cloud-flow::before { top:41%; transform:rotate(-8deg); }
+    .static-earth-cloud-flow::after { top:59%; opacity:.64; animation-duration:17s; animation-direction:reverse; transform:rotate(-8deg) scaleX(.86); }
+    .static-note { color:#fff3cf; }
+    @keyframes clouds-cross-cube { from { translate:0 0; } to { translate:36% -7px; } }
+    @media (max-width:760px) { .static-earth-wrap { width:330px; height:330px; } .static-earth-cloud-flow::before,.static-earth-cloud-flow::after { height:37px; } }
   </style>
 </head>
 <body>
@@ -489,7 +504,7 @@
 <div>
 <p class="static-world-kicker">МИР ПРОЕКТА · КОСМИЧЕСКАЯ СЦЕНА</p>
 <h2 id="world-title">Земля игрового мира</h2>
-<p>Квадратная 3D‑Земля создаётся для будущего атласа стран. Планету нельзя поворачивать — сейчас это красивая живая сцена проекта.</p>
+<p>Объёмная 3D‑Земля создаётся для будущего атласа стран. Сейчас это красивая живая сцена проекта.</p>
 </div>
 <div class="development-sign"><b>✦</b>В РАЗРАБОТКЕ</div>
 </header>
@@ -499,29 +514,23 @@
 <span class="static-sun-label" aria-hidden="true">СОЛНЦЕ</span>
 <div class="static-moon-orbit" aria-hidden="true"><span class="static-moon"></span></div>
 <div class="static-earth-wrap" aria-hidden="true">
-<div class="static-clouds static-clouds-back"></div>
-<div class="static-earth">
-<div class="static-face static-front"><span class="static-land static-land-one"></span><span class="static-land static-land-two"></span></div>
-<div class="static-face static-right"><span class="static-land"></span></div>
-<div class="static-face static-back"></div>
-<div class="static-face static-left"><span class="static-land"></span></div>
-<div class="static-face static-top"></div>
-<div class="static-face static-bottom"></div>
+<div class="static-earth-planet">
+<img class="static-earth-image" src="assets/earth-cube-v2.png" alt="" />
+<div class="static-earth-cloud-flow"></div>
 </div>
-<div class="static-clouds static-clouds-front"></div>
 </div>
 </div>
 <aside class="static-world-info">
 <span class="static-object-label">ОБЪЕКТ · ПЛАНЕТА</span>
 <h3>Земля</h3>
-<p>Мир сервера в эпохе XIII века н. э. Светлая грань Земли освещается квадратным Солнцем, а тёмная остаётся в ночной стороне.</p>
+<p>Мир сервера в эпохе XIII века н. э. Светлая грань Земли освещается Солнцем, а тёмная остаётся в ночной стороне.</p>
 <div class="static-facts">
 <div><span>ЭПОХА</span><b>XIII век н. э.</b></div>
 <div><span>СТАТУС</span><b>В разработке</b></div>
-<div><span>СПУТНИК</span><b>Квадратная Луна</b></div>
+<div><span>СПУТНИК</span><b>Луна</b></div>
 <div><span>АТЛАС СТРАН</span><b>Скоро появится</b></div>
 </div>
-<div class="static-note">Облака вращаются вокруг Земли, а Луна медленно заходит за её грань и скрывается из виду.</div>
+<div class="static-note">Облака мягко проходят по граням Земли и переходят через углы, а Луна медленно заходит за планету и скрывается из виду.</div>
 </aside>
 </div>
 </div>
