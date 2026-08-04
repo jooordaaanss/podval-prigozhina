@@ -186,6 +186,110 @@ if (ruleSearch && searchResult) {
   });
 }
 
+const worldStage = document.querySelector('[data-world-stage]');
+const worldCube = document.querySelector('[data-world-cube]');
+const worldReset = document.querySelector('[data-world-reset]');
+const worldCountries = document.querySelectorAll('[data-country]');
+const countryPanel = document.querySelector('[data-country-panel]');
+
+if (worldStage && worldCube) {
+  const defaultRotation = { x: -14, y: -31 };
+  let rotationX = defaultRotation.x;
+  let rotationY = defaultRotation.y;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let startRotationX = rotationX;
+  let startRotationY = rotationY;
+  let activePointer = null;
+  let didDrag = false;
+
+  const setCubeRotation = () => {
+    worldCube.style.setProperty('--tilt-x', `${rotationX}deg`);
+    worldCube.style.setProperty('--tilt-y', `${rotationY}deg`);
+  };
+
+  const beginDrag = (event) => {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+
+    activePointer = event.pointerId;
+    didDrag = false;
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    startRotationX = rotationX;
+    startRotationY = rotationY;
+    worldStage.classList.add('is-dragging');
+    worldStage.setPointerCapture?.(event.pointerId);
+  };
+
+  const moveDrag = (event) => {
+    if (event.pointerId !== activePointer) return;
+
+    const shiftX = event.clientX - dragStartX;
+    const shiftY = event.clientY - dragStartY;
+    didDrag ||= Math.hypot(shiftX, shiftY) > 5;
+    rotationY = startRotationY + shiftX * 0.42;
+    rotationX = Math.max(-58, Math.min(38, startRotationX - shiftY * 0.32));
+    setCubeRotation();
+  };
+
+  const endDrag = (event) => {
+    if (event.pointerId !== activePointer) return;
+
+    worldStage.releasePointerCapture?.(event.pointerId);
+    activePointer = null;
+    worldStage.classList.remove('is-dragging');
+    window.setTimeout(() => { didDrag = false; }, 0);
+  };
+
+  worldStage.addEventListener('pointerdown', beginDrag);
+  worldStage.addEventListener('pointermove', moveDrag);
+  worldStage.addEventListener('pointerup', endDrag);
+  worldStage.addEventListener('pointercancel', endDrag);
+
+  worldCountries.forEach((country) => {
+    country.addEventListener('click', () => {
+      if (didDrag) return;
+
+      worldCountries.forEach((item) => {
+        item.setAttribute('aria-pressed', String(item === country));
+      });
+
+      if (countryPanel && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        countryPanel.animate(
+          [
+            { opacity: 0.55, transform: 'translateY(7px)' },
+            { opacity: 1, transform: 'translateY(0)' },
+          ],
+          { duration: 280, easing: 'cubic-bezier(.2,.75,.22,1)' },
+        );
+      }
+    });
+  });
+
+  worldReset?.addEventListener('click', () => {
+    rotationX = defaultRotation.x;
+    rotationY = defaultRotation.y;
+    setCubeRotation();
+    worldCube.focus({ preventScroll: true });
+  });
+
+  worldCube.addEventListener('keydown', (event) => {
+    const step = event.shiftKey ? 18 : 8;
+    const controls = {
+      ArrowLeft: () => { rotationY -= step; },
+      ArrowRight: () => { rotationY += step; },
+      ArrowUp: () => { rotationX = Math.max(-58, rotationX - step); },
+      ArrowDown: () => { rotationX = Math.min(38, rotationX + step); },
+    };
+
+    if (controls[event.key]) {
+      event.preventDefault();
+      controls[event.key]();
+      setCubeRotation();
+    }
+  });
+}
+
 const backToTop = document.querySelector('#back-to-top');
 
 if (backToTop) {
@@ -199,7 +303,7 @@ if (backToTop) {
 }
 
 const revealTargets = [
-  ...document.querySelectorAll('.card, .notice, .news-card, .search-card, #rules details, .minecraft-intro, .minecraft-rules details, .history-card, .contact'),
+  ...document.querySelectorAll('.card, .notice, .news-card, .search-card, #rules details, .minecraft-intro, .minecraft-rules details, .history-card, .world-panel, .contact'),
 ];
 
 const revealVisibleTargets = () => {
