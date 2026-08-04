@@ -149,6 +149,37 @@
     .world-secret-footer { position:relative; z-index:1; display:flex; justify-content:center; gap:11px; color:#82a9bd; font-size:10px; font-weight:800; letter-spacing:.12em; } .world-secret-footer i { width:6px; height:6px; align-self:center; border-radius:50%; background:#5fdfff; box-shadow:0 0 9px #5fdfff; }
     @keyframes secret-orbit { to { transform:rotate(360deg); } } @keyframes secret-earth-drift { 0%,100% { transform:translateY(20px) scale(1.17); } 50% { transform:translateY(5px) scale(1.2); } } @keyframes secret-haze { from { transform:translateX(-4%) translateY(2%); opacity:.53; } to { transform:translateX(5%) translateY(-3%); opacity:.9; } } @keyframes secret-pulse { 0%,100% { transform:scale(.84); opacity:.7; } 50% { transform:scale(1.24); opacity:1; } } @keyframes secret-lock { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } } @keyframes secret-status { 0%,100% { box-shadow:0 0 24px rgba(255,188,49,.09),inset 0 1px 0 rgba(255,251,222,.16); } 50% { box-shadow:0 0 47px rgba(255,188,49,.27),inset 0 1px 0 rgba(255,251,222,.26); } }
     @media (max-width:760px) { .static-world-development,.world-secret { min-height:535px; } .world-secret { padding:21px 19px 24px; } .world-secret-topline { font-size:8px; } .world-secret-classified { padding:6px 8px; font-size:8px; } .world-secret-core { min-height:362px; } .world-secret-core h2 { font-size:48px; } .world-secret-core p { font-size:13px; } .world-secret-redacted { width:105px; bottom:27px; } .world-secret-redacted.left { left:19px; } .world-secret-redacted.right { right:19px; } .world-secret-footer { font-size:8px; } }
+
+    /* Атлас мира: видимая космическая сцена слева и закрытый список стран справа */
+    .atlas-world-shell { min-height:0; border:0; border-radius:28px; background:none; box-shadow:none; }
+    .atlas-world-shell::before { display:none; }
+    .atlas-world { position:relative; isolation:isolate; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr); overflow:hidden; border:1px solid rgba(123,218,255,.25); border-radius:28px; background:linear-gradient(135deg,#071423,#0a1729 49%,#0b1120); box-shadow:0 34px 86px rgba(0,0,0,.4),inset 0 1px 0 rgba(218,248,255,.08); }
+    .atlas-scene { position:relative; min-height:605px; overflow:hidden; background:radial-gradient(circle at 93% 3%,rgba(105,207,255,.18),transparent 31%),radial-gradient(circle at 52% 55%,rgba(29,96,142,.16),transparent 30%),linear-gradient(125deg,rgba(13,35,60,.72),rgba(4,12,26,.34)); }
+    .atlas-scene::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 7% 14%,rgba(225,246,255,.85) 0 1px,transparent 1.7px),radial-gradient(circle at 78% 10%,rgba(225,246,255,.7) 0 1px,transparent 1.7px),radial-gradient(circle at 20% 76%,rgba(185,229,255,.72) 0 1px,transparent 1.7px),radial-gradient(circle at 89% 76%,rgba(185,229,255,.68) 0 1px,transparent 1.7px),radial-gradient(circle at 42% 34%,rgba(185,229,255,.65) 0 1px,transparent 1.7px); background-size:127px 117px,169px 151px,143px 129px,197px 177px,183px 149px; opacity:.8; pointer-events:none; }
+    .atlas-scene::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(4,11,24,.35),transparent 35% 72%,rgba(104,204,255,.06)),repeating-linear-gradient(0deg,transparent 0 5px,rgba(163,233,255,.018) 5px 6px); pointer-events:none; }
+    .atlas-light { position:absolute; z-index:0; top:-250px; right:-250px; width:510px; height:510px; border-radius:50%; background:radial-gradient(circle,rgba(252,250,207,.32) 0 3%,rgba(255,222,147,.15) 18%,rgba(114,205,255,.06) 43%,transparent 69%); filter:blur(5px); pointer-events:none; }
+    .atlas-topline { position:absolute; z-index:3; top:27px; left:31px; display:flex; align-items:center; gap:9px; color:#a8d9ec; font-size:10px; font-weight:900; letter-spacing:.16em; } .atlas-topline::before { content:""; width:8px; height:8px; border-radius:50%; background:#69dcff; box-shadow:0 0 13px #69dcff; animation:atlas-signal 2s ease-in-out infinite; }
+    .atlas-planet-area { position:absolute; z-index:2; inset:48px 0 83px; display:grid; place-items:center; }
+    .atlas-planet { position:relative; width:min(438px,74vw); aspect-ratio:1; animation:atlas-levitate 7s ease-in-out infinite; }
+    .atlas-earth { position:absolute; z-index:3; inset:0; display:block; width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 34px 28px rgba(0,0,0,.52)) drop-shadow(18px -18px 25px rgba(118,220,255,.17)); user-select:none; }
+    .atlas-earth-glow { position:absolute; z-index:2; inset:11%; border-radius:50%; background:radial-gradient(circle at 75% 21%,rgba(162,232,255,.36),transparent 36%),radial-gradient(circle,rgba(39,126,205,.12),transparent 63%); filter:blur(20px); }
+    .atlas-cloud { position:absolute; z-index:4; display:block; height:32px; border-radius:999px; background:radial-gradient(circle at 12% 72%,#f5fbff 0 16%,transparent 17%),radial-gradient(circle at 27% 46%,#fff 0 22%,transparent 23%),radial-gradient(circle at 47% 37%,#ecf8ff 0 26%,transparent 27%),radial-gradient(circle at 67% 59%,#fff 0 22%,transparent 23%),radial-gradient(circle at 84% 62%,#e7f6ff 0 16%,transparent 17%); filter:drop-shadow(0 3px 5px rgba(101,190,255,.25)); opacity:.92; transform-origin:center; }
+    .atlas-cloud.one { top:30%; left:24%; width:156px; transform:rotate(-15deg); animation:atlas-cloud-hover 5.8s ease-in-out infinite; } .atlas-cloud.two { top:53%; left:44%; width:122px; opacity:.78; transform:rotate(17deg) scale(.82); animation:atlas-cloud-hover 6.7s ease-in-out -1.6s infinite; } .atlas-cloud.three { top:39%; left:52%; width:110px; opacity:.72; transform:rotate(-9deg) scale(.74); animation:atlas-cloud-hover 5.2s ease-in-out -2.8s infinite; }
+    .atlas-moon-wrap { position:absolute; z-index:1; top:26%; right:5%; width:98px; height:98px; animation:atlas-moon-hover 8.3s ease-in-out infinite; }
+    .atlas-moon-wrap::before { content:""; position:absolute; inset:-25px; border:1px dashed rgba(190,230,255,.25); border-radius:50%; }
+    .atlas-moon { position:absolute; inset:18px; border:1px solid rgba(236,248,255,.84); border-radius:4px; background:linear-gradient(90deg,rgba(255,255,255,.16) 50%,transparent 50%) 0 0/18px 18px,linear-gradient(rgba(255,255,255,.12) 50%,transparent 50%) 0 0/18px 18px,linear-gradient(135deg,#e5f2ff,#a0b4cc 58%,#62738f); box-shadow:0 0 0 6px rgba(203,234,255,.07),0 0 31px rgba(196,225,255,.4); }
+    .atlas-moon-label { position:absolute; top:100%; left:50%; color:#c9e7f5; font-size:8px; font-weight:900; letter-spacing:.14em; transform:translateX(-50%); white-space:nowrap; }
+    .atlas-caption { position:absolute; z-index:3; bottom:26px; left:31px; display:flex; align-items:end; gap:14px; } .atlas-caption strong { color:#f0fbff; font-size:31px; line-height:.9; letter-spacing:-.045em; text-shadow:0 0 22px rgba(154,231,255,.18); } .atlas-caption span { padding:6px 9px; border:1px solid rgba(141,218,255,.24); border-radius:7px; color:#a9d8e9; background:rgba(70,162,203,.08); font-size:9px; font-weight:900; letter-spacing:.12em; }
+    .atlas-side { position:relative; z-index:4; display:flex; min-height:605px; flex-direction:column; padding:31px 27px; border-left:1px solid rgba(133,217,255,.14); background:linear-gradient(180deg,rgba(9,23,41,.78),rgba(5,14,29,.88)); }
+    .atlas-side-kicker { display:flex; align-items:center; gap:8px; margin:0; color:#89cce8; font-size:10px; font-weight:900; letter-spacing:.16em; } .atlas-side-kicker::before { content:""; width:7px; height:7px; border-radius:2px; background:#66dbff; box-shadow:0 0 10px #66dbff; }
+    .atlas-side h2 { margin:9px 0 6px; color:#edfaff; font-size:34px; line-height:1; letter-spacing:-.045em; } .atlas-side > p { max-width:270px; margin:0; color:#91aebe; font-size:13px; line-height:1.55; }
+    .atlas-country-lock { position:relative; flex:1; display:flex; min-height:325px; align-items:center; justify-content:center; margin-top:24px; overflow:hidden; border:1px solid rgba(135,220,255,.16); border-radius:18px; background:linear-gradient(145deg,rgba(47,124,159,.13),rgba(4,12,26,.52)); }
+    .atlas-country-ghosts { position:absolute; inset:19px 17px; display:grid; align-content:start; gap:10px; filter:blur(5px); opacity:.68; } .atlas-country-ghosts div { display:flex; align-items:center; justify-content:space-between; padding:13px; border:1px solid rgba(182,234,255,.24); border-radius:10px; color:#e5f7ff; background:rgba(92,181,220,.13); font-size:12px; font-weight:750; } .atlas-country-ghosts b { width:21px; height:17px; border-radius:3px; background:linear-gradient(90deg,#487ae1 0 33%,#fff 33% 66%,#df5362 66%); }
+    .atlas-lock-message { position:relative; z-index:1; display:flex; align-items:center; flex-direction:column; text-align:center; } .atlas-lock-icon { position:relative; width:54px; height:49px; margin-bottom:16px; border:2px solid #d9f7ff; border-radius:7px; background:rgba(125,216,255,.1); box-shadow:0 0 0 8px rgba(105,212,255,.05),0 0 27px rgba(105,212,255,.16); } .atlas-lock-icon::before { content:""; position:absolute; left:50%; bottom:100%; width:26px; height:20px; border:2px solid #d9f7ff; border-bottom:0; border-radius:14px 14px 0 0; transform:translateX(-50%); } .atlas-lock-icon::after { content:""; position:absolute; top:18px; left:50%; width:6px; height:12px; border-radius:99px; background:#d9f7ff; transform:translateX(-50%); }
+    .atlas-lock-message strong { color:#e8faff; font-size:14px; letter-spacing:.12em; } .atlas-lock-message span { margin-top:5px; color:#9cc8da; font-size:10px; font-weight:750; letter-spacing:.11em; }
+    .atlas-side-footer { display:flex; align-items:center; gap:9px; margin-top:19px; color:#87aabb; font-size:9px; font-weight:850; letter-spacing:.1em; } .atlas-side-footer i { width:7px; height:7px; border-radius:50%; background:#ffd46e; box-shadow:0 0 11px #ffd46e; }
+    @keyframes atlas-signal { 0%,100% { transform:scale(.85); opacity:.75; } 50% { transform:scale(1.27); opacity:1; } } @keyframes atlas-levitate { 0%,100% { transform:translateY(0) rotate(-.5deg); } 50% { transform:translateY(-13px) rotate(.5deg); } } @keyframes atlas-cloud-hover { 0%,100% { translate:0 0; filter:drop-shadow(0 3px 5px rgba(101,190,255,.25)); } 50% { translate:0 -9px; filter:drop-shadow(0 9px 8px rgba(101,190,255,.16)); } } @keyframes atlas-moon-hover { 0%,100% { translate:0 0; } 50% { translate:0 -12px; } }
+    @media (max-width:760px) { .atlas-world { grid-template-columns:1fr; } .atlas-scene,.atlas-side { min-height:530px; } .atlas-side { border-top:1px solid rgba(133,217,255,.14); border-left:0; padding:28px 21px; } .atlas-planet { width:min(382px,90vw); } .atlas-moon-wrap { right:2%; top:21%; transform:scale(.78); } .atlas-topline { top:20px; left:21px; font-size:8px; } .atlas-caption { bottom:20px; left:21px; } .atlas-caption strong { font-size:27px; } .atlas-country-lock { min-height:275px; } }
   </style>
 </head>
 <body>
@@ -526,111 +557,38 @@
 </div>
 </section>
     <section id="world" aria-labelledby="world-title">
-<div class="static-world-development">
-<div class="world-secret">
-<div class="world-secret-scene" aria-hidden="true">
-<img class="world-secret-earth" src="assets/earth-cube-v2.png" alt="" />
-<div class="world-secret-haze"></div>
+<div class="static-world-development atlas-world-shell">
+<div class="atlas-world">
+<div class="atlas-scene" aria-label="Космическая сцена с Землёй и Луной" role="img">
+<div class="atlas-light" aria-hidden="true"></div>
+<p class="atlas-topline">ОБЪЕКТ МИРА · ПЛАНЕТА</p>
+<div class="atlas-planet-area" aria-hidden="true">
+<div class="atlas-planet">
+<div class="atlas-earth-glow"></div>
+<img class="atlas-earth" src="assets/earth-atlas-cube.png" alt="" />
+<span class="atlas-cloud one"></span>
+<span class="atlas-cloud two"></span>
+<span class="atlas-cloud three"></span>
 </div>
-<div class="world-secret-topline">
-<span>МИР ПРОЕКТА · ДОСТУП ОГРАНИЧЕН</span>
-<span class="world-secret-classified">CLASSIFIED / 67</span>
+<div class="atlas-moon-wrap"><span class="atlas-moon"></span><span class="atlas-moon-label">ЛУНА</span></div>
 </div>
-<div class="world-secret-core">
-<span class="world-secret-lock" aria-hidden="true"></span>
-<p class="eyebrow">АРХИВ МИРА ЗАШИФРОВАН</p>
-<h2 id="world-title">Мир проекта</h2>
-<p>Карты стран, история планеты и другие материалы временно скрыты. Команда готовит их к открытию.</p>
-<div class="world-secret-status">В РАЗРАБОТКЕ</div>
+<div class="atlas-caption"><strong>Земля</strong><span>XIII ВЕК Н. Э.</span></div>
 </div>
-<div class="world-secret-redacted left" aria-hidden="true"><span></span><span></span><span></span></div>
-<div class="world-secret-redacted right" aria-hidden="true"><span></span><span></span><span></span></div>
-<div class="world-secret-footer"><i aria-hidden="true"></i> НОВЫЕ МАТЕРИАЛЫ ПОЯВЯТСЯ ПОСЛЕ ОТКРЫТИЯ АТЛАСА</div>
+<aside class="atlas-side">
+<p class="atlas-side-kicker">АТЛАС МИРА</p>
+<h2 id="world-title">Страны</h2>
+<p>Список государств и конфликтов появится после открытия атласа.</p>
+<div class="atlas-country-lock">
+<div class="atlas-country-ghosts" aria-hidden="true">
+<div><b></b>Французская Империя</div>
+<div><b></b>Королевство Англия</div>
+<div><b></b>Священная Римская Империя</div>
+<div><b></b>Мамлюкский Султанат</div>
 </div>
+<div class="atlas-lock-message"><span class="atlas-lock-icon" aria-hidden="true"></span><strong>В РАЗРАБОТКЕ</strong><span>СПИСОК СТРАН ЗАКРЫТ</span></div>
 </div>
-<div class="world-head">
-<div>
-<p class="world-kicker">МИР ПРОЕКТА · ИНТЕРАКТИВНАЯ КАРТА</p>
-<h2 id="legacy-world-title" class="section-title">Земля игрового мира</h2>
-<p class="section-copy">Квадратная планета, на которой разворачивается история сервера. Потяните её мышью или пальцем, найдите подсвеченную территорию и нажмите на неё, чтобы открыть карточку страны.</p>
-</div>
-<div class="world-era" aria-label="Эпоха мира">
-<span class="world-era-mark" aria-hidden="true">◈</span>
-<div><strong>Земля</strong><span>13 век н. э.</span></div>
-</div>
-</div>
-<div class="world-panel">
-<div class="world-map">
-<div class="planet-stage" data-world-stage>
-<div class="planet-orbit" aria-hidden="true"></div>
-<div class="map-development" aria-hidden="true"><b>АТЛАС 0.2</b> тестовые страны</div>
-<div class="square-sun" aria-label="Квадратное Солнце" role="img"></div>
-<span class="sun-caption" aria-hidden="true">СОЛНЦЕ</span>
-<div class="moon-orbit" aria-hidden="true"><span class="square-moon"></span></div>
-<div class="cube-scene">
-<div class="planet-cube" data-world-cube tabindex="0" role="group" aria-label="Интерактивная квадратная планета. Потяните, чтобы повернуть карту.">
-<div class="cube-face face-front">
-<span class="land land-europe" aria-hidden="true"></span>
-<span class="land land-africa" aria-hidden="true"></span>
-<span class="land land-atlantic" aria-hidden="true"></span>
-<button class="territory territory-france" type="button" data-country="france" aria-pressed="true" aria-label="Открыть информацию о Французской Империи"><span>ФРАНЦИЯ</span></button>
-<button class="territory territory-testing territory-england" type="button" data-country="england" aria-pressed="false" aria-label="Открыть тестовую карточку Королевства Англия"><span>АНГЛИЯ<small class="territory-state">ТЕСТ</small></span></button>
-<button class="territory territory-testing territory-empire" type="button" data-country="empire" aria-pressed="false" aria-label="Открыть тестовую карточку Священной Римской Империи"><span>РИМ<small class="territory-state">ТЕСТ</small></span></button>
-<button class="territory territory-testing territory-egypt" type="button" data-country="egypt" aria-pressed="false" aria-label="Открыть тестовую карточку Мамлюкского Султаната"><span>ЕГИПЕТ<small class="territory-state">ТЕСТ</small></span></button>
-</div>
-<div class="cube-face face-right"><span class="land" aria-hidden="true"></span></div>
-<div class="cube-face face-back"></div>
-<div class="cube-face face-left"><span class="land" aria-hidden="true"></span></div>
-<div class="cube-face face-top"></div>
-<div class="cube-face face-bottom"></div>
-<div class="cloud-belt" aria-hidden="true"></div>
-</div>
-</div>
-<div class="planet-hint"><i aria-hidden="true"></i>Потяните · выберите страну · нажмите океан</div>
-</div>
-<aside class="world-info" data-country-panel aria-live="polite">
-<p class="object-type">ОБЪЕКТ · КВАДРАТНАЯ ПЛАНЕТА</p>
-<span class="country-selected" data-country-status>ТЕРРИТОРИЯ ВЫБРАНА</span>
-<div class="country-name">
-<span class="country-flag" data-country-flag aria-label="Флаг Франции" role="img"></span>
-<div><h3 data-country-title>Французская Империя</h3><p data-country-kind>Территория в игровом мире</p></div>
-</div>
-<p class="country-summary" data-country-summary>Сильное европейское государство Земли XIII века. Империя строит порядок на уважении к РП, защите граждан и честной дипломатии.</p>
-<dl class="country-facts">
-<div><dt data-country-owner-label>ВЛАДЕЛЕЦ ТЕРРИТОРИИ</dt><dd data-country-owner>Jordan</dd></div>
-<div><dt data-country-ruler-label>ИМПЕРАТОР</dt><dd data-country-ruler>Шарль Дэ‑Вилл</dd></div>
-<div><dt data-country-capital-label>СТОЛИЦА</dt><dd data-country-capital>Paris</dd></div>
-<div><dt>ЭПОХА</dt><dd data-country-era>XIII век н. э.</dd></div>
-</dl>
-<div class="country-laws">
-<h4 data-country-laws-title>Базовые законы Империи</h4>
-<ul data-country-laws>
-<li>Уважайте жителей и отыгрывайте события в рамках RP‑правил сервера.</li>
-<li>Границы, договоры и войны признаются только после согласования и фиксации в игровом процессе.</li>
-<li>Запрещены грабёж, разрушения и захват имущества без обоснованной RP‑причины.</li>
-<li>Споры решаются через дипломатию; при конфликте окончательное слово — за Императором и администрацией проекта.</li>
-</ul>
-</div>
-<details class="country-directory" open>
-<summary>Список стран <span class="country-count">4</span></summary>
-<div class="country-directory-list">
-<button class="country-directory-item" type="button" data-world-country-select="france" aria-pressed="true"><span class="directory-flag directory-france"></span>Французская Империя <small class="ready">ОТКРЫТА</small></button>
-<button class="country-directory-item" type="button" data-world-country-select="england" aria-pressed="false"><span class="directory-flag directory-england"></span>Королевство Англия <small>ТЕСТ</small></button>
-<button class="country-directory-item" type="button" data-world-country-select="empire" aria-pressed="false"><span class="directory-flag directory-empire"></span>Священная Римская Империя <small>ТЕСТ</small></button>
-<button class="country-directory-item" type="button" data-world-country-select="egypt" aria-pressed="false"><span class="directory-flag directory-egypt"></span>Мамлюкский Султанат <small>ТЕСТ</small></button>
-</div>
-</details>
+<div class="atlas-side-footer"><i aria-hidden="true"></i> ОБНОВЛЕНИЕ АТЛАСА ГОТОВИТСЯ</div>
 </aside>
-</div>
-<div class="world-controls">
-<p data-world-caption>Открыта Французская Империя. Потяните карту или выберите другую территорию.</p>
-<div class="world-zoom" aria-label="Масштаб планеты">
-<span>МАСШТАБ</span>
-<button type="button" data-world-zoom="out" aria-label="Отдалить планету">−</button>
-<input type="range" min="72" max="138" value="100" step="1" data-world-zoom-range aria-label="Масштаб планеты">
-<button type="button" data-world-zoom="in" aria-label="Приблизить планету">+</button>
-</div>
-<button class="world-reset" type="button" data-world-reset>Сбросить ракурс</button>
 </div>
 </div>
 </section>
