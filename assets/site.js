@@ -499,29 +499,15 @@ const atlasPlanet = document.querySelector('.atlas-planet');
 const atlasDanger = document.querySelector('[data-atlas-danger]');
 const atlasDoNotClick = document.querySelector('[data-atlas-do-not-click]');
 const atlasClickCount = document.querySelector('[data-atlas-click-count]');
-const atlasCracks = [...document.querySelectorAll('[data-atlas-crack-stage]')];
 
 if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCount) {
   const clickLimit = 1000;
   let clicks = 0;
   let destroyed = false;
-  let damageStage = 0;
-
-  const showNewCracks = () => {
-    const nextStage = Math.min(9, Math.floor(clicks / 100));
-    if (nextStage <= damageStage) return;
-
-    damageStage = nextStage;
-    atlasPlanet.dataset.damage = String(damageStage);
-    atlasCracks.forEach((crack) => {
-      crack.classList.toggle('is-visible', Number(crack.dataset.atlasCrackStage) <= damageStage);
-    });
-  };
 
   const updateWarning = () => {
     atlasClickCount.textContent = String(clicks);
     atlasDoNotClick.setAttribute('aria-label', `Не кликай. Нажато ${clicks} из ${clickLimit}`);
-    showNewCracks();
 
     if (clicks >= 900 && clicks < clickLimit) {
       atlasDanger.classList.add('is-critical');
