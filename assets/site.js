@@ -80,11 +80,11 @@ if (cursorSevens && !window.matchMedia('(prefers-reduced-motion: reduce)').match
 
     const symbol = document.createElement('span');
     symbol.className = 'cursor-seven-symbol';
-    symbol.textContent = '67';
+    symbol.textContent = '🇫🇷';
     element.append(symbol);
     element.style.left = `${x}%`;
     element.style.top = `${y}%`;
-    element.style.fontSize = `${10 + Math.round(Math.random() * 9)}px`;
+    element.style.fontSize = `${12 + Math.round(Math.random() * 10)}px`;
     element.style.opacity = `${0.42 + Math.random() * 0.44}`;
     cursorSevens.append(element);
 
