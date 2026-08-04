@@ -500,6 +500,9 @@ const atlasPlanet = document.querySelector('.atlas-planet');
 const atlasDanger = document.querySelector('[data-atlas-danger]');
 const atlasDoNotClick = document.querySelector('[data-atlas-do-not-click]');
 const atlasClickCount = document.querySelector('[data-atlas-click-count]');
+const atlasEarth = atlasPlanet?.querySelector('.atlas-earth');
+const atlasMoonWrap = document.querySelector('.atlas-moon-wrap');
+const atlasMoon = atlasMoonWrap?.querySelector('.atlas-moon');
 
 if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCount) {
   const clickLimit = 250;
@@ -543,6 +546,28 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
     updateWarning();
     if (clicks >= clickLimit) launchMission();
   });
+
+  const addClickReaction = (control, animatedElement, className, animationName) => {
+    if (!control || !animatedElement) return;
+
+    const playReaction = () => {
+      animatedElement.classList.remove(className);
+      window.requestAnimationFrame(() => animatedElement.classList.add(className));
+    };
+
+    control.addEventListener('click', playReaction);
+    control.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      playReaction();
+    });
+    animatedElement.addEventListener('animationend', (event) => {
+      if (event.animationName === animationName) animatedElement.classList.remove(className);
+    });
+  };
+
+  addClickReaction(atlasEarth, atlasEarth, 'is-clicked', 'atlas-earth-click');
+  addClickReaction(atlasMoonWrap, atlasMoon, 'is-clicked', 'atlas-moon-click');
 }
 
 const backToTop = document.querySelector('#back-to-top');
