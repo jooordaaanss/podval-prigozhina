@@ -63,38 +63,67 @@ document.querySelectorAll('[data-server-status]').forEach((status) => {
   status.querySelector('.server-status-label').textContent = statuses[state];
 });
 
-const applicationForm = document.querySelector('#application-form');
-const applicationStatus = document.querySelector('#application-status');
+const cursorSevens = document.querySelector('#cursor-sevens');
 
-if (applicationForm && applicationStatus) {
-  applicationForm.addEventListener('submit', (event) => {
-    event.preventDefault();
+if (cursorSevens && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const particleCount = 54;
+  const repelDistance = 210;
+  const particles = Array.from({ length: particleCount }, (_, index) => {
+    const element = document.createElement('span');
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const angle = (Math.PI * 2 * index) / particleCount;
 
-    const application = [
-      '📝 ЗАЯВКА — ПОДВАЛ ПРИГОЖИНА',
-      '',
-      `Тип заявки: ${document.querySelector('#application-type').value}`,
-      `Никнейм: ${document.querySelector('#application-name').value.trim()}`,
-      `Страна / фракция: ${document.querySelector('#application-project').value.trim()}`,
-      '',
-      'Идея или опыт:',
-      document.querySelector('#application-message').value.trim(),
-    ].join('\n');
+    element.className = 'cursor-seven';
+    element.textContent = '67';
+    element.style.left = `${x}%`;
+    element.style.top = `${y}%`;
+    element.style.fontSize = `${10 + Math.round(Math.random() * 9)}px`;
+    element.style.opacity = `${0.42 + Math.random() * 0.44}`;
+    cursorSevens.append(element);
 
-    applicationStatus.className = 'application-status';
-    applicationStatus.textContent = 'Копируем анкету…';
-    copyText(
-      application,
-      () => {
-        applicationStatus.className = 'application-status success';
-        applicationStatus.textContent = 'Анкета скопирована. Откройте Discord и отправьте её в 📝・заявки или руководству.';
-      },
-      () => {
-        applicationStatus.className = 'application-status error';
-        applicationStatus.textContent = 'Не удалось скопировать анкету. Попробуйте ещё раз или перепишите текст вручную.';
-      },
-    );
+    return { element, x, y, angle };
   });
+
+  let pointerX = -1000;
+  let pointerY = -1000;
+  let queued = false;
+
+  const moveSevens = () => {
+    queued = false;
+
+    particles.forEach((particle) => {
+      const x = (particle.x / 100) * window.innerWidth;
+      const y = (particle.y / 100) * window.innerHeight;
+      const dx = x - pointerX;
+      const dy = y - pointerY;
+      const distance = Math.hypot(dx, dy);
+      const strength = distance < repelDistance
+        ? ((repelDistance - distance) / repelDistance) ** 1.35 * 78
+        : 0;
+      const angle = distance > 0.1 ? Math.atan2(dy, dx) : particle.angle;
+      const offsetX = Math.cos(angle) * strength;
+      const offsetY = Math.sin(angle) * strength;
+
+      particle.element.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${strength * 0.055}deg)`;
+    });
+  };
+
+  const queueMove = () => {
+    if (!queued) {
+      queued = true;
+      window.requestAnimationFrame(moveSevens);
+    }
+  };
+
+  window.addEventListener('pointermove', (event) => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    cursorSevens.classList.add('is-active');
+    queueMove();
+  }, { passive: true });
+
+  window.addEventListener('resize', queueMove, { passive: true });
 }
 
 const ruleSearch = document.querySelector('#rule-search');
@@ -164,7 +193,7 @@ if (backToTop) {
 }
 
 const revealTargets = [
-  ...document.querySelectorAll('.card, .notice, .news-card, .search-card, .application-shell, #rules details, .minecraft-intro, .minecraft-rules details, .history-card, .contact'),
+  ...document.querySelectorAll('.card, .notice, .news-card, .search-card, #rules details, .minecraft-intro, .minecraft-rules details, .history-card, .contact'),
 ];
 
 const revealVisibleTargets = () => {
