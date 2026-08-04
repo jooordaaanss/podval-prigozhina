@@ -191,11 +191,149 @@ const worldCube = document.querySelector('[data-world-cube]');
 const worldReset = document.querySelector('[data-world-reset]');
 const worldCountries = document.querySelectorAll('[data-country]');
 const countryPanel = document.querySelector('[data-country-panel]');
+const worldZoomRange = document.querySelector('[data-world-zoom-range]');
+const worldZoomButtons = document.querySelectorAll('[data-world-zoom]');
+const worldCaption = document.querySelector('[data-world-caption]');
 
 if (worldStage && worldCube) {
   const defaultRotation = { x: -14, y: -31 };
+  const defaultZoom = 1;
+  const minZoom = 0.72;
+  const maxZoom = 1.38;
+  const countryData = {
+    france: {
+      status: 'ТЕРРИТОРИЯ ВЫБРАНА',
+      statusType: '',
+      title: 'Французская Империя',
+      kind: 'Территория в игровом мире',
+      summary: 'Сильное европейское государство Земли XIII века. Империя строит порядок на уважении к РП, защите граждан и честной дипломатии.',
+      ownerLabel: 'ВЛАДЕЛЕЦ ТЕРРИТОРИИ',
+      owner: 'Jordan',
+      rulerLabel: 'ИМПЕРАТОР',
+      ruler: 'Шарль Дэ‑Вилл',
+      capitalLabel: 'СТОЛИЦА',
+      capital: 'Paris',
+      era: 'XIII век н. э.',
+      flag: 'linear-gradient(90deg,#2f60bb 0 33.33%,#f4f6ff 33.33% 66.66%,#d84c59 66.66%)',
+      flagLabel: 'Флаг Франции',
+      lawsTitle: 'Базовые законы Империи',
+      laws: [
+        'Уважайте жителей и отыгрывайте события в рамках RP‑правил сервера.',
+        'Границы, договоры и войны признаются только после согласования и фиксации в игровом процессе.',
+        'Запрещены грабёж, разрушения и захват имущества без обоснованной RP‑причины.',
+        'Споры решаются через дипломатию; при конфликте окончательное слово — за Императором и администрацией проекта.',
+      ],
+      caption: 'Открыта Французская Империя. Потяните карту или выберите другую территорию.',
+    },
+    england: {
+      status: 'ТЕСТОВАЯ СТРАНА · В РАЗРАБОТКЕ',
+      statusType: 'is-development',
+      title: 'Королевство Англия',
+      kind: 'Тестовая карточка атласа',
+      summary: 'Черновая территория для проверки интерактивной карты. Её правила и руководство будут добавлены, когда страна появится в игре.',
+      ownerLabel: 'СТАТУС',
+      owner: 'В разработке',
+      rulerLabel: 'ПРАВИТЕЛЬ',
+      ruler: 'Тестовая карточка',
+      capitalLabel: 'СТОЛИЦА',
+      capital: 'London',
+      era: 'XIII век н. э.',
+      flag: 'linear-gradient(90deg,transparent 42%,#e55a63 42% 58%,transparent 58%),linear-gradient(#eef5ff 42%,#e55a63 42% 58%,#eef5ff 58%),#3c6ebf',
+      flagLabel: 'Тестовый флаг Англии',
+      lawsTitle: 'Карточка в разработке',
+      laws: [
+        'Страна добавлена для тестирования карты и навигации.',
+        'Данные о владельце, правилах и дипломатии появятся после открытия территории.',
+      ],
+      caption: 'Вы открыли тестовую страну. Она помечена как «в разработке».',
+    },
+    empire: {
+      status: 'ТЕСТОВАЯ СТРАНА · В РАЗРАБОТКЕ',
+      statusType: 'is-development',
+      title: 'Священная Римская Империя',
+      kind: 'Тестовая карточка атласа',
+      summary: 'Черновая центральноевропейская территория. Используется, чтобы показать, как новые страны будут появляться на карте.',
+      ownerLabel: 'СТАТУС',
+      owner: 'В разработке',
+      rulerLabel: 'ПРАВИТЕЛЬ',
+      ruler: 'Тестовая карточка',
+      capitalLabel: 'СТОЛИЦА',
+      capital: 'Aachen',
+      era: 'XIII век н. э.',
+      flag: 'linear-gradient(135deg,#202732 0 33%,#e4bf64 33% 66%,#b94250 66%)',
+      flagLabel: 'Тестовый флаг Священной Римской Империи',
+      lawsTitle: 'Карточка в разработке',
+      laws: [
+        'Страна добавлена для тестирования карты и навигации.',
+        'Перед открытием территория получит владельца, историю и собственные игровые законы.',
+      ],
+      caption: 'Вы открыли тестовую страну. Она помечена как «в разработке».',
+    },
+    egypt: {
+      status: 'ТЕСТОВАЯ СТРАНА · В РАЗРАБОТКЕ',
+      statusType: 'is-development',
+      title: 'Мамлюкский Султанат',
+      kind: 'Тестовая карточка атласа',
+      summary: 'Черновая африканская территория. Нужна для проверки того, как карта будет работать с государствами разных регионов мира.',
+      ownerLabel: 'СТАТУС',
+      owner: 'В разработке',
+      rulerLabel: 'ПРАВИТЕЛЬ',
+      ruler: 'Тестовая карточка',
+      capitalLabel: 'СТОЛИЦА',
+      capital: 'Cairo',
+      era: 'XIII век н. э.',
+      flag: 'linear-gradient(135deg,#d1b557,#e8eff6 50%,#39856c)',
+      flagLabel: 'Тестовый флаг Мамлюкского Султаната',
+      lawsTitle: 'Карточка в разработке',
+      laws: [
+        'Страна добавлена для тестирования карты и навигации.',
+        'После открытия здесь появятся сведения о правителе, столице и законах территории.',
+      ],
+      caption: 'Вы открыли тестовую страну. Она помечена как «в разработке».',
+    },
+    earth: {
+      status: 'ПЛАНЕТА ВЫБРАНА',
+      statusType: 'is-world',
+      title: 'Земля',
+      kind: 'Планета игрового мира',
+      summary: 'Главная карта проекта: Земля в эпохе XIII века нашей эры. Здесь развиваются страны игроков, работают дипломатия, экономика и RP‑события.',
+      ownerLabel: 'ТИП ОБЪЕКТА',
+      owner: 'Планета',
+      rulerLabel: 'НАСЕЛЕНИЕ',
+      ruler: 'Страны игроков',
+      capitalLabel: 'АТЛАС',
+      capital: 'Версия 0.2',
+      era: 'XIII век н. э.',
+      flag: 'radial-gradient(circle at 32% 29%,#b4fff4 0 5%,transparent 6%),radial-gradient(circle at 66% 63%,#79d993 0 20%,transparent 21%),linear-gradient(135deg,#50cbe8,#1c579a 67%,#122e59)',
+      flagLabel: 'Символ планеты Земля',
+      lawsTitle: 'Информация о планете',
+      laws: [
+        'Эпоха мира — XIII век нашей эры; все события проходят в рамках RP‑правил проекта.',
+        'Страны игроков добавляются на карту по мере создания и одобрения администрации.',
+        'Клик по территории открывает её законы, руководство и краткую информацию.',
+      ],
+      caption: 'Выбрана Земля. Нажмите на выделенную страну, чтобы открыть её карточку.',
+    },
+  };
+  const countryFields = {
+    status: countryPanel?.querySelector('[data-country-status]'),
+    flag: countryPanel?.querySelector('[data-country-flag]'),
+    title: countryPanel?.querySelector('[data-country-title]'),
+    kind: countryPanel?.querySelector('[data-country-kind]'),
+    summary: countryPanel?.querySelector('[data-country-summary]'),
+    ownerLabel: countryPanel?.querySelector('[data-country-owner-label]'),
+    owner: countryPanel?.querySelector('[data-country-owner]'),
+    rulerLabel: countryPanel?.querySelector('[data-country-ruler-label]'),
+    ruler: countryPanel?.querySelector('[data-country-ruler]'),
+    capitalLabel: countryPanel?.querySelector('[data-country-capital-label]'),
+    capital: countryPanel?.querySelector('[data-country-capital]'),
+    era: countryPanel?.querySelector('[data-country-era]'),
+    lawsTitle: countryPanel?.querySelector('[data-country-laws-title]'),
+    laws: countryPanel?.querySelector('[data-country-laws]'),
+  };
   let rotationX = defaultRotation.x;
   let rotationY = defaultRotation.y;
+  let zoom = defaultZoom;
   let dragStartX = 0;
   let dragStartY = 0;
   let startRotationX = rotationX;
@@ -206,6 +344,57 @@ if (worldStage && worldCube) {
   const setCubeRotation = () => {
     worldCube.style.setProperty('--tilt-x', `${rotationX}deg`);
     worldCube.style.setProperty('--tilt-y', `${rotationY}deg`);
+  };
+
+  const setZoom = (nextZoom) => {
+    zoom = Math.max(minZoom, Math.min(maxZoom, nextZoom));
+    worldCube.style.setProperty('--zoom', zoom.toFixed(2));
+    if (worldZoomRange) worldZoomRange.value = String(Math.round(zoom * 100));
+  };
+
+  const animateCountryPanel = () => {
+    if (countryPanel && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      countryPanel.animate(
+        [
+          { opacity: 0.55, transform: 'translateY(7px)' },
+          { opacity: 1, transform: 'translateY(0)' },
+        ],
+        { duration: 280, easing: 'cubic-bezier(.2,.75,.22,1)' },
+      );
+    }
+  };
+
+  const showCountry = (countryKey) => {
+    const data = countryData[countryKey];
+    if (!data || !countryPanel) return;
+
+    countryPanel.dataset.activeCountry = countryKey;
+    countryFields.status.className = `country-selected ${data.statusType}`.trim();
+    countryFields.status.textContent = data.status;
+    countryFields.flag.style.background = data.flag;
+    countryFields.flag.setAttribute('aria-label', data.flagLabel);
+    countryFields.title.textContent = data.title;
+    countryFields.kind.textContent = data.kind;
+    countryFields.summary.textContent = data.summary;
+    countryFields.ownerLabel.textContent = data.ownerLabel;
+    countryFields.owner.textContent = data.owner;
+    countryFields.rulerLabel.textContent = data.rulerLabel;
+    countryFields.ruler.textContent = data.ruler;
+    countryFields.capitalLabel.textContent = data.capitalLabel;
+    countryFields.capital.textContent = data.capital;
+    countryFields.era.textContent = data.era;
+    countryFields.lawsTitle.textContent = data.lawsTitle;
+    countryFields.laws.replaceChildren(...data.laws.map((law) => {
+      const item = document.createElement('li');
+      item.textContent = law;
+      return item;
+    }));
+    if (worldCaption) worldCaption.textContent = data.caption;
+
+    worldCountries.forEach((item) => {
+      item.setAttribute('aria-pressed', String(item.dataset.country === countryKey));
+    });
+    animateCountryPanel();
   };
 
   const beginDrag = (event) => {
@@ -245,30 +434,31 @@ if (worldStage && worldCube) {
   worldStage.addEventListener('pointermove', moveDrag);
   worldStage.addEventListener('pointerup', endDrag);
   worldStage.addEventListener('pointercancel', endDrag);
+  worldStage.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    setZoom(zoom + (event.deltaY < 0 ? 0.08 : -0.08));
+  }, { passive: false });
+  worldStage.addEventListener('click', (event) => {
+    if (didDrag || event.target.closest('[data-country]')) return;
+    showCountry('earth');
+  });
 
   worldCountries.forEach((country) => {
     country.addEventListener('click', () => {
       if (didDrag) return;
-
-      worldCountries.forEach((item) => {
-        item.setAttribute('aria-pressed', String(item === country));
-      });
-
-      if (countryPanel && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        countryPanel.animate(
-          [
-            { opacity: 0.55, transform: 'translateY(7px)' },
-            { opacity: 1, transform: 'translateY(0)' },
-          ],
-          { duration: 280, easing: 'cubic-bezier(.2,.75,.22,1)' },
-        );
-      }
+      showCountry(country.dataset.country);
     });
+  });
+
+  worldZoomRange?.addEventListener('input', () => setZoom(Number(worldZoomRange.value) / 100));
+  worldZoomButtons.forEach((button) => {
+    button.addEventListener('click', () => setZoom(zoom + (button.dataset.worldZoom === 'in' ? 0.1 : -0.1)));
   });
 
   worldReset?.addEventListener('click', () => {
     rotationX = defaultRotation.x;
     rotationY = defaultRotation.y;
+    setZoom(defaultZoom);
     setCubeRotation();
     worldCube.focus({ preventScroll: true });
   });
@@ -280,6 +470,8 @@ if (worldStage && worldCube) {
       ArrowRight: () => { rotationY += step; },
       ArrowUp: () => { rotationX = Math.max(-58, rotationX - step); },
       ArrowDown: () => { rotationX = Math.min(38, rotationX + step); },
+      '+': () => { setZoom(zoom + 0.1); },
+      '-': () => { setZoom(zoom - 0.1); },
     };
 
     if (controls[event.key]) {
@@ -288,6 +480,9 @@ if (worldStage && worldCube) {
       setCubeRotation();
     }
   });
+
+  setCubeRotation();
+  setZoom(defaultZoom);
 }
 
 const backToTop = document.querySelector('#back-to-top');
