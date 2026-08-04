@@ -534,7 +534,7 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
 
     const rocket = atlasPlanet.querySelector('.atlas-rocket');
     rocket?.addEventListener('animationend', finishMission, { once: true });
-    window.setTimeout(finishMission, 3100);
+    window.setTimeout(finishMission, 4300);
   };
 
   atlasDoNotClick.addEventListener('click', () => {
