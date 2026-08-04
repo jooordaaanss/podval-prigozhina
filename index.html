@@ -61,6 +61,21 @@
     .contact { text-align:center; border:1px solid var(--line); background:linear-gradient(125deg,rgba(96,230,255,.10),rgba(153,118,255,.11)); padding:58px 24px; border-radius:24px; } .contact h2 { margin:0 0 8px; font-size:34px; } .contact p { color:var(--muted); margin:0 0 23px; }
     footer { padding:25px 0 35px; color:#7783a2; font-size:13px; text-align:center; }
     @media (max-width:760px) { .links { display:none; } .hero { grid-template-columns:1fr; padding:65px 0 54px; gap:35px; min-height:0; } .grid, .news-grid, .apply-steps, .application-form { grid-template-columns:1fr; } section { padding:48px 0; } h1 { font-size:52px; } #rules details { padding:0 13px 13px; } #rules details p { padding:14px; } #rules summary { font-size:16px; } .minecraft-intro, .discord-intro { padding:31px 21px; } .minecraft-rules details { padding:0 13px 13px; } .minecraft-rules p { padding:14px; } .minecraft-rules summary { font-size:16px; } .updates-top, .history-top { display:block; } .last-update { display:inline-flex; margin-top:14px; } .news-card { min-height:0; } .history-entry { grid-template-columns:1fr; gap:7px; padding:19px; } .search-card, .application-top { padding:26px 20px; } .apply-steps, .application-form { padding:20px; } .application-form label.full { grid-column:auto; } .back-to-top { right:15px; bottom:15px; } }
+    /* Интерактивная карта мира */
+    #world { padding-top:32px; padding-bottom:72px; }
+    .world-head { display:flex; align-items:end; justify-content:space-between; gap:22px; margin-bottom:28px; } .world-head .section-copy { max-width:690px; margin:0; } .world-kicker { margin:0 0 6px; color:#9de9ff; font-size:10px; font-weight:900; letter-spacing:.15em; } .world-era { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:9px; flex:0 0 auto; min-width:205px; padding:12px 14px; border:1px solid rgba(123,224,255,.25); border-radius:14px; background:rgba(52,151,193,.08); color:#c9eeff; } .world-era strong { color:#f1fbff; font-size:13px; line-height:1.15; } .world-era span { color:#91b4ca; font-size:11px; } .world-era-mark { display:grid; width:31px; height:31px; place-items:center; border:1px solid rgba(123,224,255,.32); border-radius:9px; color:#78e9ff; background:rgba(96,230,255,.08); font-size:16px; }
+    .world-panel { position:relative; isolation:isolate; overflow:hidden; border:1px solid rgba(113,207,255,.22); border-radius:26px; background:linear-gradient(135deg,rgba(18,58,82,.94),rgba(13,20,44,.98) 52%,rgba(34,26,75,.9)); box-shadow:0 28px 70px rgba(0,0,0,.27),inset 0 1px 0 rgba(230,252,255,.08); } .world-panel::before { content:""; position:absolute; z-index:-1; width:470px; height:470px; top:-230px; left:-110px; border-radius:50%; background:rgba(69,213,255,.17); filter:blur(42px); } .world-panel::after { content:""; position:absolute; z-index:-1; width:390px; height:390px; right:-180px; bottom:-240px; border-radius:50%; background:rgba(137,97,255,.19); filter:blur(52px); }
+    .world-map { display:grid; grid-template-columns:minmax(390px,1.1fr) minmax(330px,.9fr); min-height:515px; } .planet-stage { position:relative; display:grid; min-height:515px; place-items:center; overflow:hidden; border-right:1px solid rgba(225,246,255,.09); perspective:1120px; touch-action:none; user-select:none; cursor:grab; } .planet-stage::before { content:""; position:absolute; inset:0; opacity:.48; background-image:linear-gradient(rgba(125,221,255,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(125,221,255,.065) 1px,transparent 1px); background-size:32px 32px; mask-image:radial-gradient(ellipse at center,black,transparent 73%); pointer-events:none; } .planet-stage::after { content:""; position:absolute; width:78%; height:38px; bottom:68px; border-radius:50%; background:rgba(0,0,0,.6); filter:blur(18px); transform:rotateX(66deg); pointer-events:none; } .planet-stage.is-dragging { cursor:grabbing; }
+    .planet-orbit { position:absolute; width:360px; height:360px; border:1px dashed rgba(121,227,255,.18); border-radius:50%; transform:rotateX(67deg) rotateZ(-18deg); opacity:.82; pointer-events:none; } .planet-orbit::before, .planet-orbit::after { content:""; position:absolute; inset:22px; border:1px solid rgba(153,118,255,.13); border-radius:50%; } .planet-orbit::after { inset:50px; border-color:rgba(96,230,255,.12); }
+    .cube-scene { position:relative; z-index:1; width:290px; height:290px; transform-style:preserve-3d; } .planet-cube { --cube-size:262px; --tilt-x:-14deg; --tilt-y:-31deg; position:absolute; top:50%; left:50%; width:var(--cube-size); height:var(--cube-size); transform-style:preserve-3d; transform:translate(-50%,-50%) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)); transition:transform .62s cubic-bezier(.17,.74,.26,1); will-change:transform; outline:none; } .planet-stage.is-dragging .planet-cube { transition:none; } .planet-cube:focus-visible { filter:drop-shadow(0 0 10px rgba(114,235,255,.75)); }
+    .cube-face { position:absolute; display:block; width:100%; height:100%; overflow:hidden; border:1px solid rgba(189,245,255,.31); background:radial-gradient(circle at 68% 20%,rgba(110,236,255,.3),transparent 25%),linear-gradient(145deg,#164d73,#103459 56%,#0b223f); box-shadow:inset 0 0 56px rgba(3,12,31,.72),inset 0 0 0 1px rgba(231,255,255,.08); backface-visibility:hidden; } .cube-face::before { content:""; position:absolute; inset:0; opacity:.82; background:repeating-linear-gradient(0deg,transparent 0 20px,rgba(214,255,255,.08) 21px 22px),repeating-linear-gradient(90deg,transparent 0 20px,rgba(214,255,255,.07) 21px 22px); mix-blend-mode:screen; pointer-events:none; } .cube-face::after { content:""; position:absolute; inset:-12%; background:linear-gradient(124deg,rgba(255,255,255,.24),transparent 31% 68%,rgba(1,12,31,.47)); pointer-events:none; } .face-front { transform:translateZ(calc(var(--cube-size) / 2)); } .face-right { transform:rotateY(90deg) translateZ(calc(var(--cube-size) / 2)); background:radial-gradient(ellipse at 30% 30%,rgba(98,224,171,.33),transparent 31%),linear-gradient(145deg,#155166,#0f3653 56%,#112a50); } .face-back { transform:rotateY(180deg) translateZ(calc(var(--cube-size) / 2)); background:linear-gradient(145deg,#193e6c,#112c57 57%,#0d2444); } .face-left { transform:rotateY(-90deg) translateZ(calc(var(--cube-size) / 2)); background:radial-gradient(ellipse at 75% 25%,rgba(168,130,255,.28),transparent 31%),linear-gradient(145deg,#17486e,#113358 60%,#152854); } .face-top { transform:rotateX(90deg) translateZ(calc(var(--cube-size) / 2)); background:linear-gradient(145deg,#216b82,#12506d 55%,#12375c); } .face-bottom { transform:rotateX(-90deg) translateZ(calc(var(--cube-size) / 2)); background:linear-gradient(145deg,#0d2948,#112e51); }
+    .land { position:absolute; z-index:1; display:block; background:linear-gradient(135deg,#78d99b,#3c9d7d); border:1px solid rgba(222,255,201,.5); box-shadow:0 0 15px rgba(102,230,167,.23),inset 0 0 12px rgba(227,255,197,.22); } .land-europe { top:11%; right:8%; width:57%; height:49%; clip-path:polygon(4% 32%,18% 10%,37% 17%,49% 5%,71% 16%,96% 10%,85% 34%,100% 48%,70% 61%,64% 91%,43% 80%,29% 96%,10% 74%); } .land-africa { right:12%; bottom:6%; width:47%; height:54%; background:linear-gradient(145deg,#8dbb69,#4d8765); clip-path:polygon(29% 0,71% 7%,93% 31%,78% 56%,66% 100%,38% 91%,22% 65%,0 40%); } .land-atlantic { top:14%; left:5%; width:28%; height:44%; background:linear-gradient(145deg,#8ecb79,#4e946c); clip-path:polygon(14% 15%,62% 0,100% 29%,84% 64%,48% 92%,4% 75%); } .face-right .land { top:19%; left:13%; width:70%; height:59%; background:linear-gradient(145deg,#81d894,#3b9478); clip-path:polygon(8% 23%,42% 2%,89% 21%,97% 56%,67% 91%,19% 77%); } .face-left .land { top:18%; left:8%; width:76%; height:65%; background:linear-gradient(145deg,#9acb68,#477f67); clip-path:polygon(12% 5%,72% 16%,96% 48%,66% 91%,19% 74%,0 32%); }
+    .territory { position:absolute; z-index:3; display:grid; place-items:center; border:1px solid rgba(255,240,158,.94); outline:0; color:#fff7bb; background:linear-gradient(135deg,rgba(255,207,71,.87),rgba(224,111,57,.88)); box-shadow:0 0 0 2px rgba(255,215,93,.2),0 0 24px rgba(255,189,61,.68); clip-path:polygon(24% 0,83% 11%,100% 43%,74% 100%,21% 87%,0 45%); cursor:pointer; transition:filter .2s ease,transform .2s ease,box-shadow .2s ease; } .territory::before { content:""; position:absolute; inset:0; background:linear-gradient(115deg,rgba(255,255,255,.45),transparent 48%); } .territory span { position:relative; padding:4px; font-size:9px; font-weight:950; letter-spacing:.06em; text-shadow:0 1px 3px rgba(68,27,5,.8); transform:rotate(-8deg); } .territory:hover, .territory:focus-visible, .territory[aria-pressed="true"] { filter:brightness(1.16) saturate(1.08); transform:scale(1.12); box-shadow:0 0 0 3px rgba(255,240,156,.33),0 0 33px rgba(255,190,62,.95); } .territory-france { top:30%; left:55%; width:22%; height:23%; }
+    .planet-hint { position:absolute; z-index:2; bottom:30px; display:inline-flex; align-items:center; gap:8px; padding:8px 11px; border:1px solid rgba(192,236,255,.18); border-radius:999px; color:#b7d5e7; background:rgba(4,13,34,.56); box-shadow:0 11px 25px rgba(0,0,0,.22); font-size:11px; pointer-events:none; } .planet-hint i { width:6px; height:6px; border-radius:50%; background:#75e8ff; box-shadow:0 0 11px #75e8ff; }
+    .world-info { padding:39px 37px 34px; } .country-selected { display:inline-flex; align-items:center; gap:8px; padding:5px 8px; border:1px solid rgba(255,210,90,.32); border-radius:7px; color:#ffe6a1; background:rgba(255,191,67,.09); font-size:10px; font-weight:900; letter-spacing:.12em; } .country-selected::before { content:""; width:6px; height:6px; border-radius:50%; background:#ffd86b; box-shadow:0 0 10px #ffd86b; } .country-name { display:flex; align-items:center; gap:13px; margin:14px 0 8px; } .country-flag { display:grid; flex:0 0 43px; width:43px; height:31px; overflow:hidden; place-items:center; border:1px solid rgba(255,255,255,.36); border-radius:7px; background:linear-gradient(90deg,#2f60bb 0 33.33%,#f4f6ff 33.33% 66.66%,#d84c59 66.66%); box-shadow:0 6px 16px rgba(0,0,0,.16); } .country-name h3 { margin:0; color:#f5fbff; font-size:clamp(25px,3vw,34px); line-height:1; letter-spacing:-.045em; } .country-name p { margin:4px 0 0; color:#a7c4d9; font-size:12px; } .country-summary { margin:0 0 23px; color:#c4d2e3; font-size:14px; line-height:1.65; } .country-facts { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin:0 0 21px; } .country-facts div { min-height:63px; padding:11px 12px; border:1px solid rgba(224,246,255,.09); border-radius:12px; background:rgba(3,12,30,.38); } .country-facts dt { color:#7ea6bd; font-size:10px; font-weight:830; letter-spacing:.1em; } .country-facts dd { margin:4px 0 0; color:#eefaff; font-size:13px; font-weight:720; line-height:1.2; }
+    .country-laws { padding:17px; border:1px solid rgba(255,207,90,.18); border-radius:15px; background:linear-gradient(135deg,rgba(91,67,26,.23),rgba(11,20,42,.46)); } .country-laws h4 { display:flex; align-items:center; gap:8px; margin:0 0 11px; color:#ffe5a0; font-size:13px; letter-spacing:.01em; } .country-laws h4::before { content:"§"; display:grid; width:20px; height:20px; place-items:center; border-radius:6px; color:#ffe9ac; background:rgba(255,203,76,.13); font-family:Georgia,serif; } .country-laws ul { display:grid; gap:8px; margin:0; padding:0; list-style:none; } .country-laws li { position:relative; padding-left:16px; color:#c7d5e3; font-size:12px; line-height:1.45; } .country-laws li::before { content:""; position:absolute; top:.57em; left:0; width:6px; height:6px; border-radius:2px; background:#ffcf67; box-shadow:0 0 8px rgba(255,207,103,.72); }
+    .world-controls { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:17px 37px 19px; border-top:1px solid rgba(225,246,255,.08); background:rgba(3,9,26,.23); } .world-controls p { margin:0; color:#99b8cc; font-size:11px; } .world-reset { appearance:none; border:1px solid rgba(123,224,255,.28); border-radius:9px; padding:8px 11px; color:#d8f7ff; background:rgba(96,230,255,.08); font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .18s ease,border-color .18s ease,background .18s ease; } .world-reset:hover, .world-reset:focus-visible { border-color:rgba(123,224,255,.68); background:rgba(96,230,255,.16); transform:translateY(-1px); }
+    @media (max-width:760px) { #world { padding-bottom:52px; } .world-head { display:block; } .world-era { display:inline-grid; margin-top:14px; } .world-map { grid-template-columns:1fr; } .planet-stage { min-height:400px; border-right:0; border-bottom:1px solid rgba(225,246,255,.09); } .cube-scene { width:250px; height:250px; } .planet-cube { --cube-size:224px; } .planet-orbit { width:290px; height:290px; } .planet-stage::after { bottom:47px; } .planet-hint { bottom:18px; max-width:calc(100% - 28px); text-align:center; justify-content:center; } .world-info { padding:27px 20px 24px; } .world-controls { padding:15px 20px; } .country-facts { grid-template-columns:1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -424,16 +439,86 @@
 <article class="history-entry">
 <div class="history-date">04.08.2026</div>
 <div>
+<h3>Открыта интерактивная карта мира <span class="history-new">НОВОЕ</span></h3>
+<p>Внизу сайта появилась квадратная планета Земля XIII века н. э. Первая отмеченная территория — Французская Империя.</p>
+</div>
+</article>
+<article class="history-entry">
+<div class="history-date">04.08.2026</div>
+<div>
 <h3>Обновление сайта и правил <span class="history-new">НОВОЕ</span></h3>
 <p>Подача заявок перенесена в Discord через бота Appy. Правила Discord переработаны: теперь каждый пункт отображается отдельной карточкой в стиле правил Minecraft.</p>
 </div>
 </article>
 </div>
 </section>
+    <section id="world" aria-labelledby="world-title">
+<div class="world-head">
+<div>
+<p class="world-kicker">МИР ПРОЕКТА · ИНТЕРАКТИВНАЯ КАРТА</p>
+<h2 id="world-title" class="section-title">Земля игрового мира</h2>
+<p class="section-copy">Квадратная планета, на которой разворачивается история сервера. Потяните её мышью или пальцем, найдите подсвеченную территорию и нажмите на неё, чтобы открыть карточку страны.</p>
+</div>
+<div class="world-era" aria-label="Эпоха мира">
+<span class="world-era-mark" aria-hidden="true">◈</span>
+<div><strong>Земля</strong><span>13 век н. э.</span></div>
+</div>
+</div>
+<div class="world-panel">
+<div class="world-map">
+<div class="planet-stage" data-world-stage>
+<div class="planet-orbit" aria-hidden="true"></div>
+<div class="cube-scene">
+<div class="planet-cube" data-world-cube tabindex="0" role="group" aria-label="Интерактивная квадратная планета. Потяните, чтобы повернуть карту.">
+<div class="cube-face face-front">
+<span class="land land-europe" aria-hidden="true"></span>
+<span class="land land-africa" aria-hidden="true"></span>
+<span class="land land-atlantic" aria-hidden="true"></span>
+<button class="territory territory-france" type="button" data-country="france" aria-pressed="true" aria-label="Открыть информацию о Французской Империи"><span>ФРАНЦИЯ</span></button>
+</div>
+<div class="cube-face face-right"><span class="land" aria-hidden="true"></span></div>
+<div class="cube-face face-back"></div>
+<div class="cube-face face-left"><span class="land" aria-hidden="true"></span></div>
+<div class="cube-face face-top"></div>
+<div class="cube-face face-bottom"></div>
+</div>
+</div>
+<div class="planet-hint"><i aria-hidden="true"></i>Потяните планету · нажмите на Францию</div>
+</div>
+<aside class="world-info" data-country-panel aria-live="polite">
+<span class="country-selected">ТЕРРИТОРИЯ ВЫБРАНА</span>
+<div class="country-name">
+<span class="country-flag" aria-label="Флаг Франции" role="img"></span>
+<div><h3>Французская Империя</h3><p>Территория в игровом мире</p></div>
+</div>
+<p class="country-summary">Сильное европейское государство Земли XIII века. Империя строит порядок на уважении к РП, защите граждан и честной дипломатии.</p>
+<dl class="country-facts">
+<div><dt>ВЛАДЕЛЕЦ ТЕРРИТОРИИ</dt><dd>Jordan</dd></div>
+<div><dt>ИМПЕРАТОР</dt><dd>Шарль Дэ‑Вилл</dd></div>
+<div><dt>СТОЛИЦА</dt><dd>Paris</dd></div>
+<div><dt>ЭПОХА</dt><dd>XIII век н. э.</dd></div>
+</dl>
+<div class="country-laws">
+<h4>Базовые законы Империи</h4>
+<ul>
+<li>Уважайте жителей и отыгрывайте события в рамках RP‑правил сервера.</li>
+<li>Границы, договоры и войны признаются только после согласования и фиксации в игровом процессе.</li>
+<li>Запрещены грабёж, разрушения и захват имущества без обоснованной RP‑причины.</li>
+<li>Споры решаются через дипломатию; при конфликте окончательное слово — за Императором и администрацией проекта.</li>
+</ul>
+</div>
+</aside>
+</div>
+<div class="world-controls">
+<p>Сейчас на карте открыта Французская Империя. Новые страны можно добавлять в эту же карту.</p>
+<button class="world-reset" type="button" data-world-reset>Сбросить ракурс</button>
+</div>
+</div>
+</section>
   </main>
 <footer class="wrap">© 2026 Подвал Пригожина · Версия правил 1.2</footer>
 <button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button>
-<script src="assets/site.js?v=2.1" defer></script>
+<script src="assets/site.js?v=2.2" defer></script>
 </body>
 </html>
 
