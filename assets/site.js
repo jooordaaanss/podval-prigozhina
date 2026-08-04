@@ -652,7 +652,7 @@ if (supportDialog && supportOpen && supportSummaryValue && supportConfirm && sup
       const isSelected = Number(amount.dataset.supportAmount) === selectedAmount && !supportCustomAmount?.value;
       amount.setAttribute('aria-pressed', String(isSelected));
     });
-    document.querySelectorAll('[data-support-symbol]').forEach((symbol) => {
+    document.querySelectorAll('[data-support-amount-symbol]').forEach((symbol) => {
       symbol.textContent = selectedSymbol;
     });
     supportSummaryValue.textContent = formattedSupportValue();
