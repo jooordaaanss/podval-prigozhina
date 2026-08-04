@@ -241,6 +241,7 @@
     .support-body { display:grid; gap:21px; padding:24px 33px 31px; } .support-field { display:grid; gap:9px; } .support-field > span { color:#f4ddb0; font-size:11px; font-weight:850; letter-spacing:.11em; } .support-currencies { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; } .support-currency,.support-amount { appearance:none; border:1px solid rgba(255,236,180,.13); border-radius:12px; color:#dcd4bf; background:rgba(4,8,23,.36); font:800 14px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .17s ease,border-color .17s ease,background .17s ease,color .17s ease,box-shadow .17s ease; } .support-currency { min-height:48px; } .support-currency small { display:block; margin-top:4px; color:#998f76; font-size:9px; font-weight:800; letter-spacing:.08em; } .support-currency:hover,.support-amount:hover { transform:translateY(-2px); border-color:rgba(255,217,110,.38); } .support-currency[aria-pressed="true"],.support-amount[aria-pressed="true"] { border-color:rgba(255,216,104,.76); color:#fff3c8; background:linear-gradient(135deg,rgba(173,112,24,.43),rgba(255,202,78,.12)); box-shadow:0 0 0 3px rgba(255,208,91,.08),inset 0 1px 0 rgba(255,244,192,.13); } .support-amounts { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; } .support-amount { min-height:50px; } .support-amount small { color:inherit; font-size:10px; opacity:.72; } .support-custom { display:flex; align-items:center; gap:10px; min-height:52px; padding:0 13px; border:1px dashed rgba(255,222,131,.28); border-radius:12px; color:#c8b98e; background:rgba(3,8,24,.27); font-size:12px; font-weight:760; } .support-custom input { min-width:0; flex:1; border:0; outline:0; color:#fff0bf; background:transparent; font:800 15px/1 Inter,ui-sans-serif,system-ui,sans-serif; text-align:right; } .support-custom input::placeholder { color:#83795f; } .support-summary { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 16px; border:1px solid rgba(255,218,112,.19); border-radius:14px; background:linear-gradient(135deg,rgba(116,81,24,.2),rgba(11,15,33,.46)); } .support-summary span { color:#cdbf99; font-size:12px; } .support-summary strong { color:#fff0b0; font-size:19px; letter-spacing:-.02em; } .support-confirm { appearance:none; width:100%; border:1px solid rgba(255,229,151,.65); border-radius:13px; padding:15px 18px; color:#2d2004; background:linear-gradient(135deg,#ffe29a,#e8ad36); box-shadow:0 12px 28px rgba(101,68,7,.28),inset 0 1px 0 rgba(255,255,245,.5); font:900 14px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .18s ease,filter .18s ease,box-shadow .18s ease; } .support-confirm:hover,.support-confirm:focus-visible { transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 17px 34px rgba(124,83,7,.34),inset 0 1px 0 rgba(255,255,245,.6); } .support-result { margin:0; padding:11px 13px; border:1px solid rgba(113,235,183,.26); border-radius:10px; color:#c9f9dc; background:rgba(66,209,132,.1); font-size:12px; line-height:1.45; } .support-result[hidden] { display:none; } .support-disclaimer { margin:0; color:#9f977f; font-size:11px; line-height:1.45; text-align:center; } .support-money-burst { position:fixed; z-index:95; top:60px; right:42px; width:1px; height:1px; pointer-events:none; } .support-money-piece { position:absolute; font-size:var(--money-size,22px); filter:drop-shadow(0 3px 6px rgba(0,0,0,.32)); animation:support-money-float var(--money-duration,2s) cubic-bezier(.15,.72,.29,1) var(--money-delay,0s) both; }
     @keyframes support-wallet-pulse { 0%,100% { transform:translateY(0) scale(1); box-shadow:0 0 0 1px rgba(255,221,112,.12),0 8px 22px rgba(80,53,7,.28); } 50% { transform:translateY(-2px) scale(1.08); box-shadow:0 0 0 5px rgba(255,215,90,.12),0 0 28px rgba(255,203,71,.58); } } @keyframes support-money-float { 0% { opacity:0; transform:translate(0,0) scale(.58) rotate(0); } 14% { opacity:1; } 100% { opacity:0; transform:translate(var(--money-x,0),var(--money-y,150px)) scale(1.18) rotate(var(--money-rotate,180deg)); } }
     @media (max-width:760px) { .nav-actions { gap:8px; } .support-open { padding:9px 10px; font-size:11px; } .support-sheet { border-radius:20px; } .support-head { padding:28px 22px 18px; } .support-body { padding:21px 22px 25px; } .support-amounts { grid-template-columns:repeat(2,1fr); } .support-money-burst { top:67px; right:26px; } }
+    .support-ledger { display:grid; grid-template-columns:1.18fr .82fr; gap:9px; margin-top:17px; } .support-ledger-card { min-height:76px; padding:12px 13px; border:1px solid rgba(255,223,134,.19); border-radius:13px; background:linear-gradient(135deg,rgba(111,75,17,.25),rgba(8,13,31,.32)); } .support-ledger-card.is-donated { border-color:rgba(126,205,255,.18); background:linear-gradient(135deg,rgba(48,99,132,.22),rgba(8,13,31,.33)); } .support-ledger-card span { display:block; color:#bfb28e; font-size:9px; font-weight:900; letter-spacing:.1em; } .support-ledger-card strong { display:block; margin-top:5px; color:#fff0b1; font-size:20px; line-height:1.05; letter-spacing:-.035em; } .support-ledger-card.is-donated strong { color:#c8efff; } .support-rate { display:block; margin-top:5px; color:#9c9279; font-size:10px; line-height:1.3; } .support-result.is-error { border-color:rgba(255,127,139,.36); color:#ffd2d7; background:rgba(231,74,94,.12); } .support-result.is-success { border-color:rgba(113,235,183,.26); color:#c9f9dc; background:rgba(66,209,132,.1); } .support-money-burst { will-change:transform; } @media (max-width:760px) { .support-ledger { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -677,7 +678,11 @@
 <div class="support-head">
 <div class="support-kicker">ПОДДЕРЖКА ПРОЕКТА</div>
 <h2 id="support-title">Помочь развитию сервера</h2>
-<p>Выберите валюту и сумму. Когда будет подключён безопасный платёжный сервис, здесь появится переход на страницу оплаты.</p>
+<p>Демо-терминал игровой экономики. Выберите валюту и сумму: 1 $ = 100 ₽, 1 € = 100 ₽. Реальные деньги здесь не используются.</p>
+<div class="support-ledger" aria-live="polite">
+<div class="support-ledger-card"><span>ДЕМО-БАЛАНС</span><strong id="support-balance-value">148 800 ₽</strong><small class="support-rate">Курс тестовой экономики</small></div>
+<div class="support-ledger-card is-donated"><span>УЖЕ ОТПРАВЛЕНО</span><strong id="support-donated-value">0 ₽</strong><small class="support-rate">За эту игровую сессию</small></div>
+</div>
 </div>
 <div class="support-body">
 <div class="support-field">
@@ -698,16 +703,16 @@
 </div>
 <label class="support-custom">Другая сумма <input id="support-custom-amount" inputmode="numeric" min="1" max="100000" type="number" placeholder="Не выбрано"><span data-support-amount-symbol>₽</span></label>
 </div>
-<div class="support-summary"><span>Будет выбрано</span><strong id="support-summary-value">100 ₽</strong></div>
-<button id="support-confirm" class="support-confirm" type="button">Подготовить поддержку</button>
+<div class="support-summary"><span>Отправится из демо-кошелька</span><strong id="support-summary-value">100 ₽</strong></div>
+<button id="support-confirm" class="support-confirm" type="button">Отправить тестовую поддержку</button>
 <p id="support-result" class="support-result" role="status" hidden></p>
-<p class="support-disclaimer">Это окно не принимает данные карты и не списывает деньги. Для реальной оплаты нужна отдельная ссылка на платёжный сервис.</p>
+<p class="support-disclaimer">Демо-терминал активирован: карты не нужны, персональные данные не запрашиваются и деньги не списываются.</p>
 </div>
 </section>
 </div>
 <footer class="wrap">© 2026 Подвал Пригожина · Версия правил 1.2</footer>
 <button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button>
-<script src="assets/site.js?v=4.8" defer></script>
+<script src="assets/site.js?v=4.9" defer></script>
 </body>
 </html>
 
