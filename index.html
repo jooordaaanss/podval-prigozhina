@@ -137,6 +137,7 @@
     .world-secret-classified { padding:7px 10px; border:1px solid rgba(142,219,255,.23); border-radius:999px; color:#d3f4ff; background:rgba(80,173,210,.08); font-size:9px; letter-spacing:.13em; }
     .world-secret-core { position:relative; z-index:1; display:flex; min-height:382px; align-items:center; justify-content:center; flex-direction:column; text-align:center; }
     .world-secret-lock { display:grid; width:58px; height:58px; place-items:center; margin:8px 0 20px; border:1px solid rgba(148,227,255,.48); border-radius:18px; color:#d9f8ff; background:linear-gradient(145deg,rgba(107,202,240,.18),rgba(17,59,83,.08)); box-shadow:0 0 0 9px rgba(98,204,249,.045),0 0 40px rgba(98,204,249,.15),inset 0 1px 0 rgba(239,253,255,.23); font-size:28px; animation:secret-lock 4.3s ease-in-out infinite; }
+    .world-secret-lock { position:relative; font-size:0; } .world-secret-lock::before { content:""; position:absolute; top:27px; width:24px; height:18px; border:2px solid #d9f8ff; border-radius:5px; background:linear-gradient(145deg,rgba(215,249,255,.3),rgba(91,196,237,.17)); box-shadow:0 0 13px rgba(119,221,255,.27); } .world-secret-lock::after { content:""; position:absolute; top:14px; width:16px; height:16px; border:2px solid #d9f8ff; border-bottom:0; border-radius:10px 10px 0 0; box-shadow:0 0 11px rgba(119,221,255,.2); }
     .world-secret-core .eyebrow { margin:0 0 10px; color:#88dff9; font-size:10px; font-weight:900; letter-spacing:.19em; }
     .world-secret-core h2 { margin:0; color:#eefbff; font-size:clamp(42px,6vw,72px); line-height:.96; letter-spacing:-.065em; text-shadow:0 0 34px rgba(148,231,255,.16); }
     .world-secret-core p { max-width:510px; margin:17px auto 23px; color:#b4cad9; font-size:15px; line-height:1.6; }
@@ -536,7 +537,7 @@
 <span class="world-secret-classified">CLASSIFIED / 67</span>
 </div>
 <div class="world-secret-core">
-<span class="world-secret-lock" aria-hidden="true">⌁</span>
+<span class="world-secret-lock" aria-hidden="true"></span>
 <p class="eyebrow">АРХИВ МИРА ЗАШИФРОВАН</p>
 <h2 id="world-title">Мир проекта</h2>
 <p>Карты стран, история планеты и другие материалы временно скрыты. Команда готовит их к открытию.</p>
