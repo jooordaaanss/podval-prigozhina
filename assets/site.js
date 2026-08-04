@@ -544,7 +544,6 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
     }
 
     document.body.append(celebration);
-    window.setTimeout(() => celebration.remove(), 5600);
   };
 
   const launchMission = () => {
