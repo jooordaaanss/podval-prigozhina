@@ -122,6 +122,32 @@
     .static-note { color:#fff3cf; }
     @keyframes clouds-cross-cube { from { translate:0 0; } to { translate:36% -7px; } }
     @media (max-width:760px) { .static-earth-wrap { width:330px; height:330px; } .static-earth-cloud-flow::before,.static-earth-cloud-flow::after { height:37px; } }
+
+    /* Закрытая вкладка мира — материалы появятся после открытия атласа */
+    .static-world-development { min-height:596px; border-color:rgba(122,211,255,.28); background:radial-gradient(circle at 50% 44%,rgba(45,122,163,.18),transparent 34%),linear-gradient(135deg,#071522,#0b1524 48%,#080e1c); box-shadow:0 35px 90px rgba(0,0,0,.42),inset 0 1px 0 rgba(205,243,255,.08); }
+    .static-world-development::before { z-index:0; opacity:.58; background-image:linear-gradient(rgba(130,221,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(130,221,255,.07) 1px,transparent 1px); background-size:38px 38px; mask-image:linear-gradient(135deg,black,transparent 76%); }
+    .world-secret { position:relative; isolation:isolate; min-height:596px; overflow:hidden; padding:26px 31px 29px; }
+    .world-secret-scene { position:absolute; z-index:-2; inset:0; display:grid; place-items:center; overflow:hidden; }
+    .world-secret-scene::before { content:""; position:absolute; width:540px; height:540px; border:1px solid rgba(122,221,255,.18); border-radius:50%; box-shadow:0 0 0 44px rgba(63,149,190,.025),0 0 0 88px rgba(63,149,190,.018),0 0 140px rgba(77,188,255,.12); animation:secret-orbit 19s linear infinite; }
+    .world-secret-earth { width:min(486px,77vw); aspect-ratio:1; object-fit:contain; opacity:.38; filter:blur(10px) saturate(.6) brightness(.72); transform:translateY(20px) scale(1.17); animation:secret-earth-drift 12s ease-in-out infinite; user-select:none; }
+    .world-secret-haze { position:absolute; inset:-22%; background:radial-gradient(ellipse at 45% 48%,rgba(146,221,255,.18),transparent 27%),radial-gradient(ellipse at 58% 41%,rgba(209,238,255,.13),transparent 24%),linear-gradient(110deg,transparent 24%,rgba(222,247,255,.085) 43%,transparent 63%); filter:blur(12px); animation:secret-haze 9s ease-in-out infinite alternate; }
+    .world-secret-scene::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,14,27,.18),rgba(5,13,25,.62) 82%),repeating-linear-gradient(0deg,transparent 0 4px,rgba(128,222,255,.025) 5px 6px); pointer-events:none; }
+    .world-secret-topline { position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:16px; color:#afc9dc; font-size:10px; font-weight:900; letter-spacing:.17em; }
+    .world-secret-topline > span:first-child { display:flex; align-items:center; gap:9px; } .world-secret-topline > span:first-child::before { content:""; width:8px; height:8px; border-radius:50%; background:#69dfff; box-shadow:0 0 14px #69dfff; animation:secret-pulse 1.9s ease-in-out infinite; }
+    .world-secret-classified { padding:7px 10px; border:1px solid rgba(142,219,255,.23); border-radius:999px; color:#d3f4ff; background:rgba(80,173,210,.08); font-size:9px; letter-spacing:.13em; }
+    .world-secret-core { position:relative; z-index:1; display:flex; min-height:382px; align-items:center; justify-content:center; flex-direction:column; text-align:center; }
+    .world-secret-lock { display:grid; width:58px; height:58px; place-items:center; margin:8px 0 20px; border:1px solid rgba(148,227,255,.48); border-radius:18px; color:#d9f8ff; background:linear-gradient(145deg,rgba(107,202,240,.18),rgba(17,59,83,.08)); box-shadow:0 0 0 9px rgba(98,204,249,.045),0 0 40px rgba(98,204,249,.15),inset 0 1px 0 rgba(239,253,255,.23); font-size:28px; animation:secret-lock 4.3s ease-in-out infinite; }
+    .world-secret-core .eyebrow { margin:0 0 10px; color:#88dff9; font-size:10px; font-weight:900; letter-spacing:.19em; }
+    .world-secret-core h2 { margin:0; color:#eefbff; font-size:clamp(42px,6vw,72px); line-height:.96; letter-spacing:-.065em; text-shadow:0 0 34px rgba(148,231,255,.16); }
+    .world-secret-core p { max-width:510px; margin:17px auto 23px; color:#b4cad9; font-size:15px; line-height:1.6; }
+    .world-secret-status { display:inline-flex; align-items:center; gap:10px; padding:12px 17px; border:1px solid rgba(255,215,108,.48); border-radius:12px; color:#fff0bf; background:rgba(255,190,58,.09); box-shadow:0 0 31px rgba(255,188,49,.12),inset 0 1px 0 rgba(255,251,222,.16); font-size:11px; font-weight:950; letter-spacing:.18em; animation:secret-status 2.8s ease-in-out infinite; }
+    .world-secret-status::before { content:""; width:8px; height:8px; border-radius:2px; background:#ffd469; box-shadow:0 0 12px #ffd469; }
+    .world-secret-redacted { position:absolute; z-index:1; bottom:32px; display:grid; gap:10px; width:210px; opacity:.88; }
+    .world-secret-redacted.left { left:31px; } .world-secret-redacted.right { right:31px; text-align:right; }
+    .world-secret-redacted span { display:block; height:9px; border-radius:999px; background:linear-gradient(90deg,rgba(155,224,248,.37),rgba(155,224,248,.08)); filter:blur(1.35px); } .world-secret-redacted span:nth-child(2) { width:73%; opacity:.65; } .world-secret-redacted span:nth-child(3) { width:88%; opacity:.48; } .world-secret-redacted.right span { margin-left:auto; background:linear-gradient(270deg,rgba(155,224,248,.37),rgba(155,224,248,.08)); }
+    .world-secret-footer { position:relative; z-index:1; display:flex; justify-content:center; gap:11px; color:#82a9bd; font-size:10px; font-weight:800; letter-spacing:.12em; } .world-secret-footer i { width:6px; height:6px; align-self:center; border-radius:50%; background:#5fdfff; box-shadow:0 0 9px #5fdfff; }
+    @keyframes secret-orbit { to { transform:rotate(360deg); } } @keyframes secret-earth-drift { 0%,100% { transform:translateY(20px) scale(1.17); } 50% { transform:translateY(5px) scale(1.2); } } @keyframes secret-haze { from { transform:translateX(-4%) translateY(2%); opacity:.53; } to { transform:translateX(5%) translateY(-3%); opacity:.9; } } @keyframes secret-pulse { 0%,100% { transform:scale(.84); opacity:.7; } 50% { transform:scale(1.24); opacity:1; } } @keyframes secret-lock { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } } @keyframes secret-status { 0%,100% { box-shadow:0 0 24px rgba(255,188,49,.09),inset 0 1px 0 rgba(255,251,222,.16); } 50% { box-shadow:0 0 47px rgba(255,188,49,.27),inset 0 1px 0 rgba(255,251,222,.26); } }
+    @media (max-width:760px) { .static-world-development,.world-secret { min-height:535px; } .world-secret { padding:21px 19px 24px; } .world-secret-topline { font-size:8px; } .world-secret-classified { padding:6px 8px; font-size:8px; } .world-secret-core { min-height:362px; } .world-secret-core h2 { font-size:48px; } .world-secret-core p { font-size:13px; } .world-secret-redacted { width:105px; bottom:27px; } .world-secret-redacted.left { left:19px; } .world-secret-redacted.right { right:19px; } .world-secret-footer { font-size:8px; } }
   </style>
 </head>
 <body>
@@ -500,38 +526,25 @@
 </section>
     <section id="world" aria-labelledby="world-title">
 <div class="static-world-development">
-<header class="static-world-head">
-<div>
-<p class="static-world-kicker">МИР ПРОЕКТА · КОСМИЧЕСКАЯ СЦЕНА</p>
-<h2 id="world-title">Земля игрового мира</h2>
-<p>Объёмная 3D‑Земля создаётся для будущего атласа стран. Сейчас это красивая живая сцена проекта.</p>
+<div class="world-secret">
+<div class="world-secret-scene" aria-hidden="true">
+<img class="world-secret-earth" src="assets/earth-cube-v2.png" alt="" />
+<div class="world-secret-haze"></div>
 </div>
-<div class="development-sign"><b>✦</b>В РАЗРАБОТКЕ</div>
-</header>
-<div class="static-world-content">
-<div class="static-space" aria-label="Анимированная космическая сцена" role="img">
-<div class="static-sun" aria-hidden="true"></div>
-<span class="static-sun-label" aria-hidden="true">СОЛНЦЕ</span>
-<div class="static-moon-orbit" aria-hidden="true"><span class="static-moon"></span></div>
-<div class="static-earth-wrap" aria-hidden="true">
-<div class="static-earth-planet">
-<img class="static-earth-image" src="assets/earth-cube-v2.png" alt="" />
-<div class="static-earth-cloud-flow"></div>
+<div class="world-secret-topline">
+<span>МИР ПРОЕКТА · ДОСТУП ОГРАНИЧЕН</span>
+<span class="world-secret-classified">CLASSIFIED / 67</span>
 </div>
+<div class="world-secret-core">
+<span class="world-secret-lock" aria-hidden="true">⌁</span>
+<p class="eyebrow">АРХИВ МИРА ЗАШИФРОВАН</p>
+<h2 id="world-title">Мир проекта</h2>
+<p>Карты стран, история планеты и другие материалы временно скрыты. Команда готовит их к открытию.</p>
+<div class="world-secret-status">В РАЗРАБОТКЕ</div>
 </div>
-</div>
-<aside class="static-world-info">
-<span class="static-object-label">ОБЪЕКТ · ПЛАНЕТА</span>
-<h3>Земля</h3>
-<p>Мир сервера в эпохе XIII века н. э. Светлая грань Земли освещается Солнцем, а тёмная остаётся в ночной стороне.</p>
-<div class="static-facts">
-<div><span>ЭПОХА</span><b>XIII век н. э.</b></div>
-<div><span>СТАТУС</span><b>В разработке</b></div>
-<div><span>СПУТНИК</span><b>Луна</b></div>
-<div><span>АТЛАС СТРАН</span><b>Скоро появится</b></div>
-</div>
-<div class="static-note">Облака мягко проходят по граням Земли и переходят через углы, а Луна медленно заходит за планету и скрывается из виду.</div>
-</aside>
+<div class="world-secret-redacted left" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="world-secret-redacted right" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="world-secret-footer"><i aria-hidden="true"></i> НОВЫЕ МАТЕРИАЛЫ ПОЯВЯТСЯ ПОСЛЕ ОТКРЫТИЯ АТЛАСА</div>
 </div>
 </div>
 <div class="world-head">
