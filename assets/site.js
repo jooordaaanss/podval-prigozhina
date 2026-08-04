@@ -194,6 +194,7 @@ const countryPanel = document.querySelector('[data-country-panel]');
 const worldZoomRange = document.querySelector('[data-world-zoom-range]');
 const worldZoomButtons = document.querySelectorAll('[data-world-zoom]');
 const worldCaption = document.querySelector('[data-world-caption]');
+const worldCountrySelects = document.querySelectorAll('[data-world-country-select]');
 
 if (worldStage && worldCube) {
   const defaultRotation = { x: -14, y: -31 };
@@ -394,6 +395,9 @@ if (worldStage && worldCube) {
     worldCountries.forEach((item) => {
       item.setAttribute('aria-pressed', String(item.dataset.country === countryKey));
     });
+    worldCountrySelects.forEach((item) => {
+      item.setAttribute('aria-pressed', String(item.dataset.worldCountrySelect === countryKey));
+    });
     animateCountryPanel();
   };
 
@@ -450,6 +454,10 @@ if (worldStage && worldCube) {
     });
   });
 
+  worldCountrySelects.forEach((country) => {
+    country.addEventListener('click', () => showCountry(country.dataset.worldCountrySelect));
+  });
+
   worldZoomRange?.addEventListener('input', () => setZoom(Number(worldZoomRange.value) / 100));
   worldZoomButtons.forEach((button) => {
     button.addEventListener('click', () => setZoom(zoom + (button.dataset.worldZoom === 'in' ? 0.1 : -0.1)));
@@ -483,6 +491,7 @@ if (worldStage && worldCube) {
 
   setCubeRotation();
   setZoom(defaultZoom);
+  showCountry('earth');
 }
 
 const backToTop = document.querySelector('#back-to-top');
