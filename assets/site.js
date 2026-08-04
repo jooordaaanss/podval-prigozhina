@@ -162,3 +162,24 @@ if (backToTop) {
   updateBackToTop();
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
+
+const revealTargets = [
+  ...document.querySelectorAll('.card, .notice, .news-card, .search-card, .application-shell, #rules details, .minecraft-intro, .minecraft-rules details, .history-card, .contact'),
+];
+
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px' });
+
+  revealTargets.forEach((target, index) => {
+    target.classList.add('reveal');
+    target.style.setProperty('--reveal-delay', `${Math.min((index % 5) * 55, 220)}ms`);
+    revealObserver.observe(target);
+  });
+}
