@@ -234,6 +234,13 @@
     @keyframes atlas-flag-wave { 0%,100% { transform:skewY(0) scaleX(1); filter:brightness(1); } 50% { transform:skewY(-7deg) scaleX(.92); filter:brightness(1.08); } }
     @media (max-width:760px) { .atlas-world { grid-template-columns:1fr; } .atlas-scene,.atlas-side { min-height:530px; } .atlas-side { border-top:1px solid rgba(133,217,255,.14); border-left:0; padding:28px 21px; } .atlas-planet { width:min(382px,90vw); } .atlas-moon-wrap { right:2%; top:21%; transform:scale(.78); } .atlas-flight-path { width:214px; top:32%; left:55%; } .atlas-rocket { top:32%; left:56%; } .atlas-lunar-flag { transform:scale(.82); transform-origin:bottom center; } .atlas-topline { top:20px; left:21px; font-size:8px; } .atlas-caption { bottom:20px; left:21px; } .atlas-caption strong { font-size:27px; } .atlas-danger { right:20px; bottom:19px; } .atlas-danger button { padding:9px 10px; font-size:9px; } .atlas-country-lock { min-height:275px; } .atlas-celebration-piece { font-size:calc(var(--size) * .82); } }
     @media (prefers-reduced-motion:reduce) { .atlas-celebration { display:none; } }
+    /* Поддержка проекта */
+    .nav-actions { display:flex; align-items:center; gap:11px; } .support-open { appearance:none; display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(255,213,107,.48); border-radius:10px; padding:9px 12px; color:#fff0b7; background:linear-gradient(135deg,rgba(154,105,23,.3),rgba(255,200,81,.11)); box-shadow:inset 0 1px 0 rgba(255,249,212,.12),0 8px 20px rgba(0,0,0,.15); font:800 12px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,filter .18s ease; } .support-open span { color:#ffd65c; font-size:15px; text-shadow:0 0 12px rgba(255,202,70,.7); } .support-open:hover,.support-open:focus-visible { transform:translateY(-2px); border-color:rgba(255,221,126,.9); filter:brightness(1.08); box-shadow:0 12px 28px rgba(83,56,12,.27),0 0 0 3px rgba(255,205,85,.08); }
+    .support-wallet { position:relative; display:grid; width:37px; height:34px; place-items:center; overflow:hidden; border:1px solid rgba(255,224,136,.55); border-radius:9px; color:#fff5cd; background:linear-gradient(135deg,#58400e,#a87718 48%,#ecd06a); box-shadow:0 0 0 1px rgba(255,221,112,.12),0 8px 22px rgba(80,53,7,.28); cursor:pointer; } .support-wallet[hidden] { display:none; } .support-wallet::before { content:""; position:absolute; inset:6px; border:1px solid rgba(68,43,3,.38); border-radius:4px; } .support-wallet::after { content:attr(data-currency); position:relative; z-index:1; color:#fff9d8; font:900 15px/1 Georgia,serif; text-shadow:0 1px 2px rgba(55,35,0,.74); } .support-wallet.is-ready { animation:support-wallet-pulse 1.25s ease-in-out 3; }
+    .support-dialog { position:fixed; z-index:80; inset:0; display:grid; place-items:center; padding:22px; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .22s ease,visibility 0s linear .22s; } .support-dialog.is-open { opacity:1; visibility:visible; pointer-events:auto; transition-delay:0s; } .support-scrim { position:absolute; inset:0; background:rgba(3,7,18,.77); backdrop-filter:blur(11px); } .support-sheet { position:relative; width:min(570px,100%); overflow:hidden; border:1px solid rgba(255,218,121,.38); border-radius:24px; background:linear-gradient(145deg,rgba(55,40,15,.98),rgba(22,25,47,.99) 47%,rgba(42,29,64,.98)); box-shadow:0 34px 95px rgba(0,0,0,.56),inset 0 1px 0 rgba(255,248,206,.14); transform:translateY(22px) scale(.96); transition:transform .34s cubic-bezier(.2,.78,.22,1); } .support-dialog.is-open .support-sheet { transform:translateY(0) scale(1); } .support-sheet::before { content:""; position:absolute; width:300px; height:300px; top:-195px; right:-95px; border-radius:50%; background:radial-gradient(circle,rgba(255,211,83,.29),transparent 68%); filter:blur(7px); pointer-events:none; } .support-sheet > * { position:relative; } .support-head { padding:31px 33px 20px; border-bottom:1px solid rgba(255,233,170,.1); } .support-kicker { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid rgba(255,217,108,.38); border-radius:999px; color:#ffe6a0; background:rgba(255,199,70,.1); font-size:10px; font-weight:900; letter-spacing:.13em; } .support-kicker::before { content:"✦"; color:#ffd45d; font-size:13px; text-shadow:0 0 10px rgba(255,211,78,.68); } .support-head h2 { margin:13px 0 7px; color:#fff8dc; font-size:clamp(27px,4vw,38px); line-height:1.05; letter-spacing:-.04em; } .support-head p { max-width:445px; margin:0; color:#d9cfb4; font-size:14px; line-height:1.55; } .support-close { appearance:none; position:absolute; top:18px; right:18px; display:grid; width:34px; height:34px; place-items:center; border:1px solid rgba(255,241,196,.15); border-radius:10px; color:#fcebc0; background:rgba(255,255,255,.06); font-size:20px; cursor:pointer; transition:transform .18s ease,background .18s ease; } .support-close:hover,.support-close:focus-visible { transform:rotate(90deg); background:rgba(255,220,126,.16); }
+    .support-body { display:grid; gap:21px; padding:24px 33px 31px; } .support-field { display:grid; gap:9px; } .support-field > span { color:#f4ddb0; font-size:11px; font-weight:850; letter-spacing:.11em; } .support-currencies { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; } .support-currency,.support-amount { appearance:none; border:1px solid rgba(255,236,180,.13); border-radius:12px; color:#dcd4bf; background:rgba(4,8,23,.36); font:800 14px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .17s ease,border-color .17s ease,background .17s ease,color .17s ease,box-shadow .17s ease; } .support-currency { min-height:48px; } .support-currency small { display:block; margin-top:4px; color:#998f76; font-size:9px; font-weight:800; letter-spacing:.08em; } .support-currency:hover,.support-amount:hover { transform:translateY(-2px); border-color:rgba(255,217,110,.38); } .support-currency[aria-pressed="true"],.support-amount[aria-pressed="true"] { border-color:rgba(255,216,104,.76); color:#fff3c8; background:linear-gradient(135deg,rgba(173,112,24,.43),rgba(255,202,78,.12)); box-shadow:0 0 0 3px rgba(255,208,91,.08),inset 0 1px 0 rgba(255,244,192,.13); } .support-amounts { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; } .support-amount { min-height:50px; } .support-amount small { color:inherit; font-size:10px; opacity:.72; } .support-custom { display:flex; align-items:center; gap:10px; min-height:52px; padding:0 13px; border:1px dashed rgba(255,222,131,.28); border-radius:12px; color:#c8b98e; background:rgba(3,8,24,.27); font-size:12px; font-weight:760; } .support-custom input { min-width:0; flex:1; border:0; outline:0; color:#fff0bf; background:transparent; font:800 15px/1 Inter,ui-sans-serif,system-ui,sans-serif; text-align:right; } .support-custom input::placeholder { color:#83795f; } .support-summary { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 16px; border:1px solid rgba(255,218,112,.19); border-radius:14px; background:linear-gradient(135deg,rgba(116,81,24,.2),rgba(11,15,33,.46)); } .support-summary span { color:#cdbf99; font-size:12px; } .support-summary strong { color:#fff0b0; font-size:19px; letter-spacing:-.02em; } .support-confirm { appearance:none; width:100%; border:1px solid rgba(255,229,151,.65); border-radius:13px; padding:15px 18px; color:#2d2004; background:linear-gradient(135deg,#ffe29a,#e8ad36); box-shadow:0 12px 28px rgba(101,68,7,.28),inset 0 1px 0 rgba(255,255,245,.5); font:900 14px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .18s ease,filter .18s ease,box-shadow .18s ease; } .support-confirm:hover,.support-confirm:focus-visible { transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 17px 34px rgba(124,83,7,.34),inset 0 1px 0 rgba(255,255,245,.6); } .support-result { margin:0; padding:11px 13px; border:1px solid rgba(113,235,183,.26); border-radius:10px; color:#c9f9dc; background:rgba(66,209,132,.1); font-size:12px; line-height:1.45; } .support-result[hidden] { display:none; } .support-disclaimer { margin:0; color:#9f977f; font-size:11px; line-height:1.45; text-align:center; } .support-money-burst { position:fixed; z-index:95; top:60px; right:42px; width:1px; height:1px; pointer-events:none; } .support-money-piece { position:absolute; font-size:var(--money-size,22px); filter:drop-shadow(0 3px 6px rgba(0,0,0,.32)); animation:support-money-float var(--money-duration,2s) cubic-bezier(.15,.72,.29,1) var(--money-delay,0s) both; }
+    @keyframes support-wallet-pulse { 0%,100% { transform:translateY(0) scale(1); box-shadow:0 0 0 1px rgba(255,221,112,.12),0 8px 22px rgba(80,53,7,.28); } 50% { transform:translateY(-2px) scale(1.08); box-shadow:0 0 0 5px rgba(255,215,90,.12),0 0 28px rgba(255,203,71,.58); } } @keyframes support-money-float { 0% { opacity:0; transform:translate(0,0) scale(.58) rotate(0); } 14% { opacity:1; } 100% { opacity:0; transform:translate(var(--money-x,0),var(--money-y,150px)) scale(1.18) rotate(var(--money-rotate,180deg)); } }
+    @media (max-width:760px) { .nav-actions { gap:8px; } .support-open { padding:9px 10px; font-size:11px; } .support-sheet { border-radius:20px; } .support-head { padding:28px 22px 18px; } .support-body { padding:21px 22px 25px; } .support-amounts { grid-template-columns:repeat(2,1fr); } .support-money-burst { top:67px; right:26px; } }
   </style>
 </head>
 <body>
@@ -247,12 +254,16 @@
 <a class="brand" href="#top">
 <img class="brand-logo" src="assets/podval-earth-cube-logo.png" alt="Логотип Подвала Пригожина">ПОДВАЛ<b>.</b>
 </a>
+<div class="nav-actions">
 <div class="links">
 <a href="#about">Важно</a>
 <a href="#updates">Новости</a>
 <a href="#rules">Discord</a>
 <a href="#minecraft">Minecraft</a>
 <a href="#help">Ссылки</a>
+</div>
+<button id="support-open" class="support-open" type="button" aria-haspopup="dialog"><span aria-hidden="true">✦</span> Поддержать</button>
+<button id="support-wallet" class="support-wallet" type="button" aria-label="Открыть выбор поддержки" title="Поддержать проект" hidden></button>
 </div>
 </nav>
 </header>
@@ -658,7 +669,42 @@
 </div>
 </div>
 </section>
-  </main>
+</main>
+<div id="support-dialog" class="support-dialog" aria-hidden="true">
+<div class="support-scrim" data-support-close></div>
+<section class="support-sheet" role="dialog" aria-modal="true" aria-labelledby="support-title" tabindex="-1">
+<button class="support-close" type="button" data-support-close aria-label="Закрыть окно поддержки">×</button>
+<div class="support-head">
+<div class="support-kicker">ПОДДЕРЖКА ПРОЕКТА</div>
+<h2 id="support-title">Помочь развитию сервера</h2>
+<p>Выберите валюту и сумму. Когда будет подключён безопасный платёжный сервис, здесь появится переход на страницу оплаты.</p>
+</div>
+<div class="support-body">
+<div class="support-field">
+<span>ВЫБЕРИТЕ ВАЛЮТУ</span>
+<div class="support-currencies" role="group" aria-label="Выбор валюты">
+<button class="support-currency" type="button" data-support-currency="RUB" data-support-symbol="₽" aria-pressed="true">₽<small>РУБЛИ</small></button>
+<button class="support-currency" type="button" data-support-currency="USD" data-support-symbol="$" aria-pressed="false">$<small>ДОЛЛАРЫ</small></button>
+<button class="support-currency" type="button" data-support-currency="EUR" data-support-symbol="€" aria-pressed="false">€<small>ЕВРО</small></button>
+</div>
+</div>
+<div class="support-field">
+<span>ВЫБЕРИТЕ СУММУ</span>
+<div class="support-amounts" role="group" aria-label="Выбор суммы">
+<button class="support-amount" type="button" data-support-amount="50" aria-pressed="false">50 <small data-support-symbol>₽</small></button>
+<button class="support-amount" type="button" data-support-amount="100" aria-pressed="true">100 <small data-support-symbol>₽</small></button>
+<button class="support-amount" type="button" data-support-amount="250" aria-pressed="false">250 <small data-support-symbol>₽</small></button>
+<button class="support-amount" type="button" data-support-amount="500" aria-pressed="false">500 <small data-support-symbol>₽</small></button>
+</div>
+<label class="support-custom">Другая сумма <input id="support-custom-amount" inputmode="numeric" min="1" max="100000" type="number" placeholder="Не выбрано"><span data-support-symbol>₽</span></label>
+</div>
+<div class="support-summary"><span>Будет выбрано</span><strong id="support-summary-value">100 ₽</strong></div>
+<button id="support-confirm" class="support-confirm" type="button">Подготовить поддержку</button>
+<p id="support-result" class="support-result" role="status" hidden></p>
+<p class="support-disclaimer">Это окно не принимает данные карты и не списывает деньги. Для реальной оплаты нужна отдельная ссылка на платёжный сервис.</p>
+</div>
+</section>
+</div>
 <footer class="wrap">© 2026 Подвал Пригожина · Версия правил 1.2</footer>
 <button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button>
 <script src="assets/site.js?v=4.6" defer></script>
