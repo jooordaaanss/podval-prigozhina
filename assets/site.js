@@ -35,16 +35,16 @@ document.querySelectorAll('[data-copy-text]').forEach((button) => {
   };
 
   button.addEventListener('click', () => {
-    button.textContent = 'Копируем…';
+    button.textContent = 'ÐšÐ¾Ð¿Ð¸Ñ€ÑƒÐµÐ¼â€¦';
     copyText(
       button.dataset.copyText,
       () => {
-        button.textContent = 'Скопировано ✓';
+        button.textContent = 'Ð¡ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾ âœ“';
         button.classList.add('copied');
         reset();
       },
       () => {
-        button.textContent = 'Не удалось скопировать';
+        button.textContent = 'ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ';
         reset();
       },
     );
@@ -52,9 +52,9 @@ document.querySelectorAll('[data-copy-text]').forEach((button) => {
 });
 
 const statuses = {
-  active: 'Сервер активен',
-  maintenance: 'Технические работы',
-  soon: 'Скоро открытие',
+  active: 'Ð¡ÐµÑ€Ð²ÐµÑ€ Ð°ÐºÑ‚Ð¸Ð²ÐµÐ½',
+  maintenance: 'Ð¢ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹',
+  soon: 'Ð¡ÐºÐ¾Ñ€Ð¾ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ',
 };
 
 document.querySelectorAll('[data-server-status]').forEach((status) => {
@@ -66,7 +66,7 @@ document.querySelectorAll('[data-server-status]').forEach((status) => {
 const cursorSevens = document.querySelector('#cursor-sevens');
 
 if (cursorSevens && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const particleCount = 54;
+  const particleCount = 67;
   const repelDistance = 210;
   const particles = Array.from({ length: particleCount }, (_, index) => {
     const element = document.createElement('span');
@@ -75,7 +75,13 @@ if (cursorSevens && !window.matchMedia('(prefers-reduced-motion: reduce)').match
     const angle = (Math.PI * 2 * index) / particleCount;
 
     element.className = 'cursor-seven';
-    element.textContent = '67';
+    element.style.setProperty('--float-delay', `${-(Math.random() * 5.5).toFixed(2)}s`);
+    element.style.setProperty('--float-duration', `${(3.8 + Math.random() * 2.8).toFixed(2)}s`);
+
+    const symbol = document.createElement('span');
+    symbol.className = 'cursor-seven-symbol';
+    symbol.textContent = '67';
+    element.append(symbol);
     element.style.left = `${x}%`;
     element.style.top = `${y}%`;
     element.style.fontSize = `${10 + Math.round(Math.random() * 9)}px`;
@@ -167,8 +173,8 @@ if (ruleSearch && searchResult) {
     });
 
     searchResult.textContent = found
-      ? `Найдено разделов: ${found}. Подходящие пункты раскрыты.`
-      : 'Ничего не найдено. Попробуйте другое слово или номер правила.';
+      ? `ÐÐ°Ð¹Ð´ÐµÐ½Ð¾ Ñ€Ð°Ð·Ð´ÐµÐ»Ð¾Ð²: ${found}. ÐŸÐ¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ðµ Ð¿ÑƒÐ½ÐºÑ‚Ñ‹ Ñ€Ð°ÑÐºÑ€Ñ‹Ñ‚Ñ‹.`
+      : 'ÐÐ¸Ñ‡ÐµÐ³Ð¾ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾. ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ ÑÐ»Ð¾Ð²Ð¾ Ð¸Ð»Ð¸ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°.';
   });
 
   ruleSearch.addEventListener('keydown', (event) => {
@@ -214,3 +220,4 @@ window.addEventListener('scroll', revealVisibleTargets, { passive: true });
 window.addEventListener('resize', revealVisibleTargets, { passive: true });
 window.requestAnimationFrame(revealVisibleTargets);
 window.setTimeout(revealVisibleTargets, 180);
+
