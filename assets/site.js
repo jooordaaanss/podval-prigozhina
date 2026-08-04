@@ -167,19 +167,21 @@ const revealTargets = [
   ...document.querySelectorAll('.card, .notice, .news-card, .search-card, .application-shell, #rules details, .minecraft-intro, .minecraft-rules details, .history-card, .contact'),
 ];
 
-if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -24px' });
-
-  revealTargets.forEach((target, index) => {
-    target.classList.add('reveal');
-    target.style.setProperty('--reveal-delay', `${Math.min((index % 5) * 55, 220)}ms`);
-    revealObserver.observe(target);
+const revealVisibleTargets = () => {
+  revealTargets.forEach((target) => {
+    const bounds = target.getBoundingClientRect();
+    if (bounds.top < window.innerHeight * 0.93 && bounds.bottom > 0) {
+      target.classList.add('is-revealed');
+    }
   });
-}
+};
+
+revealTargets.forEach((target, index) => {
+  target.classList.add('reveal');
+  target.style.setProperty('--reveal-delay', `${Math.min((index % 5) * 55, 220)}ms`);
+});
+
+window.addEventListener('scroll', revealVisibleTargets, { passive: true });
+window.addEventListener('resize', revealVisibleTargets, { passive: true });
+window.requestAnimationFrame(revealVisibleTargets);
+window.setTimeout(revealVisibleTargets, 180);
