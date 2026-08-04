@@ -524,19 +524,19 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
     atlasDoNotClick.textContent = 'СЛИШКОМ ПОЗДНО';
     atlasDanger.classList.remove('is-critical');
     atlasDanger.classList.add('is-spent');
-    atlasPlanet.classList.add('is-exploding');
+    atlasPlanet.classList.add('is-meteor-impact');
 
     let finished = false;
     const finishDestruction = () => {
       if (finished) return;
       finished = true;
-      atlasPlanet.classList.add('is-destroyed');
-      atlasScene.classList.add('is-destroyed');
+      atlasPlanet.classList.add('is-molten');
+      atlasScene.classList.add('is-molten');
     };
 
-    const explosion = atlasPlanet.querySelector('.atlas-explosion');
-    explosion?.addEventListener('animationend', finishDestruction, { once: true });
-    window.setTimeout(finishDestruction, 980);
+    const meteor = atlasPlanet.querySelector('.atlas-meteor');
+    meteor?.addEventListener('animationend', finishDestruction, { once: true });
+    window.setTimeout(finishDestruction, 4200);
   };
 
   atlasDoNotClick.addEventListener('click', () => {
