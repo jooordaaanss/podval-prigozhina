@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Правила и важная информация сервера" />
+  <meta name="description" content="ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Ð¸ Ð²Ð°Ð¶Ð½Ð°Ñ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ ÑÐµÑ€Ð²ÐµÑ€Ð°" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
-  <title>Подвал Пригожина • Правила сервера</title>
+  <title>ÐŸÐ¾Ð´Ð²Ð°Ð» ÐŸÑ€Ð¸Ð³Ð¾Ð¶Ð¸Ð½Ð° â€¢ ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° ÑÐµÑ€Ð²ÐµÑ€Ð°</title>
   <style>
     :root { --bg:#0b1020; --surface:#141b32; --surface2:#1a2340; --text:#f4f7ff; --muted:#aab5d1; --cyan:#60e6ff; --violet:#9976ff; --discord:#8493ff; --discord-soft:#c4cbff; --minecraft:#57d9a5; --minecraft-soft:#c5f7e2; --line:rgba(255,255,255,.1); }
     * { box-sizing:border-box; }
@@ -14,8 +14,7 @@
     body { margin:0; color:var(--text); background:var(--bg); font:16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
     .glow { position:fixed; z-index:-1; width:480px; height:480px; border-radius:50%; filter:blur(95px); opacity:.21; pointer-events:none; }
     .glow.one { background:var(--cyan); top:-180px; left:-160px; } .glow.two { background:var(--violet); right:-180px; top:300px; }
-    .background-mark { position:fixed; z-index:-2; top:50%; left:50%; transform:translate(-50%,-50%) rotate(-8deg); color:rgba(96,230,255,.11); font-size:clamp(250px,48vw,620px); font-weight:900; line-height:1; letter-spacing:-.12em; filter:blur(7px); pointer-events:none; user-select:none; }
-    .cursor-sevens { position:fixed; z-index:-1; inset:0; overflow:hidden; pointer-events:none; user-select:none; } .cursor-seven { position:absolute; color:rgba(153,189,255,.19); font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-weight:850; line-height:1; letter-spacing:-.1em; text-shadow:0 0 18px rgba(116,172,255,.11); will-change:transform; transition:transform .34s cubic-bezier(.2,.7,.22,1),color .25s ease,text-shadow .25s ease; } .cursor-sevens.is-active .cursor-seven { color:rgba(174,204,255,.27); text-shadow:0 0 20px rgba(116,172,255,.22); }
+    .cursor-sevens { position:fixed; z-index:-1; inset:0; overflow:hidden; pointer-events:none; user-select:none; } .cursor-seven { position:absolute; color:rgba(165,202,255,.23); font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-weight:850; line-height:1; letter-spacing:-.1em; text-shadow:0 0 18px rgba(116,172,255,.14); will-change:transform; transition:transform .34s cubic-bezier(.2,.7,.22,1),color .25s ease,text-shadow .25s ease; } .cursor-seven-symbol { display:block; animation:seven-levitate var(--float-duration,4.8s) ease-in-out var(--float-delay,0s) infinite; } .cursor-sevens.is-active .cursor-seven { color:rgba(184,216,255,.31); text-shadow:0 0 21px rgba(116,172,255,.26); }
     .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
     header { padding:20px 0; border-bottom:1px solid var(--line); background:rgba(11,16,32,.72); backdrop-filter:blur(14px); position:sticky; top:0; z-index:3; }
     .nav { display:flex; justify-content:space-between; align-items:center; gap:22px; }
@@ -31,33 +30,33 @@
     .online { display:inline-flex; align-items:center; gap:8px; color:#bfffd5!important; } .dot { width:8px; height:8px; border-radius:50%; background:#55e799; box-shadow:0 0 12px #55e799; }
     section { padding:70px 0; } .section-title { font-size:35px; letter-spacing:-.035em; margin:0 0 8px; } .section-copy { color:var(--muted); margin:0 0 28px; }
     .notice { padding:20px 23px; border-left:3px solid var(--cyan); border-radius:0 14px 14px 0; background:rgba(96,230,255,.08); color:#d9f8ff; margin-bottom:28px; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; } .card { padding:24px; background:rgba(20,27,50,.86); border:1px solid var(--line); border-radius:18px; } .chief-card { position:relative; overflow:visible; } .chief-jordan { position:relative; display:inline-block; color:var(--muted); font-weight:600; transition:color .28s ease,text-shadow .28s ease; } .chief-crown { position:absolute; left:50%; top:-1.42em; color:#ffd95a; font-size:18px; line-height:1; opacity:0; text-shadow:0 0 13px rgba(255,206,74,.82); transform:translate(-50%,7px) scale(.72) rotate(-12deg); transition:opacity .26s ease,transform .32s cubic-bezier(.2,.8,.28,1); } .chief-card:hover .chief-jordan, .chief-card:focus-within .chief-jordan { color:#ffe68a; text-shadow:0 0 13px rgba(255,211,82,.47); } .chief-card:hover .chief-crown, .chief-card:focus-within .chief-crown { opacity:1; transform:translate(-50%,0) scale(1) rotate(0); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; } .card { padding:24px; background:rgba(20,27,50,.86); border:1px solid var(--line); border-radius:18px; } .team-card { position:relative; isolation:isolate; overflow:visible; min-height:138px; } .team-card::before { content:""; position:absolute; z-index:-1; left:8%; right:8%; top:-32px; height:86px; border-radius:50%; opacity:0; filter:blur(14px); transform:translateY(12px) scale(.72); transition:opacity .32s ease,transform .42s cubic-bezier(.2,.75,.22,1); } .team-card:hover::before, .team-card:focus-within::before { opacity:1; transform:translateY(0) scale(1); } .jordan-card::before { background:radial-gradient(ellipse at center,rgba(255,212,91,.42),rgba(80,159,255,.28) 46%,transparent 72%); } .yulia-card::before { background:radial-gradient(ellipse at center,rgba(238,151,255,.37),rgba(148,112,255,.23) 48%,transparent 74%); } .senya-card::before { background:radial-gradient(ellipse at center,rgba(105,246,198,.34),rgba(82,182,255,.21) 48%,transparent 74%); } .team-card .number { transition:letter-spacing .26s ease,color .26s ease; } .team-card:hover .number { letter-spacing:.16em; } .chief-jordan { position:relative; display:inline-block; color:var(--muted); font-weight:600; transition:color .28s ease,text-shadow .28s ease; } .chief-crown { position:absolute; left:50%; top:-1.42em; color:#ffd95a; font-size:18px; line-height:1; opacity:0; text-shadow:0 0 13px rgba(255,206,74,.82); transform:translate(-50%,7px) scale(.72) rotate(-12deg); transition:opacity .26s ease,transform .32s cubic-bezier(.2,.8,.28,1); } .jordan-card:hover .chief-jordan, .jordan-card:focus-within .chief-jordan { color:#ffe68a; text-shadow:0 0 13px rgba(255,211,82,.47); } .jordan-card:hover .chief-crown, .jordan-card:focus-within .chief-crown { opacity:1; transform:translate(-50%,0) scale(1) rotate(0); } .team-cloud { position:absolute; z-index:2; top:-35px; right:18px; display:flex; align-items:center; justify-content:center; gap:5px; min-width:114px; min-height:38px; padding:7px 11px; border:1px solid rgba(220,238,255,.18); border-radius:999px; opacity:0; pointer-events:none; transform:translateY(15px) scale(.78); filter:blur(2px); transition:opacity .28s ease,transform .42s cubic-bezier(.2,.78,.22,1),filter .28s ease; box-shadow:0 14px 34px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.12); } .team-card:hover .team-cloud, .team-card:focus-within .team-cloud { opacity:1; transform:translateY(0) scale(1); filter:blur(0); animation:cloud-bob 3.3s ease-in-out .12s infinite; } .team-cloud::before, .team-cloud::after { content:""; position:absolute; border-radius:50%; background:inherit; border:inherit; opacity:.76; z-index:-1; } .team-cloud::before { width:29px; height:29px; left:-9px; bottom:-7px; } .team-cloud::after { width:23px; height:23px; right:-7px; top:-7px; } .team-cloud span { display:inline-flex; align-items:center; justify-content:center; font:800 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; animation:cloud-spark 2.1s ease-in-out infinite; } .team-cloud span:nth-child(2) { animation-delay:-.7s; } .team-cloud span:nth-child(3) { animation-delay:-1.25s; } .team-cloud span:nth-child(4) { animation-delay:-.35s; } .jordan-cloud { color:#fff0a7; background:linear-gradient(120deg,rgba(28,73,183,.83),rgba(255,255,255,.28) 50%,rgba(208,53,70,.62)); box-shadow:0 14px 34px rgba(0,0,0,.23),0 0 24px rgba(255,211,82,.23),inset 0 1px 0 rgba(255,255,255,.36); } .yulia-cloud { color:#ffe1fb; background:linear-gradient(120deg,rgba(106,70,184,.76),rgba(232,129,230,.38),rgba(82,63,165,.69)); box-shadow:0 14px 34px rgba(0,0,0,.23),0 0 24px rgba(220,126,255,.2),inset 0 1px 0 rgba(255,255,255,.26); } .senya-cloud { color:#d7fff2; background:linear-gradient(120deg,rgba(18,111,113,.76),rgba(95,229,190,.31),rgba(34,113,171,.7)); box-shadow:0 14px 34px rgba(0,0,0,.23),0 0 24px rgba(90,235,197,.19),inset 0 1px 0 rgba(255,255,255,.25); } .team-section-head { display:flex; align-items:center; gap:10px; margin-bottom:8px; } .team-section-head .section-title { margin:0; } .team-badge { display:inline-flex; align-items:center; padding:5px 9px; border:1px solid rgba(159,211,255,.3); border-radius:999px; color:#bdeeff; background:rgba(96,230,255,.09); font-size:10px; font-weight:900; letter-spacing:.12em; }
     .number { color:var(--cyan); font-size:13px; font-weight:800; letter-spacing:.1em; } .card h3 { font-size:19px; margin:7px 0; } .card p { margin:0; color:var(--muted); font-size:14px; }
-    .rules { display:grid; gap:12px; } details { background:var(--surface); border:1px solid var(--line); border-radius:15px; padding:0 20px; } summary { cursor:pointer; list-style:none; padding:18px 30px 18px 0; font-weight:750; position:relative; } summary::after { content:"+"; position:absolute; right:0; color:var(--cyan); font-size:23px; line-height:1; } details[open] summary::after { content:"−"; } details p { color:var(--muted); padding:0 0 18px; margin:0; }
+    .rules { display:grid; gap:12px; } details { background:var(--surface); border:1px solid var(--line); border-radius:15px; padding:0 20px; } summary { cursor:pointer; list-style:none; padding:18px 30px 18px 0; font-weight:750; position:relative; } summary::after { content:"+"; position:absolute; right:0; color:var(--cyan); font-size:23px; line-height:1; } details[open] summary::after { content:"âˆ’"; } details p { color:var(--muted); padding:0 0 18px; margin:0; }
     #rules { position:relative; } #rules .section-title { display:flex; align-items:center; gap:11px; } #rules .section-title::before { content:"DISCORD"; padding:4px 8px; border:1px solid rgba(132,147,255,.44); border-radius:7px; color:var(--discord-soft); background:rgba(132,147,255,.1); font-size:10px; font-weight:850; letter-spacing:.12em; }
     #rules .rules { gap:17px; } #rules details { padding:0 19px 19px; border-color:rgba(132,147,255,.2); background:linear-gradient(135deg,rgba(44,49,97,.9),rgba(16,20,47,.98)); box-shadow:inset 0 1px 0 rgba(255,255,255,.05); } #rules details[open] { border-color:rgba(147,160,255,.5); box-shadow:0 17px 46px rgba(0,0,0,.24), 0 0 0 1px rgba(132,147,255,.06), inset 0 1px 0 rgba(255,255,255,.06); }
     #rules summary { padding:21px 34px 19px 0; color:#f7f8ff; font-size:18px; letter-spacing:-.012em; } #rules summary::after { top:17px; width:26px; height:26px; display:grid; place-items:center; border:1px solid rgba(152,165,255,.35); border-radius:50%; color:#cbd1ff; background:rgba(132,147,255,.08); font-size:20px; }
     #rules details p { margin:0 0 10px; padding:16px 18px; border:1px solid rgba(198,205,255,.1); border-radius:12px; background:rgba(5,8,28,.46); color:#c7cce0; line-height:1.65; } #rules details p:last-child { margin-bottom:0; } #rules details p b { display:block; margin:0 0 7px; color:#f8f9ff; font-size:15px; } #rules details p:hover { border-color:rgba(155,167,255,.24); background:rgba(15,18,47,.62); }
-    #rules details em { display:inline-flex; align-items:flex-start; gap:7px; margin-top:11px; padding:7px 10px; border:1px solid rgba(255,116,134,.24); border-radius:8px; color:#ffacb7; background:rgba(255,78,103,.09); font-style:normal; font-size:13px; font-weight:650; line-height:1.45; } #rules details em::before { content:"⚠"; color:#ff7587; line-height:1.45; }
-    #rules .rule-note { display:block; margin-top:12px; padding:11px 13px 11px 15px; border:1px solid rgba(93,232,156,.24); border-left:3px solid #5ce89b; border-radius:0 10px 10px 0; color:#c9f6d9; background:linear-gradient(90deg,rgba(63,208,123,.13),rgba(63,208,123,.035)); font-size:13px; font-weight:550; line-height:1.55; } #rules .rule-note::before { content:"✓  ПРИМЕЧАНИЕ"; display:block; margin-bottom:4px; color:#73efa8; font-size:10px; font-weight:850; letter-spacing:.11em; }
-    #rp { display:none; } #minecraft { padding-top:40px; } .minecraft-intro { position:relative; overflow:hidden; padding:44px; border:1px solid rgba(87,217,165,.3); border-radius:24px; background:linear-gradient(135deg,rgba(20,67,53,.64),rgba(14,29,42,.96) 60%,rgba(18,56,61,.7)); box-shadow:0 20px 52px rgba(0,0,0,.22),inset 0 1px 0 rgba(213,255,239,.08); } .minecraft-intro::before { content:""; position:absolute; inset:0; opacity:.34; background-image:linear-gradient(90deg,rgba(120,247,194,.09) 1px,transparent 1px),linear-gradient(rgba(120,247,194,.09) 1px,transparent 1px); background-size:28px 28px; mask-image:linear-gradient(to bottom,black,transparent); } .minecraft-intro > * { position:relative; } .minecraft-tag { display:inline-flex; align-items:center; gap:9px; padding:7px 11px; border:1px solid rgba(124,243,195,.38); border-radius:999px; color:var(--minecraft-soft); background:rgba(87,217,165,.1); font-size:12px; font-weight:850; letter-spacing:.11em; } .minecraft-tag span { width:8px; height:8px; border-radius:2px; background:var(--minecraft); box-shadow:0 0 14px var(--minecraft); } .minecraft-intro h2 { margin:16px 0 8px; color:#edfff7; font-size:clamp(32px,4vw,48px); line-height:1.05; letter-spacing:-.04em; } .minecraft-intro > p { max-width:790px; margin:0; color:#c8ded5; font-size:16px; } .minecraft-important { margin-top:20px; padding:14px 16px; border-left:3px solid var(--minecraft); border-radius:0 11px 11px 0; color:#d3f7e5; background:rgba(87,217,165,.085); font-size:14px; } .minecraft-rules { display:grid; gap:17px; margin-top:18px; } .minecraft-rules details { padding:0 19px 19px; border-color:rgba(87,217,165,.19); background:linear-gradient(135deg,rgba(22,57,61,.91),rgba(13,25,40,.98)); box-shadow:inset 0 1px 0 rgba(255,255,255,.04); } .minecraft-rules details[open] { border-color:rgba(87,217,165,.45); box-shadow:0 17px 46px rgba(0,0,0,.23), 0 0 0 1px rgba(87,217,165,.05), inset 0 1px 0 rgba(255,255,255,.05); } .minecraft-rules summary { padding:21px 34px 19px 0; color:#effff8; font-size:18px; font-weight:780; letter-spacing:-.012em; } .minecraft-rules summary::after { top:17px; color:var(--minecraft-soft); border-color:rgba(124,243,195,.31); background:rgba(87,217,165,.08); } .minecraft-rules p { margin:0 0 10px; padding:16px 18px; border:1px solid rgba(205,255,235,.09); border-radius:12px; background:rgba(6,18,31,.48); color:#c3d0d3; line-height:1.65; } .minecraft-rules p:last-child { margin-bottom:0; } .minecraft-rules p b { display:block; margin:0 0 7px; color:#f2fff8; font-size:15px; } .minecraft-rules p:hover { border-color:rgba(112,237,186,.24); background:rgba(10,33,43,.65); } .minecraft-rules .minecraft-note { display:block; margin-top:11px; padding:10px 13px; border:1px solid rgba(93,232,156,.22); border-left:3px solid #5ce89b; border-radius:0 9px 9px 0; color:#c9f6d9; background:rgba(63,208,123,.09); font-size:13px; } .minecraft-rules .minecraft-note::before { content:"✓  ВАЖНО"; display:block; margin-bottom:4px; color:#73efa8; font-size:10px; font-weight:850; letter-spacing:.11em; } .minecraft-examples { margin-top:12px; padding:13px 15px; border:1px solid rgba(112,237,186,.2); border-radius:10px; color:#ccece1; background:rgba(87,217,165,.065); font-size:13px; } .minecraft-examples strong { color:#bdf7dc; } .minecraft-examples ul { margin:7px 0 0; padding-left:19px; } .minecraft-examples li { margin:3px 0; }
+    #rules details em { display:inline-flex; align-items:flex-start; gap:7px; margin-top:11px; padding:7px 10px; border:1px solid rgba(255,116,134,.24); border-radius:8px; color:#ffacb7; background:rgba(255,78,103,.09); font-style:normal; font-size:13px; font-weight:650; line-height:1.45; } #rules details em::before { content:"âš "; color:#ff7587; line-height:1.45; }
+    #rules .rule-note { display:block; margin-top:12px; padding:11px 13px 11px 15px; border:1px solid rgba(93,232,156,.24); border-left:3px solid #5ce89b; border-radius:0 10px 10px 0; color:#c9f6d9; background:linear-gradient(90deg,rgba(63,208,123,.13),rgba(63,208,123,.035)); font-size:13px; font-weight:550; line-height:1.55; } #rules .rule-note::before { content:"âœ“  ÐŸÐ Ð˜ÐœÐ•Ð§ÐÐÐ˜Ð•"; display:block; margin-bottom:4px; color:#73efa8; font-size:10px; font-weight:850; letter-spacing:.11em; }
+    #rp { display:none; } #minecraft { padding-top:40px; } .minecraft-intro { position:relative; overflow:hidden; padding:44px; border:1px solid rgba(87,217,165,.3); border-radius:24px; background:linear-gradient(135deg,rgba(20,67,53,.64),rgba(14,29,42,.96) 60%,rgba(18,56,61,.7)); box-shadow:0 20px 52px rgba(0,0,0,.22),inset 0 1px 0 rgba(213,255,239,.08); } .minecraft-intro::before { content:""; position:absolute; inset:0; opacity:.34; background-image:linear-gradient(90deg,rgba(120,247,194,.09) 1px,transparent 1px),linear-gradient(rgba(120,247,194,.09) 1px,transparent 1px); background-size:28px 28px; mask-image:linear-gradient(to bottom,black,transparent); } .minecraft-intro > * { position:relative; } .minecraft-tag { display:inline-flex; align-items:center; gap:9px; padding:7px 11px; border:1px solid rgba(124,243,195,.38); border-radius:999px; color:var(--minecraft-soft); background:rgba(87,217,165,.1); font-size:12px; font-weight:850; letter-spacing:.11em; } .minecraft-tag span { width:8px; height:8px; border-radius:2px; background:var(--minecraft); box-shadow:0 0 14px var(--minecraft); } .minecraft-intro h2 { margin:16px 0 8px; color:#edfff7; font-size:clamp(32px,4vw,48px); line-height:1.05; letter-spacing:-.04em; } .minecraft-intro > p { max-width:790px; margin:0; color:#c8ded5; font-size:16px; } .minecraft-important { margin-top:20px; padding:14px 16px; border-left:3px solid var(--minecraft); border-radius:0 11px 11px 0; color:#d3f7e5; background:rgba(87,217,165,.085); font-size:14px; } .minecraft-rules { display:grid; gap:17px; margin-top:18px; } .minecraft-rules details { padding:0 19px 19px; border-color:rgba(87,217,165,.19); background:linear-gradient(135deg,rgba(22,57,61,.91),rgba(13,25,40,.98)); box-shadow:inset 0 1px 0 rgba(255,255,255,.04); } .minecraft-rules details[open] { border-color:rgba(87,217,165,.45); box-shadow:0 17px 46px rgba(0,0,0,.23), 0 0 0 1px rgba(87,217,165,.05), inset 0 1px 0 rgba(255,255,255,.05); } .minecraft-rules summary { padding:21px 34px 19px 0; color:#effff8; font-size:18px; font-weight:780; letter-spacing:-.012em; } .minecraft-rules summary::after { top:17px; color:var(--minecraft-soft); border-color:rgba(124,243,195,.31); background:rgba(87,217,165,.08); } .minecraft-rules p { margin:0 0 10px; padding:16px 18px; border:1px solid rgba(205,255,235,.09); border-radius:12px; background:rgba(6,18,31,.48); color:#c3d0d3; line-height:1.65; } .minecraft-rules p:last-child { margin-bottom:0; } .minecraft-rules p b { display:block; margin:0 0 7px; color:#f2fff8; font-size:15px; } .minecraft-rules p:hover { border-color:rgba(112,237,186,.24); background:rgba(10,33,43,.65); } .minecraft-rules .minecraft-note { display:block; margin-top:11px; padding:10px 13px; border:1px solid rgba(93,232,156,.22); border-left:3px solid #5ce89b; border-radius:0 9px 9px 0; color:#c9f6d9; background:rgba(63,208,123,.09); font-size:13px; } .minecraft-rules .minecraft-note::before { content:"âœ“  Ð’ÐÐ–ÐÐž"; display:block; margin-bottom:4px; color:#73efa8; font-size:10px; font-weight:850; letter-spacing:.11em; } .minecraft-examples { margin-top:12px; padding:13px 15px; border:1px solid rgba(112,237,186,.2); border-radius:10px; color:#ccece1; background:rgba(87,217,165,.065); font-size:13px; } .minecraft-examples strong { color:#bdf7dc; } .minecraft-examples ul { margin:7px 0 0; padding-left:19px; } .minecraft-examples li { margin:3px 0; }
     .ip-row { display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin-top:6px; } .ip-value { color:#e9f7ff; font:600 14px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; } .copy-ip { appearance:none; border:1px solid rgba(96,230,255,.34); border-radius:8px; padding:7px 10px; color:#d9fbff; background:rgba(96,230,255,.1); font:700 12px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .16s ease,background .16s ease,border-color .16s ease; } .copy-ip:hover { transform:translateY(-1px); border-color:rgba(96,230,255,.72); background:rgba(96,230,255,.17); } .copy-ip.copied { border-color:rgba(93,232,156,.6); color:#c9f6d9; background:rgba(63,208,123,.14); } .server-state.status-maintenance { color:#ffc1ca!important; } .server-state.status-maintenance .dot { background:#ff7e91; box-shadow:0 0 12px #ff7e91; } .server-state.status-soon { color:#c6efff!important; } .server-state.status-soon .dot { background:#77cfff; box-shadow:0 0 12px #77cfff; }
     #updates { padding-top:28px; } .updates-top, .history-top { display:flex; align-items:end; justify-content:space-between; gap:22px; margin-bottom:28px; } .updates-top .section-copy, .history-top .section-copy { margin-bottom:0; } .last-update { flex:0 0 auto; padding:9px 12px; border:1px solid rgba(122,231,255,.26); border-radius:10px; color:#c6efff; background:rgba(91,185,255,.08); font-size:12px; font-weight:700; } .last-update b { color:#7ae7ff; }
     .news-grid { display:grid; grid-template-columns:1.35fr 1fr; gap:16px; } .news-card { position:relative; overflow:hidden; min-height:190px; padding:26px; border:1px solid rgba(122,231,255,.18); border-radius:19px; background:linear-gradient(135deg,rgba(29,55,90,.78),rgba(18,24,48,.94)); box-shadow:inset 0 1px 0 rgba(255,255,255,.045); } .news-card::after { content:""; position:absolute; width:190px; height:190px; right:-70px; top:-92px; border-radius:50%; background:rgba(122,231,255,.11); filter:blur(12px); pointer-events:none; } .news-card > * { position:relative; } .news-label { display:inline-flex; padding:5px 8px; border-radius:6px; color:#7ae7ff; background:rgba(122,231,255,.1); font-size:10px; font-weight:850; letter-spacing:.11em; } .news-card h3 { margin:12px 0 7px; font-size:22px; line-height:1.16; letter-spacing:-.025em; } .news-card p { max-width:590px; margin:0; color:#b9c8de; font-size:14px; } .news-card.secondary { border-color:rgba(153,118,255,.2); background:linear-gradient(135deg,rgba(54,43,94,.7),rgba(17,24,47,.96)); } .news-card.secondary .news-label { color:#d4c9ff; background:rgba(153,118,255,.12); }
     #history { padding-top:28px; } .history-card { padding:0; overflow:hidden; border:1px solid rgba(132,147,255,.23); border-radius:18px; background:linear-gradient(135deg,rgba(34,42,75,.78),rgba(14,20,41,.97)); } .history-entry { display:grid; grid-template-columns:156px 1fr; gap:22px; padding:22px 24px; } .history-entry + .history-entry { border-top:1px solid rgba(255,255,255,.08); } .history-date { color:#b8c2ff; font-size:13px; font-weight:820; letter-spacing:.04em; } .history-entry h3 { margin:0 0 5px; font-size:17px; } .history-entry p { margin:0; color:#b9c4da; font-size:14px; } .history-new { display:inline-flex; align-items:center; margin-left:8px; padding:3px 6px; border-radius:5px; color:#bfefff; background:rgba(122,231,255,.12); font-size:9px; font-weight:900; letter-spacing:.1em; vertical-align:2px; }
     .rule-new { display:inline-flex; align-items:center; margin-left:8px; padding:4px 7px; border:1px solid rgba(122,231,255,.3); border-radius:6px; color:#bfefff; background:rgba(122,231,255,.1); font-size:9px; font-weight:900; letter-spacing:.1em; vertical-align:2px; } .minecraft-update-note { margin-top:15px; color:#bceeff; font-size:12px; font-weight:650; } .minecraft-update-note span { color:#7ae7ff; }
-    #search { padding:38px 0 24px; } .search-card { position:relative; overflow:hidden; padding:29px; border:1px solid rgba(122,231,255,.24); border-radius:22px; background:linear-gradient(125deg,rgba(21,54,80,.76),rgba(18,24,49,.97) 66%,rgba(44,35,81,.68)); box-shadow:0 19px 48px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06); } .search-card::before { content:"⌕"; position:absolute; right:25px; top:-40px; color:rgba(122,231,255,.12); font-size:178px; font-family:ui-serif,Georgia,serif; line-height:1; pointer-events:none; } .search-card > * { position:relative; } .search-kicker { color:#9de9ff; font-size:10px; font-weight:900; letter-spacing:.14em; } .search-card h2 { margin:6px 0; font-size:29px; letter-spacing:-.035em; } .search-card p { max-width:670px; margin:0 0 18px; color:#b7c9dc; font-size:14px; } .search-box { display:flex; align-items:center; gap:10px; max-width:720px; padding:7px 8px 7px 15px; border:1px solid rgba(154,233,255,.28); border-radius:13px; background:rgba(5,12,29,.59); } .search-box span { color:#7ae7ff; font-size:20px; } .search-box input { width:100%; min-width:0; border:0; outline:0; color:#f3fbff; background:transparent; font:15px/1.4 Inter,ui-sans-serif,system-ui,sans-serif; } .search-box input::placeholder { color:#71849f; } .search-result { min-height:20px; margin-top:12px!important; margin-bottom:0!important; color:#c7effa!important; font-size:12px!important; }
+    #search { padding:38px 0 24px; } .search-card { position:relative; overflow:hidden; padding:29px; border:1px solid rgba(122,231,255,.24); border-radius:22px; background:linear-gradient(125deg,rgba(21,54,80,.76),rgba(18,24,49,.97) 66%,rgba(44,35,81,.68)); box-shadow:0 19px 48px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06); } .search-card::before { content:"âŒ•"; position:absolute; right:25px; top:-40px; color:rgba(122,231,255,.12); font-size:178px; font-family:ui-serif,Georgia,serif; line-height:1; pointer-events:none; } .search-card > * { position:relative; } .search-kicker { color:#9de9ff; font-size:10px; font-weight:900; letter-spacing:.14em; } .search-card h2 { margin:6px 0; font-size:29px; letter-spacing:-.035em; } .search-card p { max-width:670px; margin:0 0 18px; color:#b7c9dc; font-size:14px; } .search-box { display:flex; align-items:center; gap:10px; max-width:720px; padding:7px 8px 7px 15px; border:1px solid rgba(154,233,255,.28); border-radius:13px; background:rgba(5,12,29,.59); } .search-box span { color:#7ae7ff; font-size:20px; } .search-box input { width:100%; min-width:0; border:0; outline:0; color:#f3fbff; background:transparent; font:15px/1.4 Inter,ui-sans-serif,system-ui,sans-serif; } .search-box input::placeholder { color:#71849f; } .search-result { min-height:20px; margin-top:12px!important; margin-bottom:0!important; color:#c7effa!important; font-size:12px!important; }
     #applications { padding-top:42px; } .application-shell { overflow:hidden; border:1px solid rgba(153,118,255,.28); border-radius:24px; background:linear-gradient(135deg,rgba(49,38,91,.82),rgba(16,24,46,.98) 55%,rgba(17,65,65,.72)); box-shadow:0 22px 56px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.06); } .application-top { padding:34px 34px 25px; border-bottom:1px solid rgba(255,255,255,.08); } .application-label { color:#d6ccff; font-size:10px; font-weight:900; letter-spacing:.14em; } .application-top h2 { margin:7px 0; font-size:33px; letter-spacing:-.04em; } .application-top p { max-width:750px; margin:0; color:#c4c8dc; } .apply-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:22px 34px; background:rgba(7,12,31,.28); } .apply-step { display:flex; align-items:flex-start; gap:11px; color:#c4cade; font-size:13px; } .apply-step b { display:grid; flex:0 0 25px; width:25px; height:25px; place-items:center; border:1px solid rgba(153,118,255,.42); border-radius:50%; color:#d8ceff; background:rgba(153,118,255,.12); font-size:11px; } .application-form { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:30px 34px 34px; } .application-form label { display:grid; gap:7px; color:#d6daeb; font-size:12px; font-weight:720; } .application-form label.full { grid-column:1 / -1; } .application-form input, .application-form select, .application-form textarea { width:100%; border:1px solid rgba(201,207,255,.17); border-radius:10px; outline:0; padding:12px 13px; color:#f5f5ff; background:rgba(6,11,28,.54); font:14px/1.45 Inter,ui-sans-serif,system-ui,sans-serif; } .application-form textarea { min-height:104px; resize:vertical; } .application-form input:focus, .application-form select:focus, .application-form textarea:focus { border-color:rgba(132,147,255,.65); box-shadow:0 0 0 3px rgba(132,147,255,.11); } .application-form select option { color:#17203a; } .application-actions { grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:11px; margin-top:3px; } .application-submit, .discord-apply { display:inline-flex; align-items:center; justify-content:center; min-height:43px; padding:11px 15px; border-radius:10px; font:780 13px/1 Inter,ui-sans-serif,system-ui,sans-serif; text-decoration:none; cursor:pointer; } .application-submit { border:0; color:#090d23; background:#b9abff; box-shadow:0 10px 24px rgba(153,118,255,.2); } .discord-apply { border:1px solid rgba(96,230,255,.34); color:#caf7ff; background:rgba(96,230,255,.08); } .application-status { flex:1 1 250px; margin:0; color:#b7c5db; font-size:12px; } .application-status.success { color:#baf1d1; } .application-status.error { color:#ffc0ca; } .application-help { grid-column:1 / -1; margin:2px 0 0; color:#a9b6cf; font-size:12px; } .application-help b { color:#e6e8ff; }
     #rules { padding-top:40px; } .discord-intro { position:relative; overflow:hidden; padding:44px; border:1px solid rgba(132,147,255,.3); border-radius:24px; background:linear-gradient(135deg,rgba(43,51,108,.68),rgba(14,29,42,.96) 60%,rgba(43,37,82,.72)); box-shadow:0 20px 52px rgba(0,0,0,.22),inset 0 1px 0 rgba(221,224,255,.08); } .discord-intro::before { content:""; position:absolute; inset:0; opacity:.34; background-image:linear-gradient(90deg,rgba(178,187,255,.09) 1px,transparent 1px),linear-gradient(rgba(178,187,255,.09) 1px,transparent 1px); background-size:28px 28px; mask-image:linear-gradient(to bottom,black,transparent); } .discord-intro > * { position:relative; } .discord-tag { display:inline-flex; align-items:center; gap:9px; padding:7px 11px; border:1px solid rgba(180,189,255,.38); border-radius:999px; color:var(--discord-soft); background:rgba(132,147,255,.1); font-size:12px; font-weight:850; letter-spacing:.11em; } .discord-tag span { width:8px; height:8px; border-radius:2px; background:var(--discord); box-shadow:0 0 14px var(--discord); } .discord-intro h2 { margin:16px 0 8px; color:#f1f2ff; font-size:clamp(32px,4vw,48px); line-height:1.05; letter-spacing:-.04em; } .discord-intro > p { max-width:790px; margin:0; color:#c9cfe8; font-size:16px; } .discord-important { margin-top:20px; padding:14px 16px; border-left:3px solid var(--discord); border-radius:0 11px 11px 0; color:#d9dcff; background:rgba(132,147,255,.085); font-size:14px; } .discord-update-note { margin-top:15px; color:#c9d3ff; font-size:12px; font-weight:650; } .discord-update-note span { color:#aeb9ff; } .discord-rules { display:grid; gap:17px; margin-top:18px; } #rules .discord-rules details { padding:0 19px 19px; border-color:rgba(132,147,255,.19); background:linear-gradient(135deg,rgba(38,47,93,.91),rgba(13,25,40,.98)); box-shadow:inset 0 1px 0 rgba(255,255,255,.04); } #rules .discord-rules details[open] { border-color:rgba(132,147,255,.47); box-shadow:0 17px 46px rgba(0,0,0,.23),0 0 0 1px rgba(132,147,255,.05),inset 0 1px 0 rgba(255,255,255,.05); } #rules .discord-rules summary { padding:21px 34px 19px 0; color:#f1f2ff; font-size:18px; font-weight:780; letter-spacing:-.012em; } #rules .discord-rules summary::after { top:17px; color:var(--discord-soft); border-color:rgba(180,189,255,.31); background:rgba(132,147,255,.08); } #rules .discord-rules p { margin:0; padding:16px 18px; border:1px solid rgba(216,220,255,.09); border-radius:12px; background:rgba(6,18,31,.48); color:#c7cbe1; line-height:1.65; } #rules .discord-rules p:hover { border-color:rgba(157,169,255,.24); background:rgba(20,29,58,.65); } #rules .discord-rules em { display:flex; width:fit-content; max-width:100%; margin-top:12px; } 
     .back-to-top { position:fixed; z-index:4; right:22px; bottom:22px; display:grid; width:46px; height:46px; place-items:center; border:1px solid rgba(122,231,255,.38); border-radius:14px; color:#d8f9ff; background:rgba(14,24,50,.88); box-shadow:0 12px 30px rgba(0,0,0,.28); backdrop-filter:blur(14px); cursor:pointer; opacity:0; pointer-events:none; transform:translateY(12px); transition:opacity .18s ease,transform .18s ease,background .18s ease; font-size:22px; } .back-to-top:hover { background:rgba(33,68,96,.95); } .back-to-top.is-visible { opacity:1; pointer-events:auto; transform:translateY(0); }
-    /* Финальное визуальное оформление и лёгкая анимация интерфейса */
+    /* Ð¤Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð²Ð¸Ð·ÑƒÐ°Ð»ÑŒÐ½Ð¾Ðµ Ð¾Ñ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ðµ Ð¸ Ð»Ñ‘Ð³ÐºÐ°Ñ Ð°Ð½Ð¸Ð¼Ð°Ñ†Ð¸Ñ Ð¸Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹ÑÐ° */
     body { background:radial-gradient(circle at 14% 8%,rgba(59,125,181,.13),transparent 29%),radial-gradient(circle at 87% 38%,rgba(110,78,200,.12),transparent 30%),var(--bg); } header { border-bottom-color:rgba(169,205,255,.12); box-shadow:0 9px 34px rgba(3,7,21,.15); } header::after { content:""; position:absolute; right:0; bottom:-1px; left:0; height:1px; background:linear-gradient(90deg,transparent,rgba(96,230,255,.55),rgba(153,118,255,.48),transparent); opacity:.72; } .brand { transition:transform .2s ease; } .brand:hover { transform:translateY(-1px); } .brand-logo { animation:logo-float 5s ease-in-out infinite; } .links a { position:relative; padding:7px 1px; transition:color .18s ease; } .links a::after { content:""; position:absolute; right:0; bottom:2px; left:0; height:1px; background:linear-gradient(90deg,var(--cyan),var(--violet)); transform:scaleX(0); transform-origin:right; transition:transform .2s ease; } .links a:hover::after { transform:scaleX(1); transform-origin:left; }
     .hero { position:relative; isolation:isolate; } .hero::before { content:""; position:absolute; z-index:-1; width:360px; height:360px; right:22%; top:72px; border-radius:50%; background:radial-gradient(circle,rgba(96,230,255,.13),transparent 68%); filter:blur(8px); animation:hero-breathe 7s ease-in-out infinite; pointer-events:none; } .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid rgba(96,230,255,.2); border-radius:999px; background:rgba(96,230,255,.055); } .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--cyan); box-shadow:0 0 12px var(--cyan); } h1 { text-shadow:0 10px 34px rgba(0,0,0,.22); } .button { transition:transform .18s ease,box-shadow .18s ease,filter .18s ease; } .button:hover { transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 14px 36px rgba(96,230,255,.28); } .status { position:relative; overflow:hidden; transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease; } .status::before { content:""; position:absolute; width:170px; height:170px; top:-95px; right:-58px; border-radius:50%; background:rgba(96,230,255,.18); filter:blur(18px); } .status > * { position:relative; } .status:hover { transform:translateY(-4px); border-color:rgba(126,215,255,.35); box-shadow:0 19px 40px rgba(0,0,0,.23); }
-    section { position:relative; } .section-title { display:flex; align-items:center; gap:12px; } .section-title::after { content:""; display:block; width:42px; height:1px; background:linear-gradient(90deg,var(--cyan),transparent); } .card { position:relative; overflow:hidden; transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; } .card::after { content:""; position:absolute; width:110px; height:110px; right:-54px; bottom:-61px; border-radius:50%; background:rgba(96,230,255,.09); filter:blur(11px); transition:transform .35s ease; } .card > * { position:relative; } .card:hover { transform:translateY(-5px); border-color:rgba(147,205,255,.3); box-shadow:0 18px 38px rgba(0,0,0,.21); } .card:hover::after { transform:scale(1.45); } .notice { box-shadow:inset 0 1px 0 rgba(255,255,255,.04); }
+    section { position:relative; } .section-title { display:flex; align-items:center; gap:12px; } .section-title::after { content:""; display:block; width:42px; height:1px; background:linear-gradient(90deg,var(--cyan),transparent); } .card { position:relative; overflow:hidden; transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; } .card::after { content:""; position:absolute; width:110px; height:110px; right:-54px; bottom:-61px; border-radius:50%; background:rgba(96,230,255,.09); filter:blur(11px); transition:transform .35s ease; } .card > * { position:relative; } .team-card > .team-cloud { position:absolute; } .card:hover { transform:translateY(-5px); border-color:rgba(147,205,255,.3); box-shadow:0 18px 38px rgba(0,0,0,.21); } .card:hover::after { transform:scale(1.45); } .notice { box-shadow:inset 0 1px 0 rgba(255,255,255,.04); }
     .news-card, .search-card, .application-shell, .history-card, .minecraft-intro, .contact { transition:transform .26s ease,border-color .26s ease,box-shadow .26s ease; } .news-card:hover, .search-card:hover, .application-shell:hover, .history-card:hover, .minecraft-intro:hover, .contact:hover { transform:translateY(-3px); box-shadow:0 22px 52px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.07); } .search-box { transition:border-color .2s ease,box-shadow .2s ease,background .2s ease; } .search-box:focus-within { border-color:rgba(122,231,255,.7); box-shadow:0 0 0 4px rgba(96,230,255,.09); background:rgba(5,14,34,.77); } .application-submit, .discord-apply { transition:transform .18s ease,filter .18s ease,box-shadow .18s ease; } .application-submit:hover, .discord-apply:hover { transform:translateY(-2px); filter:brightness(1.08); }
     #rules details, .minecraft-rules details { position:relative; overflow:hidden; } #rules details::before, .minecraft-rules details::before { content:""; position:absolute; top:15px; bottom:15px; left:0; width:2px; border-radius:0 4px 4px 0; opacity:.5; transition:opacity .2s ease,top .2s ease,bottom .2s ease; } #rules details::before { background:linear-gradient(var(--discord),transparent); } .minecraft-rules details::before { background:linear-gradient(var(--minecraft),transparent); } #rules details:hover::before, .minecraft-rules details:hover::before, #rules details[open]::before, .minecraft-rules details[open]::before { top:0; bottom:0; opacity:1; } #rules details p, .minecraft-rules p { transition:border-color .2s ease,background .2s ease; }
-    .background-mark { animation:background-drift 16s ease-in-out infinite; } .glow.one { animation:glow-drift-one 13s ease-in-out infinite; } .glow.two { animation:glow-drift-two 15s ease-in-out infinite; } .reveal { opacity:0; transform:translateY(22px) scale(.987); transition:opacity .58s cubic-bezier(.2,.65,.3,1),transform .58s cubic-bezier(.2,.65,.3,1); transition-delay:var(--reveal-delay,0ms); } .reveal.is-revealed { opacity:1; transform:translateY(0) scale(1); }
-    @keyframes logo-float { 0%,100% { transform:translateY(0) rotate(-1deg); } 50% { transform:translateY(-3px) rotate(1deg); } } @keyframes hero-breathe { 0%,100% { transform:scale(.94); opacity:.66; } 50% { transform:scale(1.12); opacity:1; } } @keyframes background-drift { 0%,100% { transform:translate(-50%,-50%) rotate(-8deg) scale(1); } 50% { transform:translate(-48%,-53%) rotate(-5deg) scale(1.025); } } @keyframes glow-drift-one { 0%,100% { transform:translate(0,0); } 50% { transform:translate(42px,28px); } } @keyframes glow-drift-two { 0%,100% { transform:translate(0,0); } 50% { transform:translate(-36px,-34px); } }
+    .glow.one { animation:glow-drift-one 13s ease-in-out infinite; } .glow.two { animation:glow-drift-two 15s ease-in-out infinite; } .reveal { opacity:0; transform:translateY(22px) scale(.987); transition:opacity .58s cubic-bezier(.2,.65,.3,1),transform .58s cubic-bezier(.2,.65,.3,1); transition-delay:var(--reveal-delay,0ms); } .reveal.is-revealed { opacity:1; transform:translateY(0) scale(1); } #rules details[open] > p, .minecraft-rules details[open] > p { animation:rule-tab-open .34s cubic-bezier(.2,.72,.28,1) both; } #rules details[open] summary::after, .minecraft-rules details[open] summary::after { animation:tab-icon-pop .28s cubic-bezier(.2,.85,.22,1); }
+    @keyframes logo-float { 0%,100% { transform:translateY(0) rotate(-1deg); } 50% { transform:translateY(-3px) rotate(1deg); } } @keyframes hero-breathe { 0%,100% { transform:scale(.94); opacity:.66; } 50% { transform:scale(1.12); opacity:1; } } @keyframes seven-levitate { 0%,100% { transform:translateY(0) rotate(-2deg); } 50% { transform:translateY(-7px) rotate(2deg); } } @keyframes cloud-bob { 0%,100% { translate:0 0; } 50% { translate:0 -6px; } } @keyframes cloud-spark { 0%,100% { transform:translateY(0) scale(1); opacity:.74; } 50% { transform:translateY(-4px) scale(1.13); opacity:1; } } @keyframes rule-tab-open { from { opacity:0; transform:translateY(-8px) scale(.985); } to { opacity:1; transform:translateY(0) scale(1); } } @keyframes tab-icon-pop { 0% { transform:scale(.72) rotate(-20deg); } 100% { transform:scale(1) rotate(0); } } @keyframes glow-drift-one { 0%,100% { transform:translate(0,0); } 50% { transform:translate(42px,28px); } } @keyframes glow-drift-two { 0%,100% { transform:translate(0,0); } 50% { transform:translate(-36px,-34px); } }
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } .reveal { opacity:1; transform:none; } }
     .contact { text-align:center; border:1px solid var(--line); background:linear-gradient(125deg,rgba(96,230,255,.10),rgba(153,118,255,.11)); padding:58px 24px; border-radius:24px; } .contact h2 { margin:0 0 8px; font-size:34px; } .contact p { color:var(--muted); margin:0 0 23px; }
     footer { padding:25px 0 35px; color:#7783a2; font-size:13px; text-align:center; }
@@ -70,234 +69,236 @@
 <div class="glow two">
 </div>
 <div id="cursor-sevens" class="cursor-sevens" aria-hidden="true"></div>
-<div class="background-mark" aria-hidden="true">67</div>
   <header>
 <nav class="wrap nav">
 <a class="brand" href="#top">
-<img class="brand-logo" src="assets/podval-earth-cube-logo.png" alt="Логотип Подвала Пригожина">ПОДВАЛ<b>.</b>
+<img class="brand-logo" src="assets/podval-earth-cube-logo.png" alt="Ð›Ð¾Ð³Ð¾Ñ‚Ð¸Ð¿ ÐŸÐ¾Ð´Ð²Ð°Ð»Ð° ÐŸÑ€Ð¸Ð³Ð¾Ð¶Ð¸Ð½Ð°">ÐŸÐžÐ”Ð’ÐÐ›<b>.</b>
 </a>
 <div class="links">
-<a href="#about">Важно</a>
-<a href="#updates">Новости</a>
+<a href="#about">Ð’Ð°Ð¶Ð½Ð¾</a>
+<a href="#updates">ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸</a>
 <a href="#rules">Discord</a>
 <a href="#minecraft">Minecraft</a>
-<a href="#help">Ссылки</a>
+<a href="#help">Ð¡ÑÑ‹Ð»ÐºÐ¸</a>
 </div>
 </nav>
 </header>
   <main id="top" class="wrap">
     <section class="hero">
       <div>
-<div class="eyebrow">Официальные правила сервера</div>
-<h1>Подвал <span>Пригожина.</span>
+<div class="eyebrow">ÐžÑ„Ð¸Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð° ÑÐµÑ€Ð²ÐµÑ€Ð°</div>
+<h1>ÐŸÐ¾Ð´Ð²Ð°Ð» <span>ÐŸÑ€Ð¸Ð³Ð¾Ð¶Ð¸Ð½Ð°.</span>
 </h1>
-<p class="lead">Правила Discord и Minecraft-сервера, чтобы всем было комфортно общаться, играть и развивать свои страны.</p>
-<a class="button" href="#rules">Правила Discord <span>↓</span>
+<p class="lead">ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Discord Ð¸ Minecraft-ÑÐµÑ€Ð²ÐµÑ€Ð°, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð²ÑÐµÐ¼ Ð±Ñ‹Ð»Ð¾ ÐºÐ¾Ð¼Ñ„Ð¾Ñ€Ñ‚Ð½Ð¾ Ð¾Ð±Ñ‰Ð°Ñ‚ÑŒÑÑ, Ð¸Ð³Ñ€Ð°Ñ‚ÑŒ Ð¸ Ñ€Ð°Ð·Ð²Ð¸Ð²Ð°Ñ‚ÑŒ ÑÐ²Ð¾Ð¸ ÑÑ‚Ñ€Ð°Ð½Ñ‹.</p>
+<a class="button" href="#rules">ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Discord <span>â†“</span>
 </a>
 </div>
       <aside class="status">
-<p>Статус Minecraft-сервера</p>
-<strong>ПОДВАЛ ПРИГОЖИНА</strong>
-<!-- Статус меняется одним словом: active, maintenance или soon -->
+<p>Ð¡Ñ‚Ð°Ñ‚ÑƒÑ Minecraft-ÑÐµÑ€Ð²ÐµÑ€Ð°</p>
+<strong>ÐŸÐžÐ”Ð’ÐÐ› ÐŸÐ Ð˜Ð“ÐžÐ–Ð˜ÐÐ</strong>
+<!-- Ð¡Ñ‚Ð°Ñ‚ÑƒÑ Ð¼ÐµÐ½ÑÐµÑ‚ÑÑ Ð¾Ð´Ð½Ð¸Ð¼ ÑÐ»Ð¾Ð²Ð¾Ð¼: active, maintenance Ð¸Ð»Ð¸ soon -->
 <p class="online server-state" data-server-status="active">
 <span class="dot">
-</span> <span class="server-status-label">Сервер активен</span></p>
+</span> <span class="server-status-label">Ð¡ÐµÑ€Ð²ÐµÑ€ Ð°ÐºÑ‚Ð¸Ð²ÐµÐ½</span></p>
 <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
 <p>
-<b>Версия:</b> 1.20.1 Minecraft<br>
-<span class="ip-row"><b>IP:</b> <code class="ip-value">jordan0pidor.b2t.world</code> <button class="copy-ip" type="button" data-copy-text="jordan0pidor.b2t.world">Скопировать IP</button></span></p>
+<b>Ð’ÐµÑ€ÑÐ¸Ñ:</b> 1.20.1 Minecraft<br>
+<span class="ip-row"><b>IP:</b> <code class="ip-value">jordan0pidor.b2t.world</code> <button class="copy-ip" type="button" data-copy-text="jordan0pidor.b2t.world">Ð¡ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ IP</button></span></p>
 </aside>
     </section>
     <section id="about">
-<h2 class="section-title">Важно знать</h2>
-<p class="section-copy">Правила помогают сделать сервер безопасным и приятным для всех.</p>
-<div class="notice">Правила действуют для всех участников без исключений. Незнание правил не освобождает от ответственности.</div>
+<h2 class="section-title">Ð’Ð°Ð¶Ð½Ð¾ Ð·Ð½Ð°Ñ‚ÑŒ</h2>
+<p class="section-copy">ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Ð¿Ð¾Ð¼Ð¾Ð³Ð°ÑŽÑ‚ ÑÐ´ÐµÐ»Ð°Ñ‚ÑŒ ÑÐµÑ€Ð²ÐµÑ€ Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ñ‹Ð¼ Ð¸ Ð¿Ñ€Ð¸ÑÑ‚Ð½Ñ‹Ð¼ Ð´Ð»Ñ Ð²ÑÐµÑ….</p>
+<div class="notice">ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Ð´ÐµÐ¹ÑÑ‚Ð²ÑƒÑŽÑ‚ Ð´Ð»Ñ Ð²ÑÐµÑ… ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸ÐºÐ¾Ð² Ð±ÐµÐ· Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹. ÐÐµÐ·Ð½Ð°Ð½Ð¸Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð» Ð½Ðµ Ð¾ÑÐ²Ð¾Ð±Ð¾Ð¶Ð´Ð°ÐµÑ‚ Ð¾Ñ‚ Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸.</div>
 <div class="grid">
 <article class="card">
-<div class="number">01 / УВАЖЕНИЕ</div>
-<h3>Берегите атмосферу</h3>
-<p>Не оскорбляйте, не провоцируйте и не преследуйте других участников.</p>
+<div class="number">01 / Ð£Ð’ÐÐ–Ð•ÐÐ˜Ð•</div>
+<h3>Ð‘ÐµÑ€ÐµÐ³Ð¸Ñ‚Ðµ Ð°Ñ‚Ð¼Ð¾ÑÑ„ÐµÑ€Ñƒ</h3>
+<p>ÐÐµ Ð¾ÑÐºÐ¾Ñ€Ð±Ð»ÑÐ¹Ñ‚Ðµ, Ð½Ðµ Ð¿Ñ€Ð¾Ð²Ð¾Ñ†Ð¸Ñ€ÑƒÐ¹Ñ‚Ðµ Ð¸ Ð½Ðµ Ð¿Ñ€ÐµÑÐ»ÐµÐ´ÑƒÐ¹Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¸Ñ… ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸ÐºÐ¾Ð².</p>
 </article>
 <article class="card">
-<div class="number">02 / БЕЗОПАСНОСТЬ</div>
-<h3>Личные данные — личные</h3>
-<p>Не распространяйте информацию о других людях без их согласия.</p>
+<div class="number">02 / Ð‘Ð•Ð—ÐžÐŸÐÐ¡ÐÐžÐ¡Ð¢Ð¬</div>
+<h3>Ð›Ð¸Ñ‡Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ â€” Ð»Ð¸Ñ‡Ð½Ñ‹Ðµ</h3>
+<p>ÐÐµ Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÐ¹Ñ‚Ðµ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð»ÑŽÐ´ÑÑ… Ð±ÐµÐ· Ð¸Ñ… ÑÐ¾Ð³Ð»Ð°ÑÐ¸Ñ.</p>
 </article>
 <article class="card">
-<div class="number">03 / ПОРЯДОК</div>
-<h3>Слушайте команду</h3>
-<p>Не мешайте работе проекта и соблюдайте тематичность каналов.</p>
+<div class="number">03 / ÐŸÐžÐ Ð¯Ð”ÐžÐš</div>
+<h3>Ð¡Ð»ÑƒÑˆÐ°Ð¹Ñ‚Ðµ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ</h3>
+<p>ÐÐµ Ð¼ÐµÑˆÐ°Ð¹Ñ‚Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ðµ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð° Ð¸ ÑÐ¾Ð±Ð»ÑŽÐ´Ð°Ð¹Ñ‚Ðµ Ñ‚ÐµÐ¼Ð°Ñ‚Ð¸Ñ‡Ð½Ð¾ÑÑ‚ÑŒ ÐºÐ°Ð½Ð°Ð»Ð¾Ð².</p>
 </article>
 </div>
 </section>
     <section id="updates">
 <div class="updates-top">
 <div>
-<h2 class="section-title">Новости проекта</h2>
-<p class="section-copy">Короткие объявления об обновлениях, событиях и важных изменениях.</p>
+<h2 class="section-title">ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°</h2>
+<p class="section-copy">ÐšÐ¾Ñ€Ð¾Ñ‚ÐºÐ¸Ðµ Ð¾Ð±ÑŠÑÐ²Ð»ÐµÐ½Ð¸Ñ Ð¾Ð± Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸ÑÑ…, ÑÐ¾Ð±Ñ‹Ñ‚Ð¸ÑÑ… Ð¸ Ð²Ð°Ð¶Ð½Ñ‹Ñ… Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸ÑÑ….</p>
 </div>
-<div class="last-update"><b>Правила обновлены:</b> 04.08.2026</div>
+<div class="last-update"><b>ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ñ‹:</b> 04.08.2026</div>
 </div>
 <div class="news-grid">
 <article class="news-card">
-<div class="news-label">ОБНОВЛЕНИЕ · 04.08.2026</div>
-<h3>Опубликованы правила Minecraft</h3>
-<p>Полный свод правил Minecraft RP теперь доступен на сайте. Новые и изменённые разделы выделены голубой меткой «НОВОЕ».</p>
+<div class="news-label">ÐžÐ‘ÐÐžÐ’Ð›Ð•ÐÐ˜Ð• Â· 04.08.2026</div>
+<h3>ÐžÐ¿ÑƒÐ±Ð»Ð¸ÐºÐ¾Ð²Ð°Ð½Ñ‹ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð° Minecraft</h3>
+<p>ÐŸÐ¾Ð»Ð½Ñ‹Ð¹ ÑÐ²Ð¾Ð´ Ð¿Ñ€Ð°Ð²Ð¸Ð» Minecraft RP Ñ‚ÐµÐ¿ÐµÑ€ÑŒ Ð´Ð¾ÑÑ‚ÑƒÐ¿ÐµÐ½ Ð½Ð° ÑÐ°Ð¹Ñ‚Ðµ. ÐÐ¾Ð²Ñ‹Ðµ Ð¸ Ð¸Ð·Ð¼ÐµÐ½Ñ‘Ð½Ð½Ñ‹Ðµ Ñ€Ð°Ð·Ð´ÐµÐ»Ñ‹ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ñ‹ Ð³Ð¾Ð»ÑƒÐ±Ð¾Ð¹ Ð¼ÐµÑ‚ÐºÐ¾Ð¹ Â«ÐÐžÐ’ÐžÐ•Â».</p>
 </article>
 <article class="news-card secondary">
-<div class="news-label">СЕРВЕР АКТИВЕН</div>
-<h3>Версия 1.20.1</h3>
-<p>Подключайтесь к серверу по IP из верхнего блока. Кнопка рядом с адресом копирует его одним нажатием.</p>
+<div class="news-label">Ð¡Ð•Ð Ð’Ð•Ð  ÐÐšÐ¢Ð˜Ð’Ð•Ð</div>
+<h3>Ð’ÐµÑ€ÑÐ¸Ñ 1.20.1</h3>
+<p>ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡Ð°Ð¹Ñ‚ÐµÑÑŒ Ðº ÑÐµÑ€Ð²ÐµÑ€Ñƒ Ð¿Ð¾ IP Ð¸Ð· Ð²ÐµÑ€Ñ…Ð½ÐµÐ³Ð¾ Ð±Ð»Ð¾ÐºÐ°. ÐšÐ½Ð¾Ð¿ÐºÐ° Ñ€ÑÐ´Ð¾Ð¼ Ñ Ð°Ð´Ñ€ÐµÑÐ¾Ð¼ ÐºÐ¾Ð¿Ð¸Ñ€ÑƒÐµÑ‚ ÐµÐ³Ð¾ Ð¾Ð´Ð½Ð¸Ð¼ Ð½Ð°Ð¶Ð°Ñ‚Ð¸ÐµÐ¼.</p>
 </article>
 </div>
 </section>
     <section id="team">
-<h2 class="section-title">Руководство проекта</h2>
-<p class="section-copy">Команда, которая отвечает за развитие и порядок на сервере.</p>
+<div class="team-section-head"><h2 class="section-title">Ð ÑƒÐºÐ¾Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°</h2><span class="team-badge">ÐšÐžÐœÐÐÐ”Ð</span></div>
+<p class="section-copy">ÐšÐ¾Ð¼Ð°Ð½Ð´Ð°, ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ Ð¾Ñ‚Ð²ÐµÑ‡Ð°ÐµÑ‚ Ð·Ð° Ñ€Ð°Ð·Ð²Ð¸Ñ‚Ð¸Ðµ Ð¸ Ð¿Ð¾Ñ€ÑÐ´Ð¾Ðº Ð½Ð° ÑÐµÑ€Ð²ÐµÑ€Ðµ.</p>
 <div class="grid">
-<article class="card chief-card">
+<article class="card team-card jordan-card">
 <div class="number">CHIEF</div>
-<h3>iordans <span class="chief-jordan">(Jordan)<span class="chief-crown" aria-hidden="true">♛</span></span>
+<h3>iordans <span class="chief-jordan">(Jordan)<span class="chief-crown" aria-hidden="true">â™›</span></span>
 </h3>
-<p>Главное руководство проекта.</p>
+<p>Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ñ€ÑƒÐºÐ¾Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°.</p>
+<div class="team-cloud jordan-cloud" aria-hidden="true"><span>ðŸ‡«ðŸ‡·</span><span>67</span><span>67</span><span>67</span><span>67</span></div>
 </article>
-<article class="card">
+<article class="card team-card yulia-card">
 <div class="number">CHIEF</div>
-<h3>ukt0001 <span style="color:var(--muted);font-weight:600">(Юля)</span>
+<h3>ukt0001 <span style="color:var(--muted);font-weight:600">(Ð®Ð»Ñ)</span>
 </h3>
-<p>Главное руководство проекта.</p>
+<p>Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ñ€ÑƒÐºÐ¾Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°.</p>
+<div class="team-cloud yulia-cloud" aria-hidden="true"><span>âœ¦</span><span>âœ¦</span><span>âœ§</span></div>
 </article>
-<article class="card">
+<article class="card team-card senya-card">
 <div class="number">SOUS CHIEF</div>
 <h3>senya0488 <span style="color:var(--muted);font-weight:600">(Senya)</span>
 </h3>
-<p>Руководитель Проекта.</p>
+<p>Ð ÑƒÐºÐ¾Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ ÐŸÑ€Ð¾ÐµÐºÑ‚Ð°.</p>
+<div class="team-cloud senya-cloud" aria-hidden="true"><span>â—†</span><span>âœ¦</span><span>â—†</span></div>
 </article>
 </div>
 </section>
     <section id="search">
 <div class="search-card">
-<div class="search-kicker">БЫСТРЫЙ ПОИСК</div>
-<h2>Найти правило</h2>
-<p>Введите слово или номер: например, «реклама», «бан», «1.3», «токсичность» или «читы». Подходящие пункты раскроются автоматически.</p>
-<label class="search-box" for="rule-search"><span>⌕</span><input id="rule-search" type="search" autocomplete="off" placeholder="Поиск по правилам Discord и Minecraft"></label>
-<p id="search-result" class="search-result" role="status">Введите запрос, чтобы найти нужный пункт.</p>
+<div class="search-kicker">Ð‘Ð«Ð¡Ð¢Ð Ð«Ð™ ÐŸÐžÐ˜Ð¡Ðš</div>
+<h2>ÐÐ°Ð¹Ñ‚Ð¸ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð¾</h2>
+<p>Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»Ð¾Ð²Ð¾ Ð¸Ð»Ð¸ Ð½Ð¾Ð¼ÐµÑ€: Ð½Ð°Ð¿Ñ€Ð¸Ð¼ÐµÑ€, Â«Ñ€ÐµÐºÐ»Ð°Ð¼Ð°Â», Â«Ð±Ð°Ð½Â», Â«1.3Â», Â«Ñ‚Ð¾ÐºÑÐ¸Ñ‡Ð½Ð¾ÑÑ‚ÑŒÂ» Ð¸Ð»Ð¸ Â«Ñ‡Ð¸Ñ‚Ñ‹Â». ÐŸÐ¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ðµ Ð¿ÑƒÐ½ÐºÑ‚Ñ‹ Ñ€Ð°ÑÐºÑ€Ð¾ÑŽÑ‚ÑÑ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸.</p>
+<label class="search-box" for="rule-search"><span>âŒ•</span><input id="rule-search" type="search" autocomplete="off" placeholder="ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°Ð¼ Discord Ð¸ Minecraft"></label>
+<p id="search-result" class="search-result" role="status">Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð°Ð¿Ñ€Ð¾Ñ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ð°Ð¹Ñ‚Ð¸ Ð½ÑƒÐ¶Ð½Ñ‹Ð¹ Ð¿ÑƒÐ½ÐºÑ‚.</p>
 </div>
 </section>
     <section id="rules">
 <div class="discord-intro">
 <div class="discord-tag"><span></span> DISCORD</div>
-<h2>Правила Discord-сервера</h2>
-<p>Правила общения и порядка в сообществе. Нажмите на карточку, чтобы развернуть пункт и увидеть наказание.</p>
-<div class="discord-important">Незнание правил не освобождает от ответственности. Наказание зависит от ситуации и тяжести нарушения.</div>
-<div class="discord-update-note"><span>●</span> Актуальная редакция правил — 04.08.2026.</div>
+<h2>ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Discord-ÑÐµÑ€Ð²ÐµÑ€Ð°</h2>
+<p>ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ Ð¸ Ð¿Ð¾Ñ€ÑÐ´ÐºÐ° Ð² ÑÐ¾Ð¾Ð±Ñ‰ÐµÑÑ‚Ð²Ðµ. ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð½Ð° ÐºÐ°Ñ€Ñ‚Ð¾Ñ‡ÐºÑƒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ñ€Ð°Ð·Ð²ÐµÑ€Ð½ÑƒÑ‚ÑŒ Ð¿ÑƒÐ½ÐºÑ‚ Ð¸ ÑƒÐ²Ð¸Ð´ÐµÑ‚ÑŒ Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ.</p>
+<div class="discord-important">ÐÐµÐ·Ð½Ð°Ð½Ð¸Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð» Ð½Ðµ Ð¾ÑÐ²Ð¾Ð±Ð¾Ð¶Ð´Ð°ÐµÑ‚ Ð¾Ñ‚ Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸. ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ Ð·Ð°Ð²Ð¸ÑÐ¸Ñ‚ Ð¾Ñ‚ ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸Ð¸ Ð¸ Ñ‚ÑÐ¶ÐµÑÑ‚Ð¸ Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ.</div>
+<div class="discord-update-note"><span>â—</span> ÐÐºÑ‚ÑƒÐ°Ð»ÑŒÐ½Ð°Ñ Ñ€ÐµÐ´Ð°ÐºÑ†Ð¸Ñ Ð¿Ñ€Ð°Ð²Ð¸Ð» â€” 04.08.2026.</div>
 </div>
 <div class="discord-rules">
-<details><summary>1.1 | Реклама</summary><p>Запрещена реклама Discord-серверов, соцсетей, групп, YouTube/Twitch-каналов и подобного без согласования с администрацией.<span class="rule-note">Реклама соцсетей, групп, YouTube/Twitch-каналов и подобного в «обо мне» и интеграциях профиля Discord не наказуема.</span><em>Наказание: реклама серверов — мут от 7 дней до перманентного.</em></p></details>
-<details><summary>1.2 | Оформление профиля</summary><p>Запрещены NSFW, оскорбительный или провокационный контент, чрезмерный мат, прозрачные и нечитаемые никнеймы в аватарах, никнеймах, клан-тегах, статусах и названиях голосовых каналов.<em>Наказание: мут до соответствия правилу.</em></p></details>
-<details><summary>1.3 | Твинки</summary><p>Запрещено использовать твинки для обхода мута, бана и других вредных манипуляций.<em>Наказание: бан твинка, предупреждение или бан основного аккаунта вплоть до перманентного.</em></p></details>
-<details><summary>1.4 | Коммерция</summary><p>Коммерческая деятельность на территории проекта без согласования запрещена.<em>Наказание: бан вплоть до перманентного.</em></p></details>
-<details><summary>1.5 | Личная информация</summary><p>Запрещено распространять личную информацию участников без согласия пользователя.<em>Наказание: бан вплоть до перманентного.</em></p></details>
-<details><summary>1.6 | Обход правил</summary><p>Запрещены попытки обойти правила или действовать на грани их нарушения. Это расценивается как неуважение к сообществу.<em>Наказание: в соответствии с обходимым правилом.</em></p></details>
-<details><summary>1.7 | Баги и уязвимости</summary><p>Запрещено использовать баги и уязвимости в ботах или Discord.<em>Наказание: бан вплоть до перманентного.</em></p></details>
-<details><summary>1.8 | Вред серверу</summary><p>Запрещены действия, мешающие развитию сервера, призывы покинуть сервер, неконструктивная критика и попытки подорвать репутацию сообщества.<em>Наказание: мут от 7 дней или бан вплоть до перманентного.</em></p></details>
-<details><summary>1.9 | Насилие и политика</summary><p>Запрещены призывы к насилию, разжигание межнациональной розни, а также бурные обсуждения терактов, вооружённых конфликтов и политических событий.<span class="rule-note">Правило не распространяется на RP-ситуации, если это не нарушает пункт 1.6.</span><em>Наказание: мут от 1 часа до перманентного бана.</em></p></details>
-<details><summary>1.10 | Токсичность</summary><p>Запрещены оскорбления, унижения, провокации, угрозы, преследование и травля, включая косвенные формы, сарказм и оскорбления родственников.<span class="rule-note">Правило пресекает нездоровое общение, но оставляет простор для юмора и подколов, не мешающих другим и не засоряющих чат негативом. Разграничение в каждой ситуации — на усмотрение участников и модераторов.</span><em>Наказание: мут от 1 часа или бан вплоть до перманентного.</em></p></details>
-<details><summary>2.1 | NSFW</summary><p>Любой NSFW-контент запрещён.<em>Наказание: мут от 1 часа.</em></p></details>
-<details><summary>2.2 | Спам</summary><p>Запрещены спам, флуд, оффтоп и чрезмерный капс.<em>Наказание: мут от 1 часа.</em></p></details>
-<details><summary>2.3 | Слап</summary><p>Запрещено слапать людей или роли без адекватной причины либо после просьбы прекратить.<em>Наказание: мут от 1 часа или бан вплоть до перманентного.</em></p></details>
-<details><summary>2.4 | Мошенничество</summary><p>Запрещены фишинг, шантаж, мошенничество, распространение и реклама читов и нелицензионного ПО.<em>Наказание: бан вплоть до перманентного.</em></p></details>
-<details><summary>2.5 | Команда проекта</summary><p>Запрещено препятствовать работе команды проекта.<em>Наказание: мут от 1 дня или бан вплоть до перманентного.</em></p></details>
-<details><summary>2.6 | Голосовые каналы</summary><p>Запрещено мешать общению: намеренно перемещаться между каналами для провокации, создавать громкий фон и включать громкие или резкие звуки.<em>Наказание: мут от 1 часа или бан на голосовые каналы.</em></p></details>
-<details><summary>2.7 | Музыкальные боты</summary><p>Нельзя приглашать музыкального бота или засорять чужой плейлист, когда он используется в другом канале, либо использовать более одного музыкального бота одновременно.<em>Наказание: мут от 1 часа.</em></p></details>
-<details><summary>3.1 | Предложения</summary><p>Запрещены несерьёзные, глупые и оскорбительные предложения.<em>Наказание: мут от 15 минут.</em></p></details>
-<details><summary>3.2 | Тематика</summary><p>Строго запрещено писать не по теме: эти каналы созданы для помощи, а не для оффтопа.<em>Наказание: мут от 15 минут.</em></p></details>
-<details><summary>3.3 | Язык</summary><p>Основная тема сообщения должна быть написана исключительно на русском языке.<em>Наказание: мут от 15 минут.</em></p></details>
-<details><summary>3.4 | Формат</summary><p>Общение происходит в формате «предложение — ответ».<span class="rule-note">Обсудить ваше предложение можно в ветке под ним.</span><em>Наказание: мут от 15 минут.</em></p></details>
+<details><summary>1.1 | Ð ÐµÐºÐ»Ð°Ð¼Ð°</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð° Ñ€ÐµÐºÐ»Ð°Ð¼Ð° Discord-ÑÐµÑ€Ð²ÐµÑ€Ð¾Ð², ÑÐ¾Ñ†ÑÐµÑ‚ÐµÐ¹, Ð³Ñ€ÑƒÐ¿Ð¿, YouTube/Twitch-ÐºÐ°Ð½Ð°Ð»Ð¾Ð² Ð¸ Ð¿Ð¾Ð´Ð¾Ð±Ð½Ð¾Ð³Ð¾ Ð±ÐµÐ· ÑÐ¾Ð³Ð»Ð°ÑÐ¾Ð²Ð°Ð½Ð¸Ñ Ñ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸ÐµÐ¹.<span class="rule-note">Ð ÐµÐºÐ»Ð°Ð¼Ð° ÑÐ¾Ñ†ÑÐµÑ‚ÐµÐ¹, Ð³Ñ€ÑƒÐ¿Ð¿, YouTube/Twitch-ÐºÐ°Ð½Ð°Ð»Ð¾Ð² Ð¸ Ð¿Ð¾Ð´Ð¾Ð±Ð½Ð¾Ð³Ð¾ Ð² Â«Ð¾Ð±Ð¾ Ð¼Ð½ÐµÂ» Ð¸ Ð¸Ð½Ñ‚ÐµÐ³Ñ€Ð°Ñ†Ð¸ÑÑ… Ð¿Ñ€Ð¾Ñ„Ð¸Ð»Ñ Discord Ð½Ðµ Ð½Ð°ÐºÐ°Ð·ÑƒÐµÐ¼Ð°.</span><em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ñ€ÐµÐºÐ»Ð°Ð¼Ð° ÑÐµÑ€Ð²ÐµÑ€Ð¾Ð² â€” Ð¼ÑƒÑ‚ Ð¾Ñ‚ 7 Ð´Ð½ÐµÐ¹ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>1.2 | ÐžÑ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ðµ Ð¿Ñ€Ð¾Ñ„Ð¸Ð»Ñ</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ NSFW, Ð¾ÑÐºÐ¾Ñ€Ð±Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ð¸Ð»Ð¸ Ð¿Ñ€Ð¾Ð²Ð¾ÐºÐ°Ñ†Ð¸Ð¾Ð½Ð½Ñ‹Ð¹ ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚, Ñ‡Ñ€ÐµÐ·Ð¼ÐµÑ€Ð½Ñ‹Ð¹ Ð¼Ð°Ñ‚, Ð¿Ñ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ñ‹Ðµ Ð¸ Ð½ÐµÑ‡Ð¸Ñ‚Ð°ÐµÐ¼Ñ‹Ðµ Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼Ñ‹ Ð² Ð°Ð²Ð°Ñ‚Ð°Ñ€Ð°Ñ…, Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼Ð°Ñ…, ÐºÐ»Ð°Ð½-Ñ‚ÐµÐ³Ð°Ñ…, ÑÑ‚Ð°Ñ‚ÑƒÑÐ°Ñ… Ð¸ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸ÑÑ… Ð³Ð¾Ð»Ð¾ÑÐ¾Ð²Ñ‹Ñ… ÐºÐ°Ð½Ð°Ð»Ð¾Ð².<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð´Ð¾ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð¸Ñ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ñƒ.</em></p></details>
+<details><summary>1.3 | Ð¢Ð²Ð¸Ð½ÐºÐ¸</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Ñ‚Ð²Ð¸Ð½ÐºÐ¸ Ð´Ð»Ñ Ð¾Ð±Ñ…Ð¾Ð´Ð° Ð¼ÑƒÑ‚Ð°, Ð±Ð°Ð½Ð° Ð¸ Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð²Ñ€ÐµÐ´Ð½Ñ‹Ñ… Ð¼Ð°Ð½Ð¸Ð¿ÑƒÐ»ÑÑ†Ð¸Ð¹.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð±Ð°Ð½ Ñ‚Ð²Ð¸Ð½ÐºÐ°, Ð¿Ñ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ðµ Ð¸Ð»Ð¸ Ð±Ð°Ð½ Ð¾ÑÐ½Ð¾Ð²Ð½Ð¾Ð³Ð¾ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚Ð° Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>1.4 | ÐšÐ¾Ð¼Ð¼ÐµÑ€Ñ†Ð¸Ñ</summary><p>ÐšÐ¾Ð¼Ð¼ÐµÑ€Ñ‡ÐµÑÐºÐ°Ñ Ð´ÐµÑÑ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚ÑŒ Ð½Ð° Ñ‚ÐµÑ€Ñ€Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð° Ð±ÐµÐ· ÑÐ¾Ð³Ð»Ð°ÑÐ¾Ð²Ð°Ð½Ð¸Ñ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð°.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð±Ð°Ð½ Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>1.5 | Ð›Ð¸Ñ‡Ð½Ð°Ñ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÑ‚ÑŒ Ð»Ð¸Ñ‡Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸ÐºÐ¾Ð² Ð±ÐµÐ· ÑÐ¾Ð³Ð»Ð°ÑÐ¸Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð±Ð°Ð½ Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>1.6 | ÐžÐ±Ñ…Ð¾Ð´ Ð¿Ñ€Ð°Ð²Ð¸Ð»</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÐ¸ Ð¾Ð±Ð¾Ð¹Ñ‚Ð¸ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð° Ð¸Ð»Ð¸ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¾Ð²Ð°Ñ‚ÑŒ Ð½Ð° Ð³Ñ€Ð°Ð½Ð¸ Ð¸Ñ… Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ. Ð­Ñ‚Ð¾ Ñ€Ð°ÑÑ†ÐµÐ½Ð¸Ð²Ð°ÐµÑ‚ÑÑ ÐºÐ°Ðº Ð½ÐµÑƒÐ²Ð°Ð¶ÐµÐ½Ð¸Ðµ Ðº ÑÐ¾Ð¾Ð±Ñ‰ÐµÑÑ‚Ð²Ñƒ.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð² ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð¸Ð¸ Ñ Ð¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ð¼ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð¾Ð¼.</em></p></details>
+<details><summary>1.7 | Ð‘Ð°Ð³Ð¸ Ð¸ ÑƒÑÐ·Ð²Ð¸Ð¼Ð¾ÑÑ‚Ð¸</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Ð±Ð°Ð³Ð¸ Ð¸ ÑƒÑÐ·Ð²Ð¸Ð¼Ð¾ÑÑ‚Ð¸ Ð² Ð±Ð¾Ñ‚Ð°Ñ… Ð¸Ð»Ð¸ Discord.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð±Ð°Ð½ Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>1.8 | Ð’Ñ€ÐµÐ´ ÑÐµÑ€Ð²ÐµÑ€Ñƒ</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ, Ð¼ÐµÑˆÐ°ÑŽÑ‰Ð¸Ðµ Ñ€Ð°Ð·Ð²Ð¸Ñ‚Ð¸ÑŽ ÑÐµÑ€Ð²ÐµÑ€Ð°, Ð¿Ñ€Ð¸Ð·Ñ‹Ð²Ñ‹ Ð¿Ð¾ÐºÐ¸Ð½ÑƒÑ‚ÑŒ ÑÐµÑ€Ð²ÐµÑ€, Ð½ÐµÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¸Ð²Ð½Ð°Ñ ÐºÑ€Ð¸Ñ‚Ð¸ÐºÐ° Ð¸ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÐ¸ Ð¿Ð¾Ð´Ð¾Ñ€Ð²Ð°Ñ‚ÑŒ Ñ€ÐµÐ¿ÑƒÑ‚Ð°Ñ†Ð¸ÑŽ ÑÐ¾Ð¾Ð±Ñ‰ÐµÑÑ‚Ð²Ð°.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 7 Ð´Ð½ÐµÐ¹ Ð¸Ð»Ð¸ Ð±Ð°Ð½ Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>1.9 | ÐÐ°ÑÐ¸Ð»Ð¸Ðµ Ð¸ Ð¿Ð¾Ð»Ð¸Ñ‚Ð¸ÐºÐ°</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð¿Ñ€Ð¸Ð·Ñ‹Ð²Ñ‹ Ðº Ð½Ð°ÑÐ¸Ð»Ð¸ÑŽ, Ñ€Ð°Ð·Ð¶Ð¸Ð³Ð°Ð½Ð¸Ðµ Ð¼ÐµÐ¶Ð½Ð°Ñ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ð¾Ð¹ Ñ€Ð¾Ð·Ð½Ð¸, Ð° Ñ‚Ð°ÐºÐ¶Ðµ Ð±ÑƒÑ€Ð½Ñ‹Ðµ Ð¾Ð±ÑÑƒÐ¶Ð´ÐµÐ½Ð¸Ñ Ñ‚ÐµÑ€Ð°ÐºÑ‚Ð¾Ð², Ð²Ð¾Ð¾Ñ€ÑƒÐ¶Ñ‘Ð½Ð½Ñ‹Ñ… ÐºÐ¾Ð½Ñ„Ð»Ð¸ÐºÑ‚Ð¾Ð² Ð¸ Ð¿Ð¾Ð»Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ð¹.<span class="rule-note">ÐŸÑ€Ð°Ð²Ð¸Ð»Ð¾ Ð½Ðµ Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÐµÑ‚ÑÑ Ð½Ð° RP-ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸Ð¸, ÐµÑÐ»Ð¸ ÑÑ‚Ð¾ Ð½Ðµ Ð½Ð°Ñ€ÑƒÑˆÐ°ÐµÑ‚ Ð¿ÑƒÐ½ÐºÑ‚ 1.6.</span><em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 1 Ñ‡Ð°ÑÐ° Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾ Ð±Ð°Ð½Ð°.</em></p></details>
+<details><summary>1.10 | Ð¢Ð¾ÐºÑÐ¸Ñ‡Ð½Ð¾ÑÑ‚ÑŒ</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð¾ÑÐºÐ¾Ñ€Ð±Ð»ÐµÐ½Ð¸Ñ, ÑƒÐ½Ð¸Ð¶ÐµÐ½Ð¸Ñ, Ð¿Ñ€Ð¾Ð²Ð¾ÐºÐ°Ñ†Ð¸Ð¸, ÑƒÐ³Ñ€Ð¾Ð·Ñ‹, Ð¿Ñ€ÐµÑÐ»ÐµÐ´Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¸ Ñ‚Ñ€Ð°Ð²Ð»Ñ, Ð²ÐºÐ»ÑŽÑ‡Ð°Ñ ÐºÐ¾ÑÐ²ÐµÐ½Ð½Ñ‹Ðµ Ñ„Ð¾Ñ€Ð¼Ñ‹, ÑÐ°Ñ€ÐºÐ°Ð·Ð¼ Ð¸ Ð¾ÑÐºÐ¾Ñ€Ð±Ð»ÐµÐ½Ð¸Ñ Ñ€Ð¾Ð´ÑÑ‚Ð²ÐµÐ½Ð½Ð¸ÐºÐ¾Ð².<span class="rule-note">ÐŸÑ€Ð°Ð²Ð¸Ð»Ð¾ Ð¿Ñ€ÐµÑÐµÐºÐ°ÐµÑ‚ Ð½ÐµÐ·Ð´Ð¾Ñ€Ð¾Ð²Ð¾Ðµ Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ, Ð½Ð¾ Ð¾ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ Ð¿Ñ€Ð¾ÑÑ‚Ð¾Ñ€ Ð´Ð»Ñ ÑŽÐ¼Ð¾Ñ€Ð° Ð¸ Ð¿Ð¾Ð´ÐºÐ¾Ð»Ð¾Ð², Ð½Ðµ Ð¼ÐµÑˆÐ°ÑŽÑ‰Ð¸Ñ… Ð´Ñ€ÑƒÐ³Ð¸Ð¼ Ð¸ Ð½Ðµ Ð·Ð°ÑÐ¾Ñ€ÑÑŽÑ‰Ð¸Ñ… Ñ‡Ð°Ñ‚ Ð½ÐµÐ³Ð°Ñ‚Ð¸Ð²Ð¾Ð¼. Ð Ð°Ð·Ð³Ñ€Ð°Ð½Ð¸Ñ‡ÐµÐ½Ð¸Ðµ Ð² ÐºÐ°Ð¶Ð´Ð¾Ð¹ ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸Ð¸ â€” Ð½Ð° ÑƒÑÐ¼Ð¾Ñ‚Ñ€ÐµÐ½Ð¸Ðµ ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸ÐºÐ¾Ð² Ð¸ Ð¼Ð¾Ð´ÐµÑ€Ð°Ñ‚Ð¾Ñ€Ð¾Ð².</span><em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 1 Ñ‡Ð°ÑÐ° Ð¸Ð»Ð¸ Ð±Ð°Ð½ Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>2.1 | NSFW</summary><p>Ð›ÑŽÐ±Ð¾Ð¹ NSFW-ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚ Ð·Ð°Ð¿Ñ€ÐµÑ‰Ñ‘Ð½.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 1 Ñ‡Ð°ÑÐ°.</em></p></details>
+<details><summary>2.2 | Ð¡Ð¿Ð°Ð¼</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ ÑÐ¿Ð°Ð¼, Ñ„Ð»ÑƒÐ´, Ð¾Ñ„Ñ„Ñ‚Ð¾Ð¿ Ð¸ Ñ‡Ñ€ÐµÐ·Ð¼ÐµÑ€Ð½Ñ‹Ð¹ ÐºÐ°Ð¿Ñ.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 1 Ñ‡Ð°ÑÐ°.</em></p></details>
+<details><summary>2.3 | Ð¡Ð»Ð°Ð¿</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ ÑÐ»Ð°Ð¿Ð°Ñ‚ÑŒ Ð»ÑŽÐ´ÐµÐ¹ Ð¸Ð»Ð¸ Ñ€Ð¾Ð»Ð¸ Ð±ÐµÐ· Ð°Ð´ÐµÐºÐ²Ð°Ñ‚Ð½Ð¾Ð¹ Ð¿Ñ€Ð¸Ñ‡Ð¸Ð½Ñ‹ Ð»Ð¸Ð±Ð¾ Ð¿Ð¾ÑÐ»Ðµ Ð¿Ñ€Ð¾ÑÑŒÐ±Ñ‹ Ð¿Ñ€ÐµÐºÑ€Ð°Ñ‚Ð¸Ñ‚ÑŒ.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 1 Ñ‡Ð°ÑÐ° Ð¸Ð»Ð¸ Ð±Ð°Ð½ Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>2.4 | ÐœÐ¾ÑˆÐµÐ½Ð½Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ñ„Ð¸ÑˆÐ¸Ð½Ð³, ÑˆÐ°Ð½Ñ‚Ð°Ð¶, Ð¼Ð¾ÑˆÐµÐ½Ð½Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾, Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð¸ Ñ€ÐµÐºÐ»Ð°Ð¼Ð° Ñ‡Ð¸Ñ‚Ð¾Ð² Ð¸ Ð½ÐµÐ»Ð¸Ñ†ÐµÐ½Ð·Ð¸Ð¾Ð½Ð½Ð¾Ð³Ð¾ ÐŸÐž.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð±Ð°Ð½ Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>2.5 | ÐšÐ¾Ð¼Ð°Ð½Ð´Ð° Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð¿Ñ€ÐµÐ¿ÑÑ‚ÑÑ‚Ð²Ð¾Ð²Ð°Ñ‚ÑŒ Ñ€Ð°Ð±Ð¾Ñ‚Ðµ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 1 Ð´Ð½Ñ Ð¸Ð»Ð¸ Ð±Ð°Ð½ Ð²Ð¿Ð»Ð¾Ñ‚ÑŒ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾.</em></p></details>
+<details><summary>2.6 | Ð“Ð¾Ð»Ð¾ÑÐ¾Ð²Ñ‹Ðµ ÐºÐ°Ð½Ð°Ð»Ñ‹</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð¼ÐµÑˆÐ°Ñ‚ÑŒ Ð¾Ð±Ñ‰ÐµÐ½Ð¸ÑŽ: Ð½Ð°Ð¼ÐµÑ€ÐµÐ½Ð½Ð¾ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰Ð°Ñ‚ÑŒÑÑ Ð¼ÐµÐ¶Ð´Ñƒ ÐºÐ°Ð½Ð°Ð»Ð°Ð¼Ð¸ Ð´Ð»Ñ Ð¿Ñ€Ð¾Ð²Ð¾ÐºÐ°Ñ†Ð¸Ð¸, ÑÐ¾Ð·Ð´Ð°Ð²Ð°Ñ‚ÑŒ Ð³Ñ€Ð¾Ð¼ÐºÐ¸Ð¹ Ñ„Ð¾Ð½ Ð¸ Ð²ÐºÐ»ÑŽÑ‡Ð°Ñ‚ÑŒ Ð³Ñ€Ð¾Ð¼ÐºÐ¸Ðµ Ð¸Ð»Ð¸ Ñ€ÐµÐ·ÐºÐ¸Ðµ Ð·Ð²ÑƒÐºÐ¸.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 1 Ñ‡Ð°ÑÐ° Ð¸Ð»Ð¸ Ð±Ð°Ð½ Ð½Ð° Ð³Ð¾Ð»Ð¾ÑÐ¾Ð²Ñ‹Ðµ ÐºÐ°Ð½Ð°Ð»Ñ‹.</em></p></details>
+<details><summary>2.7 | ÐœÑƒÐ·Ñ‹ÐºÐ°Ð»ÑŒÐ½Ñ‹Ðµ Ð±Ð¾Ñ‚Ñ‹</summary><p>ÐÐµÐ»ÑŒÐ·Ñ Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÐ°Ñ‚ÑŒ Ð¼ÑƒÐ·Ñ‹ÐºÐ°Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ð±Ð¾Ñ‚Ð° Ð¸Ð»Ð¸ Ð·Ð°ÑÐ¾Ñ€ÑÑ‚ÑŒ Ñ‡ÑƒÐ¶Ð¾Ð¹ Ð¿Ð»ÐµÐ¹Ð»Ð¸ÑÑ‚, ÐºÐ¾Ð³Ð´Ð° Ð¾Ð½ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ÑÑ Ð² Ð´Ñ€ÑƒÐ³Ð¾Ð¼ ÐºÐ°Ð½Ð°Ð»Ðµ, Ð»Ð¸Ð±Ð¾ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Ð±Ð¾Ð»ÐµÐµ Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ð¼ÑƒÐ·Ñ‹ÐºÐ°Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ð±Ð¾Ñ‚Ð° Ð¾Ð´Ð½Ð¾Ð²Ñ€ÐµÐ¼ÐµÐ½Ð½Ð¾.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 1 Ñ‡Ð°ÑÐ°.</em></p></details>
+<details><summary>3.1 | ÐŸÑ€ÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ</summary><p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð½ÐµÑÐµÑ€ÑŒÑ‘Ð·Ð½Ñ‹Ðµ, Ð³Ð»ÑƒÐ¿Ñ‹Ðµ Ð¸ Ð¾ÑÐºÐ¾Ñ€Ð±Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð¿Ñ€ÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 15 Ð¼Ð¸Ð½ÑƒÑ‚.</em></p></details>
+<details><summary>3.2 | Ð¢ÐµÐ¼Ð°Ñ‚Ð¸ÐºÐ°</summary><p>Ð¡Ñ‚Ñ€Ð¾Ð³Ð¾ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ð½Ðµ Ð¿Ð¾ Ñ‚ÐµÐ¼Ðµ: ÑÑ‚Ð¸ ÐºÐ°Ð½Ð°Ð»Ñ‹ ÑÐ¾Ð·Ð´Ð°Ð½Ñ‹ Ð´Ð»Ñ Ð¿Ð¾Ð¼Ð¾Ñ‰Ð¸, Ð° Ð½Ðµ Ð´Ð»Ñ Ð¾Ñ„Ñ„Ñ‚Ð¾Ð¿Ð°.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 15 Ð¼Ð¸Ð½ÑƒÑ‚.</em></p></details>
+<details><summary>3.3 | Ð¯Ð·Ñ‹Ðº</summary><p>ÐžÑÐ½Ð¾Ð²Ð½Ð°Ñ Ñ‚ÐµÐ¼Ð° ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð° Ð±Ñ‹Ñ‚ÑŒ Ð½Ð°Ð¿Ð¸ÑÐ°Ð½Ð° Ð¸ÑÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð½Ð° Ñ€ÑƒÑÑÐºÐ¾Ð¼ ÑÐ·Ñ‹ÐºÐµ.<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 15 Ð¼Ð¸Ð½ÑƒÑ‚.</em></p></details>
+<details><summary>3.4 | Ð¤Ð¾Ñ€Ð¼Ð°Ñ‚</summary><p>ÐžÐ±Ñ‰ÐµÐ½Ð¸Ðµ Ð¿Ñ€Ð¾Ð¸ÑÑ…Ð¾Ð´Ð¸Ñ‚ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ Â«Ð¿Ñ€ÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ â€” Ð¾Ñ‚Ð²ÐµÑ‚Â».<span class="rule-note">ÐžÐ±ÑÑƒÐ´Ð¸Ñ‚ÑŒ Ð²Ð°ÑˆÐµ Ð¿Ñ€ÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð¼Ð¾Ð¶Ð½Ð¾ Ð² Ð²ÐµÑ‚ÐºÐµ Ð¿Ð¾Ð´ Ð½Ð¸Ð¼.</span><em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 15 Ð¼Ð¸Ð½ÑƒÑ‚.</em></p></details>
 </div>
 </section>
     <section id="rp">
-<h2 class="section-title">RP-правила</h2>
-<p class="section-copy">Правила ролевого мира, ведения войн и игрового процесса.</p>
-<div class="notice">Каждый игрок, посетивший проект «Подвал Пригожина», автоматически соглашается с этим сводом правил. Незнание правил не освобождает от ответственности.</div>
+<h2 class="section-title">RP-Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°</h2>
+<p class="section-copy">ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Ñ€Ð¾Ð»ÐµÐ²Ð¾Ð³Ð¾ Ð¼Ð¸Ñ€Ð°, Ð²ÐµÐ´ÐµÐ½Ð¸Ñ Ð²Ð¾Ð¹Ð½ Ð¸ Ð¸Ð³Ñ€Ð¾Ð²Ð¾Ð³Ð¾ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ°.</p>
+<div class="notice">ÐšÐ°Ð¶Ð´Ñ‹Ð¹ Ð¸Ð³Ñ€Ð¾Ðº, Ð¿Ð¾ÑÐµÑ‚Ð¸Ð²ÑˆÐ¸Ð¹ Ð¿Ñ€Ð¾ÐµÐºÑ‚ Â«ÐŸÐ¾Ð´Ð²Ð°Ð» ÐŸÑ€Ð¸Ð³Ð¾Ð¶Ð¸Ð½Ð°Â», Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸ ÑÐ¾Ð³Ð»Ð°ÑˆÐ°ÐµÑ‚ÑÑ Ñ ÑÑ‚Ð¸Ð¼ ÑÐ²Ð¾Ð´Ð¾Ð¼ Ð¿Ñ€Ð°Ð²Ð¸Ð». ÐÐµÐ·Ð½Ð°Ð½Ð¸Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð» Ð½Ðµ Ð¾ÑÐ²Ð¾Ð±Ð¾Ð¶Ð´Ð°ÐµÑ‚ Ð¾Ñ‚ Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸.</div>
 <div class="rules">
 <details open>
-<summary>1. Правила ведения войн</summary>
+<summary>1. ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Ð²ÐµÐ´ÐµÐ½Ð¸Ñ Ð²Ð¾Ð¹Ð½</summary>
 <p>
-<b>1.1–1.4 Общие правила.</b> Все ресурсы и силы существуют только в рамках игры. Нельзя создавать армию, технику, патроны или ресурсы вне игрового процесса. Любая военная операция фиксируется: цель, начало и завершение, ресурсы и результат. Экстренная операция может начаться без предварительной фиксации, но должна быть записана не позднее 30 минут.</p>
+<b>1.1â€“1.4 ÐžÐ±Ñ‰Ð¸Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°.</b> Ð’ÑÐµ Ñ€ÐµÑÑƒÑ€ÑÑ‹ Ð¸ ÑÐ¸Ð»Ñ‹ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÑŽÑ‚ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð² Ñ€Ð°Ð¼ÐºÐ°Ñ… Ð¸Ð³Ñ€Ñ‹. ÐÐµÐ»ÑŒÐ·Ñ ÑÐ¾Ð·Ð´Ð°Ð²Ð°Ñ‚ÑŒ Ð°Ñ€Ð¼Ð¸ÑŽ, Ñ‚ÐµÑ…Ð½Ð¸ÐºÑƒ, Ð¿Ð°Ñ‚Ñ€Ð¾Ð½Ñ‹ Ð¸Ð»Ð¸ Ñ€ÐµÑÑƒÑ€ÑÑ‹ Ð²Ð½Ðµ Ð¸Ð³Ñ€Ð¾Ð²Ð¾Ð³Ð¾ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ°. Ð›ÑŽÐ±Ð°Ñ Ð²Ð¾ÐµÐ½Ð½Ð°Ñ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ñ„Ð¸ÐºÑÐ¸Ñ€ÑƒÐµÑ‚ÑÑ: Ñ†ÐµÐ»ÑŒ, Ð½Ð°Ñ‡Ð°Ð»Ð¾ Ð¸ Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð¸Ðµ, Ñ€ÐµÑÑƒÑ€ÑÑ‹ Ð¸ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚. Ð­ÐºÑÑ‚Ñ€ÐµÐ½Ð½Ð°Ñ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð¼Ð¾Ð¶ÐµÑ‚ Ð½Ð°Ñ‡Ð°Ñ‚ÑŒÑÑ Ð±ÐµÐ· Ð¿Ñ€ÐµÐ´Ð²Ð°Ñ€Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð¹ Ñ„Ð¸ÐºÑÐ°Ñ†Ð¸Ð¸, Ð½Ð¾ Ð´Ð¾Ð»Ð¶Ð½Ð° Ð±Ñ‹Ñ‚ÑŒ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ð° Ð½Ðµ Ð¿Ð¾Ð·Ð´Ð½ÐµÐµ 30 Ð¼Ð¸Ð½ÑƒÑ‚.</p>
 <p>
-<b>2.1–2.6 Армия и мобилизация.</b> Армия создаётся из ресурсов страны: людей, еды, оружия и брони. Каждый боец требует экипировки, питания и медицинской поддержки; пополнение требует времени и ресурсов. Массовая мобилизация снижает качество экипировки, мораль и повышает потери. Ополчение допускается в экстренных случаях с пониженной эффективностью. Качество экипировки не снижается при больших запасах нужного ресурса или полностью автоматизированном производстве.</p>
+<b>2.1â€“2.6 ÐÑ€Ð¼Ð¸Ñ Ð¸ Ð¼Ð¾Ð±Ð¸Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ.</b> ÐÑ€Ð¼Ð¸Ñ ÑÐ¾Ð·Ð´Ð°Ñ‘Ñ‚ÑÑ Ð¸Ð· Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð² ÑÑ‚Ñ€Ð°Ð½Ñ‹: Ð»ÑŽÐ´ÐµÐ¹, ÐµÐ´Ñ‹, Ð¾Ñ€ÑƒÐ¶Ð¸Ñ Ð¸ Ð±Ñ€Ð¾Ð½Ð¸. ÐšÐ°Ð¶Ð´Ñ‹Ð¹ Ð±Ð¾ÐµÑ† Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ ÑÐºÐ¸Ð¿Ð¸Ñ€Ð¾Ð²ÐºÐ¸, Ð¿Ð¸Ñ‚Ð°Ð½Ð¸Ñ Ð¸ Ð¼ÐµÐ´Ð¸Ñ†Ð¸Ð½ÑÐºÐ¾Ð¹ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶ÐºÐ¸; Ð¿Ð¾Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð¸ Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð². ÐœÐ°ÑÑÐ¾Ð²Ð°Ñ Ð¼Ð¾Ð±Ð¸Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ ÑÐ½Ð¸Ð¶Ð°ÐµÑ‚ ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐºÐ¸Ð¿Ð¸Ñ€Ð¾Ð²ÐºÐ¸, Ð¼Ð¾Ñ€Ð°Ð»ÑŒ Ð¸ Ð¿Ð¾Ð²Ñ‹ÑˆÐ°ÐµÑ‚ Ð¿Ð¾Ñ‚ÐµÑ€Ð¸. ÐžÐ¿Ð¾Ð»Ñ‡ÐµÐ½Ð¸Ðµ Ð´Ð¾Ð¿ÑƒÑÐºÐ°ÐµÑ‚ÑÑ Ð² ÑÐºÑÑ‚Ñ€ÐµÐ½Ð½Ñ‹Ñ… ÑÐ»ÑƒÑ‡Ð°ÑÑ… Ñ Ð¿Ð¾Ð½Ð¸Ð¶ÐµÐ½Ð½Ð¾Ð¹ ÑÑ„Ñ„ÐµÐºÑ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒÑŽ. ÐšÐ°Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐºÐ¸Ð¿Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð½Ðµ ÑÐ½Ð¸Ð¶Ð°ÐµÑ‚ÑÑ Ð¿Ñ€Ð¸ Ð±Ð¾Ð»ÑŒÑˆÐ¸Ñ… Ð·Ð°Ð¿Ð°ÑÐ°Ñ… Ð½ÑƒÐ¶Ð½Ð¾Ð³Ð¾ Ñ€ÐµÑÑƒÑ€ÑÐ° Ð¸Ð»Ð¸ Ð¿Ð¾Ð»Ð½Ð¾ÑÑ‚ÑŒÑŽ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ð·Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ð¼ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ðµ.</p>
 <p>
-<b>3.1–3.6 Техника и ремонт.</b> Техника появляется только через производство, захват или поставку. Производство и ремонт требуют ресурсов и времени. Неотремонтированная техника небоеспособна. Временный ремонт допустим при минимальных повреждениях, но снижает эффективность и долговечность.</p>
+<b>3.1â€“3.6 Ð¢ÐµÑ…Ð½Ð¸ÐºÐ° Ð¸ Ñ€ÐµÐ¼Ð¾Ð½Ñ‚.</b> Ð¢ÐµÑ…Ð½Ð¸ÐºÐ° Ð¿Ð¾ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ‡ÐµÑ€ÐµÐ· Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾, Ð·Ð°Ñ…Ð²Ð°Ñ‚ Ð¸Ð»Ð¸ Ð¿Ð¾ÑÑ‚Ð°Ð²ÐºÑƒ. ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ð¸ Ñ€ÐµÐ¼Ð¾Ð½Ñ‚ Ñ‚Ñ€ÐµÐ±ÑƒÑŽÑ‚ Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð² Ð¸ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸. ÐÐµÐ¾Ñ‚Ñ€ÐµÐ¼Ð¾Ð½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð°Ñ Ñ‚ÐµÑ…Ð½Ð¸ÐºÐ° Ð½ÐµÐ±Ð¾ÐµÑÐ¿Ð¾ÑÐ¾Ð±Ð½Ð°. Ð’Ñ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ð¹ Ñ€ÐµÐ¼Ð¾Ð½Ñ‚ Ð´Ð¾Ð¿ÑƒÑÑ‚Ð¸Ð¼ Ð¿Ñ€Ð¸ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ñ… Ð¿Ð¾Ð²Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸ÑÑ…, Ð½Ð¾ ÑÐ½Ð¸Ð¶Ð°ÐµÑ‚ ÑÑ„Ñ„ÐµÐºÑ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒ Ð¸ Ð´Ð¾Ð»Ð³Ð¾Ð²ÐµÑ‡Ð½Ð¾ÑÑ‚ÑŒ.</p>
 <p>
-<b>4.1–4.4 Боеприпасы и расход.</b> Боеприпасы расходуются и не восстанавливаются автоматически. Их можно пополнить доставкой, производством, захватом или обменом. Если они закончились, огонь прекращается. В зоне операции разрешена ручная выдача малой партии — до 10% от потребности операции.</p>
+<b>4.1â€“4.4 Ð‘Ð¾ÐµÐ¿Ñ€Ð¸Ð¿Ð°ÑÑ‹ Ð¸ Ñ€Ð°ÑÑ…Ð¾Ð´.</b> Ð‘Ð¾ÐµÐ¿Ñ€Ð¸Ð¿Ð°ÑÑ‹ Ñ€Ð°ÑÑ…Ð¾Ð´ÑƒÑŽÑ‚ÑÑ Ð¸ Ð½Ðµ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÑŽÑ‚ÑÑ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸. Ð˜Ñ… Ð¼Ð¾Ð¶Ð½Ð¾ Ð¿Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÑŒ Ð´Ð¾ÑÑ‚Ð°Ð²ÐºÐ¾Ð¹, Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾Ð¼, Ð·Ð°Ñ…Ð²Ð°Ñ‚Ð¾Ð¼ Ð¸Ð»Ð¸ Ð¾Ð±Ð¼ÐµÐ½Ð¾Ð¼. Ð•ÑÐ»Ð¸ Ð¾Ð½Ð¸ Ð·Ð°ÐºÐ¾Ð½Ñ‡Ð¸Ð»Ð¸ÑÑŒ, Ð¾Ð³Ð¾Ð½ÑŒ Ð¿Ñ€ÐµÐºÑ€Ð°Ñ‰Ð°ÐµÑ‚ÑÑ. Ð’ Ð·Ð¾Ð½Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð° Ñ€ÑƒÑ‡Ð½Ð°Ñ Ð²Ñ‹Ð´Ð°Ñ‡Ð° Ð¼Ð°Ð»Ð¾Ð¹ Ð¿Ð°Ñ€Ñ‚Ð¸Ð¸ â€” Ð´Ð¾ 10% Ð¾Ñ‚ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð½Ð¾ÑÑ‚Ð¸ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¸.</p>
 <p>
-<b>5.1–5.6 Наступление и оборона.</b> Наступление требует цели, маршрута, снабжения, резервов и времени, а также обязательной фиксации. После провала фиксируются потери и операция завершается. Оборона требует укреплений, снабжения и контроля зоны. Быстрое наступление возможно при минимальном сопротивлении и короткой дистанции. Если наступающая страна продвинулась на 25–30% и более, она может закрепиться на занятой территории.</p>
+<b>5.1â€“5.6 ÐÐ°ÑÑ‚ÑƒÐ¿Ð»ÐµÐ½Ð¸Ðµ Ð¸ Ð¾Ð±Ð¾Ñ€Ð¾Ð½Ð°.</b> ÐÐ°ÑÑ‚ÑƒÐ¿Ð»ÐµÐ½Ð¸Ðµ Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ Ñ†ÐµÐ»Ð¸, Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð°, ÑÐ½Ð°Ð±Ð¶ÐµÐ½Ð¸Ñ, Ñ€ÐµÐ·ÐµÑ€Ð²Ð¾Ð² Ð¸ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸, Ð° Ñ‚Ð°ÐºÐ¶Ðµ Ð¾Ð±ÑÐ·Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð¹ Ñ„Ð¸ÐºÑÐ°Ñ†Ð¸Ð¸. ÐŸÐ¾ÑÐ»Ðµ Ð¿Ñ€Ð¾Ð²Ð°Ð»Ð° Ñ„Ð¸ÐºÑÐ¸Ñ€ÑƒÑŽÑ‚ÑÑ Ð¿Ð¾Ñ‚ÐµÑ€Ð¸ Ð¸ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ð·Ð°Ð²ÐµÑ€ÑˆÐ°ÐµÑ‚ÑÑ. ÐžÐ±Ð¾Ñ€Ð¾Ð½Ð° Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ ÑƒÐºÑ€ÐµÐ¿Ð»ÐµÐ½Ð¸Ð¹, ÑÐ½Ð°Ð±Ð¶ÐµÐ½Ð¸Ñ Ð¸ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ñ Ð·Ð¾Ð½Ñ‹. Ð‘Ñ‹ÑÑ‚Ñ€Ð¾Ðµ Ð½Ð°ÑÑ‚ÑƒÐ¿Ð»ÐµÐ½Ð¸Ðµ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð¿Ñ€Ð¸ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ð¼ ÑÐ¾Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð»ÐµÐ½Ð¸Ð¸ Ð¸ ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¾Ð¹ Ð´Ð¸ÑÑ‚Ð°Ð½Ñ†Ð¸Ð¸. Ð•ÑÐ»Ð¸ Ð½Ð°ÑÑ‚ÑƒÐ¿Ð°ÑŽÑ‰Ð°Ñ ÑÑ‚Ñ€Ð°Ð½Ð° Ð¿Ñ€Ð¾Ð´Ð²Ð¸Ð½ÑƒÐ»Ð°ÑÑŒ Ð½Ð° 25â€“30% Ð¸ Ð±Ð¾Ð»ÐµÐµ, Ð¾Ð½Ð° Ð¼Ð¾Ð¶ÐµÑ‚ Ð·Ð°ÐºÑ€ÐµÐ¿Ð¸Ñ‚ÑŒÑÑ Ð½Ð° Ð·Ð°Ð½ÑÑ‚Ð¾Ð¹ Ñ‚ÐµÑ€Ñ€Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸.</p>
 <p>
-<b>6.1–6.4 Территории и контроль.</b> Территория захвачена, только когда противоположная сторона не может её отбить. Закрепление требует физического подчинения. Захват ценной территории требует больше времени и ресурсов. Захват без удержания считается рейдом, если достигнуты ресурсы или информация.</p>
+<b>6.1â€“6.4 Ð¢ÐµÑ€Ñ€Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸ Ð¸ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒ.</b> Ð¢ÐµÑ€Ñ€Ð¸Ñ‚Ð¾Ñ€Ð¸Ñ Ð·Ð°Ñ…Ð²Ð°Ñ‡ÐµÐ½Ð°, Ñ‚Ð¾Ð»ÑŒÐºÐ¾ ÐºÐ¾Ð³Ð´Ð° Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð¾Ð¿Ð¾Ð»Ð¾Ð¶Ð½Ð°Ñ ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð° Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ ÐµÑ‘ Ð¾Ñ‚Ð±Ð¸Ñ‚ÑŒ. Ð—Ð°ÐºÑ€ÐµÐ¿Ð»ÐµÐ½Ð¸Ðµ Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ Ñ„Ð¸Ð·Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¿Ð¾Ð´Ñ‡Ð¸Ð½ÐµÐ½Ð¸Ñ. Ð—Ð°Ñ…Ð²Ð°Ñ‚ Ñ†ÐµÐ½Ð½Ð¾Ð¹ Ñ‚ÐµÑ€Ñ€Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸ Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ Ð±Ð¾Ð»ÑŒÑˆÐµ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð¸ Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð². Ð—Ð°Ñ…Ð²Ð°Ñ‚ Ð±ÐµÐ· ÑƒÐ´ÐµÑ€Ð¶Ð°Ð½Ð¸Ñ ÑÑ‡Ð¸Ñ‚Ð°ÐµÑ‚ÑÑ Ñ€ÐµÐ¹Ð´Ð¾Ð¼, ÐµÑÐ»Ð¸ Ð´Ð¾ÑÑ‚Ð¸Ð³Ð½ÑƒÑ‚Ñ‹ Ñ€ÐµÑÑƒÑ€ÑÑ‹ Ð¸Ð»Ð¸ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ.</p>
 <p>
-<b>7.1–7.4 ПВО.</b> Развёртывание ПВО занимает 1–5 минут, требует ресурсов, питания или топлива и обслуживания. До окончания развёртывания ПВО не работает и может быть уничтожено.</p>
+<b>7.1â€“7.4 ÐŸÐ’Ðž.</b> Ð Ð°Ð·Ð²Ñ‘Ñ€Ñ‚Ñ‹Ð²Ð°Ð½Ð¸Ðµ ÐŸÐ’Ðž Ð·Ð°Ð½Ð¸Ð¼Ð°ÐµÑ‚ 1â€“5 Ð¼Ð¸Ð½ÑƒÑ‚, Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð², Ð¿Ð¸Ñ‚Ð°Ð½Ð¸Ñ Ð¸Ð»Ð¸ Ñ‚Ð¾Ð¿Ð»Ð¸Ð²Ð° Ð¸ Ð¾Ð±ÑÐ»ÑƒÐ¶Ð¸Ð²Ð°Ð½Ð¸Ñ. Ð”Ð¾ Ð¾ÐºÐ¾Ð½Ñ‡Ð°Ð½Ð¸Ñ Ñ€Ð°Ð·Ð²Ñ‘Ñ€Ñ‚Ñ‹Ð²Ð°Ð½Ð¸Ñ ÐŸÐ’Ðž Ð½Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚ Ð¸ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ ÑƒÐ½Ð¸Ñ‡Ñ‚Ð¾Ð¶ÐµÐ½Ð¾.</p>
 <p>
-<b>8.1–8.4 Связь и командование.</b> Информация ограничена разведкой и источниками. При нарушении связи приказы отдаёт старший поблизости; при отсутствии информации действует заранее утверждённый план. При критической угрозе допустимы автономные действия с отдельной фиксацией.</p>
+<b>8.1â€“8.4 Ð¡Ð²ÑÐ·ÑŒ Ð¸ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð¾Ð²Ð°Ð½Ð¸Ðµ.</b> Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾Ð³Ñ€Ð°Ð½Ð¸Ñ‡ÐµÐ½Ð° Ñ€Ð°Ð·Ð²ÐµÐ´ÐºÐ¾Ð¹ Ð¸ Ð¸ÑÑ‚Ð¾Ñ‡Ð½Ð¸ÐºÐ°Ð¼Ð¸. ÐŸÑ€Ð¸ Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ð¸ ÑÐ²ÑÐ·Ð¸ Ð¿Ñ€Ð¸ÐºÐ°Ð·Ñ‹ Ð¾Ñ‚Ð´Ð°Ñ‘Ñ‚ ÑÑ‚Ð°Ñ€ÑˆÐ¸Ð¹ Ð¿Ð¾Ð±Ð»Ð¸Ð·Ð¾ÑÑ‚Ð¸; Ð¿Ñ€Ð¸ Ð¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ð²Ð¸Ð¸ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸ Ð´ÐµÐ¹ÑÑ‚Ð²ÑƒÐµÑ‚ Ð·Ð°Ñ€Ð°Ð½ÐµÐµ ÑƒÑ‚Ð²ÐµÑ€Ð¶Ð´Ñ‘Ð½Ð½Ñ‹Ð¹ Ð¿Ð»Ð°Ð½. ÐŸÑ€Ð¸ ÐºÑ€Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð¹ ÑƒÐ³Ñ€Ð¾Ð·Ðµ Ð´Ð¾Ð¿ÑƒÑÑ‚Ð¸Ð¼Ñ‹ Ð°Ð²Ñ‚Ð¾Ð½Ð¾Ð¼Ð½Ñ‹Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ Ñ Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ð¾Ð¹ Ñ„Ð¸ÐºÑÐ°Ñ†Ð¸ÐµÐ¹.</p>
 <p>
-<b>9.1–9.5 Потери и мораль.</b> Потери, нехватка снабжения и долгий бой без успеха снижают мораль и эффективность. Потери свыше 30% снижают скорость реакции, точность и дисциплину; свыше 50% требуют прекратить наступление. При защите критически важной территории мораль может удерживаться выше критической один раз за операцию.</p>
+<b>9.1â€“9.5 ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ Ð¸ Ð¼Ð¾Ñ€Ð°Ð»ÑŒ.</b> ÐŸÐ¾Ñ‚ÐµÑ€Ð¸, Ð½ÐµÑ…Ð²Ð°Ñ‚ÐºÐ° ÑÐ½Ð°Ð±Ð¶ÐµÐ½Ð¸Ñ Ð¸ Ð´Ð¾Ð»Ð³Ð¸Ð¹ Ð±Ð¾Ð¹ Ð±ÐµÐ· ÑƒÑÐ¿ÐµÑ…Ð° ÑÐ½Ð¸Ð¶Ð°ÑŽÑ‚ Ð¼Ð¾Ñ€Ð°Ð»ÑŒ Ð¸ ÑÑ„Ñ„ÐµÐºÑ‚Ð¸Ð²Ð½Ð¾ÑÑ‚ÑŒ. ÐŸÐ¾Ñ‚ÐµÑ€Ð¸ ÑÐ²Ñ‹ÑˆÐµ 30% ÑÐ½Ð¸Ð¶Ð°ÑŽÑ‚ ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒ Ñ€ÐµÐ°ÐºÑ†Ð¸Ð¸, Ñ‚Ð¾Ñ‡Ð½Ð¾ÑÑ‚ÑŒ Ð¸ Ð´Ð¸ÑÑ†Ð¸Ð¿Ð»Ð¸Ð½Ñƒ; ÑÐ²Ñ‹ÑˆÐµ 50% Ñ‚Ñ€ÐµÐ±ÑƒÑŽÑ‚ Ð¿Ñ€ÐµÐºÑ€Ð°Ñ‚Ð¸Ñ‚ÑŒ Ð½Ð°ÑÑ‚ÑƒÐ¿Ð»ÐµÐ½Ð¸Ðµ. ÐŸÑ€Ð¸ Ð·Ð°Ñ‰Ð¸Ñ‚Ðµ ÐºÑ€Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸ Ð²Ð°Ð¶Ð½Ð¾Ð¹ Ñ‚ÐµÑ€Ñ€Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸ Ð¼Ð¾Ñ€Ð°Ð»ÑŒ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ´ÐµÑ€Ð¶Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð²Ñ‹ÑˆÐµ ÐºÑ€Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð¹ Ð¾Ð´Ð¸Ð½ Ñ€Ð°Ð· Ð·Ð° Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸ÑŽ.</p>
 <p>
-<b>10.1–10.4 Журналы.</b> Операции и ресурсы фиксируются: цель, ресурсы, время, результат и потери. Без фиксации они не учитываются. Журнал доступен администрации в спорных ситуациях. Экстренная операция фиксируется не позднее 30 минут.</p>
+<b>10.1â€“10.4 Ð–ÑƒÑ€Ð½Ð°Ð»Ñ‹.</b> ÐžÐ¿ÐµÑ€Ð°Ñ†Ð¸Ð¸ Ð¸ Ñ€ÐµÑÑƒÑ€ÑÑ‹ Ñ„Ð¸ÐºÑÐ¸Ñ€ÑƒÑŽÑ‚ÑÑ: Ñ†ÐµÐ»ÑŒ, Ñ€ÐµÑÑƒÑ€ÑÑ‹, Ð²Ñ€ÐµÐ¼Ñ, Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ð¸ Ð¿Ð¾Ñ‚ÐµÑ€Ð¸. Ð‘ÐµÐ· Ñ„Ð¸ÐºÑÐ°Ñ†Ð¸Ð¸ Ð¾Ð½Ð¸ Ð½Ðµ ÑƒÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÑŽÑ‚ÑÑ. Ð–ÑƒÑ€Ð½Ð°Ð» Ð´Ð¾ÑÑ‚ÑƒÐ¿ÐµÐ½ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸ Ð² ÑÐ¿Ð¾Ñ€Ð½Ñ‹Ñ… ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸ÑÑ…. Ð­ÐºÑÑ‚Ñ€ÐµÐ½Ð½Ð°Ñ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ Ñ„Ð¸ÐºÑÐ¸Ñ€ÑƒÐµÑ‚ÑÑ Ð½Ðµ Ð¿Ð¾Ð·Ð´Ð½ÐµÐµ 30 Ð¼Ð¸Ð½ÑƒÑ‚.</p>
 </details>
 <details>
-<summary>2. Никнеймы и чат</summary>
+<summary>2. ÐÐ¸ÐºÐ½ÐµÐ¹Ð¼Ñ‹ Ð¸ Ñ‡Ð°Ñ‚</summary>
 <p>
-<b>Никнеймы.</b> Запрещены оскорбительные никнеймы и ники с оскорбительными словами. Формат «Имя_Фамилия» приветствуется.</p>
+<b>ÐÐ¸ÐºÐ½ÐµÐ¹Ð¼Ñ‹.</b> Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð¾ÑÐºÐ¾Ñ€Ð±Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼Ñ‹ Ð¸ Ð½Ð¸ÐºÐ¸ Ñ Ð¾ÑÐºÐ¾Ñ€Ð±Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼Ð¸ ÑÐ»Ð¾Ð²Ð°Ð¼Ð¸. Ð¤Ð¾Ñ€Ð¼Ð°Ñ‚ Â«Ð˜Ð¼Ñ_Ð¤Ð°Ð¼Ð¸Ð»Ð¸ÑÂ» Ð¿Ñ€Ð¸Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ÑÑ.</p>
 <p>
-<b>Чат и Meta Gaming.</b> Запрещены Meta Gaming, оскорбления игроков и родственников, расизм, нацизм и разжигание политических конфликтов в OOC. Нельзя реагировать по RP на приказы и просьбы из OOC-чата.<br>
-<em>Наказание за Meta Gaming: мут от 10 до 60+ минут; за нарушение OOC-правил: предупреждение.</em>
+<b>Ð§Ð°Ñ‚ Ð¸ Meta Gaming.</b> Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Meta Gaming, Ð¾ÑÐºÐ¾Ñ€Ð±Ð»ÐµÐ½Ð¸Ñ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ð¸ Ñ€Ð¾Ð´ÑÑ‚Ð²ÐµÐ½Ð½Ð¸ÐºÐ¾Ð², Ñ€Ð°ÑÐ¸Ð·Ð¼, Ð½Ð°Ñ†Ð¸Ð·Ð¼ Ð¸ Ñ€Ð°Ð·Ð¶Ð¸Ð³Ð°Ð½Ð¸Ðµ Ð¿Ð¾Ð»Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÐºÐ¾Ð½Ñ„Ð»Ð¸ÐºÑ‚Ð¾Ð² Ð² OOC. ÐÐµÐ»ÑŒÐ·Ñ Ñ€ÐµÐ°Ð³Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ð¾ RP Ð½Ð° Ð¿Ñ€Ð¸ÐºÐ°Ð·Ñ‹ Ð¸ Ð¿Ñ€Ð¾ÑÑŒÐ±Ñ‹ Ð¸Ð· OOC-Ñ‡Ð°Ñ‚Ð°.<br>
+<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ Ð·Ð° Meta Gaming: Ð¼ÑƒÑ‚ Ð¾Ñ‚ 10 Ð´Ð¾ 60+ Ð¼Ð¸Ð½ÑƒÑ‚; Ð·Ð° Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ðµ OOC-Ð¿Ñ€Ð°Ð²Ð¸Ð»: Ð¿Ñ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ðµ.</em>
 </p>
-<p>Запрещены провокации персонала, обсуждение и критика действий администрации, сторонняя реклама, флуд, бессмысленные сообщения, хаотичный регистр, попрошайничество у администрации, выдача себя за администратора, оффтоп и провокация игроков на нарушения.<br>
-<em>Наказания: от мута на 10 минут до бана от 1 дня; за выдачу себя за администрацию — бан от 1 часа.</em>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð¿Ñ€Ð¾Ð²Ð¾ÐºÐ°Ñ†Ð¸Ð¸ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð»Ð°, Ð¾Ð±ÑÑƒÐ¶Ð´ÐµÐ½Ð¸Ðµ Ð¸ ÐºÑ€Ð¸Ñ‚Ð¸ÐºÐ° Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ð¹ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸, ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½ÑÑ Ñ€ÐµÐºÐ»Ð°Ð¼Ð°, Ñ„Ð»ÑƒÐ´, Ð±ÐµÑÑÐ¼Ñ‹ÑÐ»ÐµÐ½Ð½Ñ‹Ðµ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ, Ñ…Ð°Ð¾Ñ‚Ð¸Ñ‡Ð½Ñ‹Ð¹ Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€, Ð¿Ð¾Ð¿Ñ€Ð¾ÑˆÐ°Ð¹Ð½Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñƒ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸, Ð²Ñ‹Ð´Ð°Ñ‡Ð° ÑÐµÐ±Ñ Ð·Ð° Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð°, Ð¾Ñ„Ñ„Ñ‚Ð¾Ð¿ Ð¸ Ð¿Ñ€Ð¾Ð²Ð¾ÐºÐ°Ñ†Ð¸Ñ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ð½Ð° Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ.<br>
+<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ñ: Ð¾Ñ‚ Ð¼ÑƒÑ‚Ð° Ð½Ð° 10 Ð¼Ð¸Ð½ÑƒÑ‚ Ð´Ð¾ Ð±Ð°Ð½Ð° Ð¾Ñ‚ 1 Ð´Ð½Ñ; Ð·Ð° Ð²Ñ‹Ð´Ð°Ñ‡Ñƒ ÑÐµÐ±Ñ Ð·Ð° Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸ÑŽ â€” Ð±Ð°Ð½ Ð¾Ñ‚ 1 Ñ‡Ð°ÑÐ°.</em>
 </p>
 </details>
 <details>
-<summary>3. Основные правила и игровой процесс</summary>
-<p>Игроки проекта RPM обязаны общаться на русском языке. Администратор может редактировать правила, но обязан уведомить сервер через @everyone; иначе изменение не засчитывается. Администрация не отвечает за действия приглашённых вами игроков и не обязана возвращать предметы, утраченные в игровом процессе.</p>
-<p>Запрещены использование неточностей правил, читов и стороннего ПО, введение администрации в заблуждение, сокрытие багов или дюпа, использование нечестно добытых вещей, нарушение правил ивентов, сделки за неролевые ресурсы, багоюз, подделка доказательств, нарушение RP-правил и FearRP, а также препятствование персоналу.<br>
-<em>Наказания: от кика и нарушения до перманентного бана, в зависимости от пункта.</em>
+<summary>3. ÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð° Ð¸ Ð¸Ð³Ñ€Ð¾Ð²Ð¾Ð¹ Ð¿Ñ€Ð¾Ñ†ÐµÑÑ</summary>
+<p>Ð˜Ð³Ñ€Ð¾ÐºÐ¸ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð° RPM Ð¾Ð±ÑÐ·Ð°Ð½Ñ‹ Ð¾Ð±Ñ‰Ð°Ñ‚ÑŒÑÑ Ð½Ð° Ñ€ÑƒÑÑÐºÐ¾Ð¼ ÑÐ·Ñ‹ÐºÐµ. ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€ Ð¼Ð¾Ð¶ÐµÑ‚ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°, Ð½Ð¾ Ð¾Ð±ÑÐ·Ð°Ð½ ÑƒÐ²ÐµÐ´Ð¾Ð¼Ð¸Ñ‚ÑŒ ÑÐµÑ€Ð²ÐµÑ€ Ñ‡ÐµÑ€ÐµÐ· @everyone; Ð¸Ð½Ð°Ñ‡Ðµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð½Ðµ Ð·Ð°ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÑ‚ÑÑ. ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ð½Ðµ Ð¾Ñ‚Ð²ÐµÑ‡Ð°ÐµÑ‚ Ð·Ð° Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ Ð¿Ñ€Ð¸Ð³Ð»Ð°ÑˆÑ‘Ð½Ð½Ñ‹Ñ… Ð²Ð°Ð¼Ð¸ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ð¸ Ð½Ðµ Ð¾Ð±ÑÐ·Ð°Ð½Ð° Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°Ñ‚ÑŒ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ñ‹, ÑƒÑ‚Ñ€Ð°Ñ‡ÐµÐ½Ð½Ñ‹Ðµ Ð² Ð¸Ð³Ñ€Ð¾Ð²Ð¾Ð¼ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐµ.</p>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð½ÐµÑ‚Ð¾Ñ‡Ð½Ð¾ÑÑ‚ÐµÐ¹ Ð¿Ñ€Ð°Ð²Ð¸Ð», Ñ‡Ð¸Ñ‚Ð¾Ð² Ð¸ ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½ÐµÐ³Ð¾ ÐŸÐž, Ð²Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸ Ð² Ð·Ð°Ð±Ð»ÑƒÐ¶Ð´ÐµÐ½Ð¸Ðµ, ÑÐ¾ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ Ð±Ð°Ð³Ð¾Ð² Ð¸Ð»Ð¸ Ð´ÑŽÐ¿Ð°, Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð½ÐµÑ‡ÐµÑÑ‚Ð½Ð¾ Ð´Ð¾Ð±Ñ‹Ñ‚Ñ‹Ñ… Ð²ÐµÑ‰ÐµÐ¹, Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð» Ð¸Ð²ÐµÐ½Ñ‚Ð¾Ð², ÑÐ´ÐµÐ»ÐºÐ¸ Ð·Ð° Ð½ÐµÑ€Ð¾Ð»ÐµÐ²Ñ‹Ðµ Ñ€ÐµÑÑƒÑ€ÑÑ‹, Ð±Ð°Ð³Ð¾ÑŽÐ·, Ð¿Ð¾Ð´Ð´ÐµÐ»ÐºÐ° Ð´Ð¾ÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒÑÑ‚Ð², Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ðµ RP-Ð¿Ñ€Ð°Ð²Ð¸Ð» Ð¸ FearRP, Ð° Ñ‚Ð°ÐºÐ¶Ðµ Ð¿Ñ€ÐµÐ¿ÑÑ‚ÑÑ‚Ð²Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð»Ñƒ.<br>
+<em>ÐÐ°ÐºÐ°Ð·Ð°Ð½Ð¸Ñ: Ð¾Ñ‚ ÐºÐ¸ÐºÐ° Ð¸ Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ Ð´Ð¾ Ð¿ÐµÑ€Ð¼Ð°Ð½ÐµÐ½Ñ‚Ð½Ð¾Ð³Ð¾ Ð±Ð°Ð½Ð°, Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ð¿ÑƒÐ½ÐºÑ‚Ð°.</em>
 </p>
-<p>Каждый игрок должен отыгрывать FearRP — боязнь смерти.</p>
+<p>ÐšÐ°Ð¶Ð´Ñ‹Ð¹ Ð¸Ð³Ñ€Ð¾Ðº Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð¾Ñ‚Ñ‹Ð³Ñ€Ñ‹Ð²Ð°Ñ‚ÑŒ FearRP â€” Ð±Ð¾ÑÐ·Ð½ÑŒ ÑÐ¼ÐµÑ€Ñ‚Ð¸.</p>
 </details>
 <details>
-<summary>4. Администрация и RP-имена</summary>
+<summary>4. ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ð¸ RP-Ð¸Ð¼ÐµÐ½Ð°</summary>
 <p>
-<b>Администрация.</b> Следящий контролирует игру и предотвращает нарушения. Он может изменить срок наказания в разумных пределах, обязан отчитываться администрации, действовать грамотно и уважительно, не злоупотреблять полномочиями, не снабжать игроков ресурсами, полученными через служебные возможности, и вовремя предотвращать инциденты.</p>
-<p>Следящий может быть снят с поста без предупреждения. Администратор может продлевать или сокращать сроки наказаний. Администратор предоставляет доказательства нарушения, при этом следящий не обязан отчитываться перед игроками. Оспорить действия администрации можно только в личных сообщениях <b>@ukt0001</b>.</p>
+<b>ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ.</b> Ð¡Ð»ÐµÐ´ÑÑ‰Ð¸Ð¹ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð¸Ñ€ÑƒÐµÑ‚ Ð¸Ð³Ñ€Ñƒ Ð¸ Ð¿Ñ€ÐµÐ´Ð¾Ñ‚Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ. ÐžÐ½ Ð¼Ð¾Ð¶ÐµÑ‚ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ ÑÑ€Ð¾Ðº Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ñ Ð² Ñ€Ð°Ð·ÑƒÐ¼Ð½Ñ‹Ñ… Ð¿Ñ€ÐµÐ´ÐµÐ»Ð°Ñ…, Ð¾Ð±ÑÐ·Ð°Ð½ Ð¾Ñ‚Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ñ‚ÑŒÑÑ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸, Ð´ÐµÐ¹ÑÑ‚Ð²Ð¾Ð²Ð°Ñ‚ÑŒ Ð³Ñ€Ð°Ð¼Ð¾Ñ‚Ð½Ð¾ Ð¸ ÑƒÐ²Ð°Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾, Ð½Ðµ Ð·Ð»Ð¾ÑƒÐ¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÑÑ‚ÑŒ Ð¿Ð¾Ð»Ð½Ð¾Ð¼Ð¾Ñ‡Ð¸ÑÐ¼Ð¸, Ð½Ðµ ÑÐ½Ð°Ð±Ð¶Ð°Ñ‚ÑŒ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ñ€ÐµÑÑƒÑ€ÑÐ°Ð¼Ð¸, Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ñ‹Ð¼Ð¸ Ñ‡ÐµÑ€ÐµÐ· ÑÐ»ÑƒÐ¶ÐµÐ±Ð½Ñ‹Ðµ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑ‚Ð¸, Ð¸ Ð²Ð¾Ð²Ñ€ÐµÐ¼Ñ Ð¿Ñ€ÐµÐ´Ð¾Ñ‚Ð²Ñ€Ð°Ñ‰Ð°Ñ‚ÑŒ Ð¸Ð½Ñ†Ð¸Ð´ÐµÐ½Ñ‚Ñ‹.</p>
+<p>Ð¡Ð»ÐµÐ´ÑÑ‰Ð¸Ð¹ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ ÑÐ½ÑÑ‚ Ñ Ð¿Ð¾ÑÑ‚Ð° Ð±ÐµÐ· Ð¿Ñ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ñ. ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€ Ð¼Ð¾Ð¶ÐµÑ‚ Ð¿Ñ€Ð¾Ð´Ð»ÐµÐ²Ð°Ñ‚ÑŒ Ð¸Ð»Ð¸ ÑÐ¾ÐºÑ€Ð°Ñ‰Ð°Ñ‚ÑŒ ÑÑ€Ð¾ÐºÐ¸ Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ð¹. ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€ Ð¿Ñ€ÐµÐ´Ð¾ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ Ð´Ð¾ÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒÑÑ‚Ð²Ð° Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ, Ð¿Ñ€Ð¸ ÑÑ‚Ð¾Ð¼ ÑÐ»ÐµÐ´ÑÑ‰Ð¸Ð¹ Ð½Ðµ Ð¾Ð±ÑÐ·Ð°Ð½ Ð¾Ñ‚Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ñ‚ÑŒÑÑ Ð¿ÐµÑ€ÐµÐ´ Ð¸Ð³Ñ€Ð¾ÐºÐ°Ð¼Ð¸. ÐžÑÐ¿Ð¾Ñ€Ð¸Ñ‚ÑŒ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸ Ð¼Ð¾Ð¶Ð½Ð¾ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð² Ð»Ð¸Ñ‡Ð½Ñ‹Ñ… ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸ÑÑ… <b>@ukt0001</b>.</p>
 <p>
-<b>RP-имена.</b> RP-имя — имя персонажа только в формате «Имя Фамилия» на русском языке, например: «Алекс Вендетто». В RP-имени запрещены мат, слова admin/moderator и подобные. Имя и фамилия должны существовать. Принимать во фракцию игрока без корректно установленного RP-имени запрещено.</p>
+<b>RP-Ð¸Ð¼ÐµÐ½Ð°.</b> RP-Ð¸Ð¼Ñ â€” Ð¸Ð¼Ñ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð° Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ Â«Ð˜Ð¼Ñ Ð¤Ð°Ð¼Ð¸Ð»Ð¸ÑÂ» Ð½Ð° Ñ€ÑƒÑÑÐºÐ¾Ð¼ ÑÐ·Ñ‹ÐºÐµ, Ð½Ð°Ð¿Ñ€Ð¸Ð¼ÐµÑ€: Â«ÐÐ»ÐµÐºÑ Ð’ÐµÐ½Ð´ÐµÑ‚Ñ‚Ð¾Â». Ð’ RP-Ð¸Ð¼ÐµÐ½Ð¸ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð¼Ð°Ñ‚, ÑÐ»Ð¾Ð²Ð° admin/moderator Ð¸ Ð¿Ð¾Ð´Ð¾Ð±Ð½Ñ‹Ðµ. Ð˜Ð¼Ñ Ð¸ Ñ„Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ñ‹ ÑÑƒÑ‰ÐµÑÑ‚Ð²Ð¾Ð²Ð°Ñ‚ÑŒ. ÐŸÑ€Ð¸Ð½Ð¸Ð¼Ð°Ñ‚ÑŒ Ð²Ð¾ Ñ„Ñ€Ð°ÐºÑ†Ð¸ÑŽ Ð¸Ð³Ñ€Ð¾ÐºÐ° Ð±ÐµÐ· ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ð¾Ð³Ð¾ RP-Ð¸Ð¼ÐµÐ½Ð¸ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾.</p>
 </details>
 </div>
 </section>
     <section id="help">
-<h2 class="section-title">Полезные ссылки</h2>
-<p class="section-copy">Всё, что нужно для участия в сообществе.</p>
+<h2 class="section-title">ÐŸÐ¾Ð»ÐµÐ·Ð½Ñ‹Ðµ ÑÑÑ‹Ð»ÐºÐ¸</h2>
+<p class="section-copy">Ð’ÑÑ‘, Ñ‡Ñ‚Ð¾ Ð½ÑƒÐ¶Ð½Ð¾ Ð´Ð»Ñ ÑƒÑ‡Ð°ÑÑ‚Ð¸Ñ Ð² ÑÐ¾Ð¾Ð±Ñ‰ÐµÑÑ‚Ð²Ðµ.</p>
 <div class="grid">
 <article class="card">
-<div class="number">РОЛИ</div>
-<h3>Список ролей</h3>
-<p>Здесь можно ознакомиться с доступными ролями и их описанием.</p>
+<div class="number">Ð ÐžÐ›Ð˜</div>
+<h3>Ð¡Ð¿Ð¸ÑÐ¾Ðº Ñ€Ð¾Ð»ÐµÐ¹</h3>
+<p>Ð—Ð´ÐµÑÑŒ Ð¼Ð¾Ð¶Ð½Ð¾ Ð¾Ð·Ð½Ð°ÐºÐ¾Ð¼Ð¸Ñ‚ÑŒÑÑ Ñ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ñ‹Ð¼Ð¸ Ñ€Ð¾Ð»ÑÐ¼Ð¸ Ð¸ Ð¸Ñ… Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸ÐµÐ¼.</p>
 <br>
-<a class="button" href="https://discord.gg/9mxzRVTnPp" target="_blank" rel="noreferrer">Посмотреть</a>
+<a class="button" href="https://discord.gg/9mxzRVTnPp" target="_blank" rel="noreferrer">ÐŸÐ¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ</a>
 </article>
 <article class="card">
-<div class="number">ПОМОЩЬ</div>
-<h3>Как зайти на сервер</h3>
-<p>Инструкция и помощь с подключением к серверу.</p>
+<div class="number">ÐŸÐžÐœÐžÐ©Ð¬</div>
+<h3>ÐšÐ°Ðº Ð·Ð°Ð¹Ñ‚Ð¸ Ð½Ð° ÑÐµÑ€Ð²ÐµÑ€</h3>
+<p>Ð˜Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ñ Ð¸ Ð¿Ð¾Ð¼Ð¾Ñ‰ÑŒ Ñ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸ÐµÐ¼ Ðº ÑÐµÑ€Ð²ÐµÑ€Ñƒ.</p>
 <br>
-<a class="button" href="https://discord.gg/ypVqfEfx3X" target="_blank" rel="noreferrer">Открыть</a>
+<a class="button" href="https://discord.gg/ypVqfEfx3X" target="_blank" rel="noreferrer">ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ</a>
 </article>
 <article class="card">
-<div class="number">ЗАЯВКИ</div>
-<h3>Подать заявку</h3>
-<p>Заявки в администрацию, на создание страны или фракции принимаются в Discord.</p>
+<div class="number">Ð—ÐÐ¯Ð’ÐšÐ˜</div>
+<h3>ÐŸÐ¾Ð´Ð°Ñ‚ÑŒ Ð·Ð°ÑÐ²ÐºÑƒ</h3>
+<p>Ð—Ð°ÑÐ²ÐºÐ¸ Ð² Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸ÑŽ, Ð½Ð° ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ñ‹ Ð¸Ð»Ð¸ Ñ„Ñ€Ð°ÐºÑ†Ð¸Ð¸ Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÑŽÑ‚ÑÑ Ð² Discord.</p>
 <br>
-<a class="button" href="https://discord.gg/CrXzENDW64" target="_blank" rel="noreferrer">Перейти к заявкам</a>
+<a class="button" href="https://discord.gg/CrXzENDW64" target="_blank" rel="noreferrer">ÐŸÐµÑ€ÐµÐ¹Ñ‚Ð¸ Ðº Ð·Ð°ÑÐ²ÐºÐ°Ð¼</a>
 </article>
 </div>
 </section>
@@ -306,133 +307,134 @@
 <div class="minecraft-tag">
 <span>
 </span> MINECRAFT RP</div>
-<h2>Основные правила Minecraft-сервера</h2>
-<p>Подключаясь к серверу, вы автоматически соглашаетесь со всеми правилами ниже и обязуетесь их выполнять. Это единственные официальные правила Minecraft-сервера.</p>
-<div class="minecraft-important">Незнание правил не освобождает от ответственности. Об изменениях игроки будут уведомлены в специальном канале Discord.</div>
-<div class="minecraft-update-note"><span>●</span> Голубой меткой «НОВОЕ» отмечены правила, добавленные или изменённые 04.08.2026.</div>
+<h2>ÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð° Minecraft-ÑÐµÑ€Ð²ÐµÑ€Ð°</h2>
+<p>ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡Ð°ÑÑÑŒ Ðº ÑÐµÑ€Ð²ÐµÑ€Ñƒ, Ð²Ñ‹ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸ ÑÐ¾Ð³Ð»Ð°ÑˆÐ°ÐµÑ‚ÐµÑÑŒ ÑÐ¾ Ð²ÑÐµÐ¼Ð¸ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°Ð¼Ð¸ Ð½Ð¸Ð¶Ðµ Ð¸ Ð¾Ð±ÑÐ·ÑƒÐµÑ‚ÐµÑÑŒ Ð¸Ñ… Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÑÑ‚ÑŒ. Ð­Ñ‚Ð¾ ÐµÐ´Ð¸Ð½ÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ðµ Ð¾Ñ„Ð¸Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð° Minecraft-ÑÐµÑ€Ð²ÐµÑ€Ð°.</p>
+<div class="minecraft-important">ÐÐµÐ·Ð½Ð°Ð½Ð¸Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð» Ð½Ðµ Ð¾ÑÐ²Ð¾Ð±Ð¾Ð¶Ð´Ð°ÐµÑ‚ Ð¾Ñ‚ Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸. ÐžÐ± Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸ÑÑ… Ð¸Ð³Ñ€Ð¾ÐºÐ¸ Ð±ÑƒÐ´ÑƒÑ‚ ÑƒÐ²ÐµÐ´Ð¾Ð¼Ð»ÐµÐ½Ñ‹ Ð² ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾Ð¼ ÐºÐ°Ð½Ð°Ð»Ðµ Discord.</div>
+<div class="minecraft-update-note"><span>â—</span> Ð“Ð¾Ð»ÑƒÐ±Ð¾Ð¹ Ð¼ÐµÑ‚ÐºÐ¾Ð¹ Â«ÐÐžÐ’ÐžÐ•Â» Ð¾Ñ‚Ð¼ÐµÑ‡ÐµÐ½Ñ‹ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°, Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð½Ñ‹Ðµ Ð¸Ð»Ð¸ Ð¸Ð·Ð¼ÐµÐ½Ñ‘Ð½Ð½Ñ‹Ðµ 04.08.2026.</div>
 </div>
 <div class="minecraft-rules">
 <details open>
-<summary>1. Общие положения <span class="rule-new">НОВОЕ</span></summary>
-<p>Перед правилами равны все игроки и администрация, кроме владельца сервера. Если что-то прямо не предусмотрено правилами, это не означает, что действие разрешено: оцените его с точки зрения логики RP-мира или обратитесь к администрации за уточнением.<span class="minecraft-note">Нарушение законов РФ на сервере строго запрещено.</span>
+<summary>1. ÐžÐ±Ñ‰Ð¸Ðµ Ð¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>ÐŸÐµÑ€ÐµÐ´ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°Ð¼Ð¸ Ñ€Ð°Ð²Ð½Ñ‹ Ð²ÑÐµ Ð¸Ð³Ñ€Ð¾ÐºÐ¸ Ð¸ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ, ÐºÑ€Ð¾Ð¼Ðµ Ð²Ð»Ð°Ð´ÐµÐ»ÑŒÑ†Ð° ÑÐµÑ€Ð²ÐµÑ€Ð°. Ð•ÑÐ»Ð¸ Ñ‡Ñ‚Ð¾-Ñ‚Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ Ð½Ðµ Ð¿Ñ€ÐµÐ´ÑƒÑÐ¼Ð¾Ñ‚Ñ€ÐµÐ½Ð¾ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°Ð¼Ð¸, ÑÑ‚Ð¾ Ð½Ðµ Ð¾Ð·Ð½Ð°Ñ‡Ð°ÐµÑ‚, Ñ‡Ñ‚Ð¾ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¾: Ð¾Ñ†ÐµÐ½Ð¸Ñ‚Ðµ ÐµÐ³Ð¾ Ñ Ñ‚Ð¾Ñ‡ÐºÐ¸ Ð·Ñ€ÐµÐ½Ð¸Ñ Ð»Ð¾Ð³Ð¸ÐºÐ¸ RP-Ð¼Ð¸Ñ€Ð° Ð¸Ð»Ð¸ Ð¾Ð±Ñ€Ð°Ñ‚Ð¸Ñ‚ÐµÑÑŒ Ðº Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸ Ð·Ð° ÑƒÑ‚Ð¾Ñ‡Ð½ÐµÐ½Ð¸ÐµÐ¼.<span class="minecraft-note">ÐÐ°Ñ€ÑƒÑˆÐµÐ½Ð¸Ðµ Ð·Ð°ÐºÐ¾Ð½Ð¾Ð² Ð Ð¤ Ð½Ð° ÑÐµÑ€Ð²ÐµÑ€Ðµ ÑÑ‚Ñ€Ð¾Ð³Ð¾ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾.</span>
 </p>
-<p>При частых или серьёзных нарушениях игрок может быть добавлен в список Нежелательных игроков (НИ). Минимальный срок бана для НИ — сутки; к бану добавляется отметка «+ НИ». Апелляция статуса подаётся через тикет на разбан.</p>
-<p>При заявке на разбан или жалобе на администрацию могут запросить демонстрацию экрана с событием. При отсутствии иных существенных доказательств приоритет имеют показания администрации.</p>
+<p>ÐŸÑ€Ð¸ Ñ‡Ð°ÑÑ‚Ñ‹Ñ… Ð¸Ð»Ð¸ ÑÐµÑ€ÑŒÑ‘Ð·Ð½Ñ‹Ñ… Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸ÑÑ… Ð¸Ð³Ñ€Ð¾Ðº Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ Ð² ÑÐ¿Ð¸ÑÐ¾Ðº ÐÐµÐ¶ÐµÐ»Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² (ÐÐ˜). ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÑ€Ð¾Ðº Ð±Ð°Ð½Ð° Ð´Ð»Ñ ÐÐ˜ â€” ÑÑƒÑ‚ÐºÐ¸; Ðº Ð±Ð°Ð½Ñƒ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚ÑÑ Ð¾Ñ‚Ð¼ÐµÑ‚ÐºÐ° Â«+ ÐÐ˜Â». ÐÐ¿ÐµÐ»Ð»ÑÑ†Ð¸Ñ ÑÑ‚Ð°Ñ‚ÑƒÑÐ° Ð¿Ð¾Ð´Ð°Ñ‘Ñ‚ÑÑ Ñ‡ÐµÑ€ÐµÐ· Ñ‚Ð¸ÐºÐµÑ‚ Ð½Ð° Ñ€Ð°Ð·Ð±Ð°Ð½.</p>
+<p>ÐŸÑ€Ð¸ Ð·Ð°ÑÐ²ÐºÐµ Ð½Ð° Ñ€Ð°Ð·Ð±Ð°Ð½ Ð¸Ð»Ð¸ Ð¶Ð°Ð»Ð¾Ð±Ðµ Ð½Ð° Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸ÑŽ Ð¼Ð¾Ð³ÑƒÑ‚ Ð·Ð°Ð¿Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ Ð´ÐµÐ¼Ð¾Ð½ÑÑ‚Ñ€Ð°Ñ†Ð¸ÑŽ ÑÐºÑ€Ð°Ð½Ð° Ñ ÑÐ¾Ð±Ñ‹Ñ‚Ð¸ÐµÐ¼. ÐŸÑ€Ð¸ Ð¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ð²Ð¸Ð¸ Ð¸Ð½Ñ‹Ñ… ÑÑƒÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð½Ñ‹Ñ… Ð´Ð¾ÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒÑÑ‚Ð² Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚ Ð¸Ð¼ÐµÑŽÑ‚ Ð¿Ð¾ÐºÐ°Ð·Ð°Ð½Ð¸Ñ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸.</p>
 </details>
 <details>
-<summary>1.1 | Нон-рп <span class="rule-new">НОВОЕ</span></summary>
-<p>Неправильная отыгровка или её отсутствие вовсе, согласно лору мира и сервера, логике и правилам. Нарушение нюансов отыгрыша также будет расцениваться как нарушение данного пункта правил. Учитывайте, что под «лором мира и сервера» подразумеваются события, происходившие на сервере.</p>
+<summary>1.1 | ÐÐ¾Ð½-Ñ€Ð¿ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð°Ñ Ð¾Ñ‚Ñ‹Ð³Ñ€Ð¾Ð²ÐºÐ° Ð¸Ð»Ð¸ ÐµÑ‘ Ð¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ð²Ð¸Ðµ Ð²Ð¾Ð²ÑÐµ, ÑÐ¾Ð³Ð»Ð°ÑÐ½Ð¾ Ð»Ð¾Ñ€Ñƒ Ð¼Ð¸Ñ€Ð° Ð¸ ÑÐµÑ€Ð²ÐµÑ€Ð°, Ð»Ð¾Ð³Ð¸ÐºÐµ Ð¸ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°Ð¼. ÐÐ°Ñ€ÑƒÑˆÐµÐ½Ð¸Ðµ Ð½ÑŽÐ°Ð½ÑÐ¾Ð² Ð¾Ñ‚Ñ‹Ð³Ñ€Ñ‹ÑˆÐ° Ñ‚Ð°ÐºÐ¶Ðµ Ð±ÑƒÐ´ÐµÑ‚ Ñ€Ð°ÑÑ†ÐµÐ½Ð¸Ð²Ð°Ñ‚ÑŒÑÑ ÐºÐ°Ðº Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ðµ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¿ÑƒÐ½ÐºÑ‚Ð° Ð¿Ñ€Ð°Ð²Ð¸Ð». Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ð¿Ð¾Ð´ Â«Ð»Ð¾Ñ€Ð¾Ð¼ Ð¼Ð¸Ñ€Ð° Ð¸ ÑÐµÑ€Ð²ÐµÑ€Ð°Â» Ð¿Ð¾Ð´Ñ€Ð°Ð·ÑƒÐ¼ÐµÐ²Ð°ÑŽÑ‚ÑÑ ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ñ, Ð¿Ñ€Ð¾Ð¸ÑÑ…Ð¾Ð´Ð¸Ð²ÑˆÐ¸Ðµ Ð½Ð° ÑÐµÑ€Ð²ÐµÑ€Ðµ.</p>
 </details>
 <details>
-<summary>1.2 | Беспричинная агрессия <span class="rule-new">НОВОЕ</span></summary>
-<p>Намеренная попытка ранения или убийства любых игроков без адекватной РП-причины, возникшей во время РП-процесса.</p>
+<summary>1.2 | Ð‘ÐµÑÐ¿Ñ€Ð¸Ñ‡Ð¸Ð½Ð½Ð°Ñ Ð°Ð³Ñ€ÐµÑÑÐ¸Ñ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>ÐÐ°Ð¼ÐµÑ€ÐµÐ½Ð½Ð°Ñ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÐ° Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð¸Ð»Ð¸ ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²Ð° Ð»ÑŽÐ±Ñ‹Ñ… Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ð±ÐµÐ· Ð°Ð´ÐµÐºÐ²Ð°Ñ‚Ð½Ð¾Ð¹ Ð ÐŸ-Ð¿Ñ€Ð¸Ñ‡Ð¸Ð½Ñ‹, Ð²Ð¾Ð·Ð½Ð¸ÐºÑˆÐµÐ¹ Ð²Ð¾ Ð²Ñ€ÐµÐ¼Ñ Ð ÐŸ-Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ°.</p>
 </details>
 <details>
-<summary>1.3 | Превышение возможностей <span class="rule-new">НОВОЕ</span></summary>
-<p>Превышение допустимых человеческих возможностей и возможностей производства; выполнение действий, которые вы или ваше государство не смогли бы сделать в реальной жизни.</p>
+<summary>1.3 | ÐŸÑ€ÐµÐ²Ñ‹ÑˆÐµÐ½Ð¸Ðµ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑ‚ÐµÐ¹ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>ÐŸÑ€ÐµÐ²Ñ‹ÑˆÐµÐ½Ð¸Ðµ Ð´Ð¾Ð¿ÑƒÑÑ‚Ð¸Ð¼Ñ‹Ñ… Ñ‡ÐµÐ»Ð¾Ð²ÐµÑ‡ÐµÑÐºÐ¸Ñ… Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑ‚ÐµÐ¹ Ð¸ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑ‚ÐµÐ¹ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð°; Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ð¹, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð²Ñ‹ Ð¸Ð»Ð¸ Ð²Ð°ÑˆÐµ Ð³Ð¾ÑÑƒÐ´Ð°Ñ€ÑÑ‚Ð²Ð¾ Ð½Ðµ ÑÐ¼Ð¾Ð³Ð»Ð¸ Ð±Ñ‹ ÑÐ´ÐµÐ»Ð°Ñ‚ÑŒ Ð² Ñ€ÐµÐ°Ð»ÑŒÐ½Ð¾Ð¹ Ð¶Ð¸Ð·Ð½Ð¸.</p>
 <div class="minecraft-examples">
-<strong>Примеры превышения возможностей:</strong>
+<strong>ÐŸÑ€Ð¸Ð¼ÐµÑ€Ñ‹ Ð¿Ñ€ÐµÐ²Ñ‹ÑˆÐµÐ½Ð¸Ñ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑ‚ÐµÐ¹:</strong>
 <ul>
-<li>подвозка новых орудий и припасов в случае окружения войск;</li>
-<li>бесконечные пополнения войск;</li>
-<li>атака танками в горы;</li>
-<li>солдат больше 90% населения;</li>
-<li>производство товара без завода, который должен его производить, или без подходящих материалов.</li>
+<li>Ð¿Ð¾Ð´Ð²Ð¾Ð·ÐºÐ° Ð½Ð¾Ð²Ñ‹Ñ… Ð¾Ñ€ÑƒÐ´Ð¸Ð¹ Ð¸ Ð¿Ñ€Ð¸Ð¿Ð°ÑÐ¾Ð² Ð² ÑÐ»ÑƒÑ‡Ð°Ðµ Ð¾ÐºÑ€ÑƒÐ¶ÐµÐ½Ð¸Ñ Ð²Ð¾Ð¹ÑÐº;</li>
+<li>Ð±ÐµÑÐºÐ¾Ð½ÐµÑ‡Ð½Ñ‹Ðµ Ð¿Ð¾Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ Ð²Ð¾Ð¹ÑÐº;</li>
+<li>Ð°Ñ‚Ð°ÐºÐ° Ñ‚Ð°Ð½ÐºÐ°Ð¼Ð¸ Ð² Ð³Ð¾Ñ€Ñ‹;</li>
+<li>ÑÐ¾Ð»Ð´Ð°Ñ‚ Ð±Ð¾Ð»ÑŒÑˆÐµ 90% Ð½Ð°ÑÐµÐ»ÐµÐ½Ð¸Ñ;</li>
+<li>Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ñ‚Ð¾Ð²Ð°Ñ€Ð° Ð±ÐµÐ· Ð·Ð°Ð²Ð¾Ð´Ð°, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÐµÐ³Ð¾ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ, Ð¸Ð»Ð¸ Ð±ÐµÐ· Ð¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ñ… Ð¼Ð°Ñ‚ÐµÑ€Ð¸Ð°Ð»Ð¾Ð².</li>
 </ul>
 </div>
-<p>Вы обязаны отыгрывать адекватные РП-действия и приказы, совершённые в отношении вашего персонажа. Приказы, которые невозможны или нарушают правила сервера, отдавать запрещено.</p>
+<p>Ð’Ñ‹ Ð¾Ð±ÑÐ·Ð°Ð½Ñ‹ Ð¾Ñ‚Ñ‹Ð³Ñ€Ñ‹Ð²Ð°Ñ‚ÑŒ Ð°Ð´ÐµÐºÐ²Ð°Ñ‚Ð½Ñ‹Ðµ Ð ÐŸ-Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ Ð¸ Ð¿Ñ€Ð¸ÐºÐ°Ð·Ñ‹, ÑÐ¾Ð²ÐµÑ€ÑˆÑ‘Ð½Ð½Ñ‹Ðµ Ð² Ð¾Ñ‚Ð½Ð¾ÑˆÐµÐ½Ð¸Ð¸ Ð²Ð°ÑˆÐµÐ³Ð¾ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°. ÐŸÑ€Ð¸ÐºÐ°Ð·Ñ‹, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ñ‹ Ð¸Ð»Ð¸ Ð½Ð°Ñ€ÑƒÑˆÐ°ÑŽÑ‚ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð° ÑÐµÑ€Ð²ÐµÑ€Ð°, Ð¾Ñ‚Ð´Ð°Ð²Ð°Ñ‚ÑŒ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾.</p>
 </details>
 <details>
-<summary>1.4 | OOC-информация <span class="rule-new">НОВОЕ</span></summary>
-<p>Запрещено распространять и использовать информацию, которую ваш персонаж получил не РП-путём или в результате нарушения правил сервера кем-либо. В случае смерти персонажа новый персонаж никак не связан с предыдущим воспоминаниями и ситуациями.</p>
+<summary>1.4 | OOC-Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÑ‚ÑŒ Ð¸ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ, ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ Ð²Ð°Ñˆ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð» Ð½Ðµ Ð ÐŸ-Ð¿ÑƒÑ‚Ñ‘Ð¼ Ð¸Ð»Ð¸ Ð² Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ðµ Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ Ð¿Ñ€Ð°Ð²Ð¸Ð» ÑÐµÑ€Ð²ÐµÑ€Ð° ÐºÐµÐ¼-Ð»Ð¸Ð±Ð¾. Ð’ ÑÐ»ÑƒÑ‡Ð°Ðµ ÑÐ¼ÐµÑ€Ñ‚Ð¸ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð° Ð½Ð¾Ð²Ñ‹Ð¹ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ Ð½Ð¸ÐºÐ°Ðº Ð½Ðµ ÑÐ²ÑÐ·Ð°Ð½ Ñ Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¼ Ð²Ð¾ÑÐ¿Ð¾Ð¼Ð¸Ð½Ð°Ð½Ð¸ÑÐ¼Ð¸ Ð¸ ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸ÑÐ¼Ð¸.</p>
 </details>
 <details>
-<summary>1.5 | Страх за жизнь <span class="rule-new">НОВОЕ</span></summary>
-<p>Ваш главный персонаж должен испытывать страх за свою жизнь и за свою страну.</p>
+<summary>1.5 | Ð¡Ñ‚Ñ€Ð°Ñ… Ð·Ð° Ð¶Ð¸Ð·Ð½ÑŒ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð’Ð°Ñˆ Ð³Ð»Ð°Ð²Ð½Ñ‹Ð¹ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð¸ÑÐ¿Ñ‹Ñ‚Ñ‹Ð²Ð°Ñ‚ÑŒ ÑÑ‚Ñ€Ð°Ñ… Ð·Ð° ÑÐ²Ð¾ÑŽ Ð¶Ð¸Ð·Ð½ÑŒ Ð¸ Ð·Ð° ÑÐ²Ð¾ÑŽ ÑÑ‚Ñ€Ð°Ð½Ñƒ.</p>
 </details>
 <details>
-<summary>1.6 | Правило достоверной информации <span class="rule-new">НОВОЕ</span></summary>
-<p>Любой военный конфликт должен быть обоснован — необходим казус белли.</p>
+<summary>1.6 | ÐŸÑ€Ð°Ð²Ð¸Ð»Ð¾ Ð´Ð¾ÑÑ‚Ð¾Ð²ÐµÑ€Ð½Ð¾Ð¹ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð›ÑŽÐ±Ð¾Ð¹ Ð²Ð¾ÐµÐ½Ð½Ñ‹Ð¹ ÐºÐ¾Ð½Ñ„Ð»Ð¸ÐºÑ‚ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ð±Ð¾ÑÐ½Ð¾Ð²Ð°Ð½ â€” Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼ ÐºÐ°Ð·ÑƒÑ Ð±ÐµÐ»Ð»Ð¸.</p>
 </details>
 <details>
-<summary>1.7 | Неприемлемый отыгрыш <span class="rule-new">НОВОЕ</span></summary>
-<p>Запрещается отыгрывать любые действия, которые включают в себя отыгрыш, не совпадающий с тоном ситуации.</p>
+<summary>1.7 | ÐÐµÐ¿Ñ€Ð¸ÐµÐ¼Ð»ÐµÐ¼Ñ‹Ð¹ Ð¾Ñ‚Ñ‹Ð³Ñ€Ñ‹Ñˆ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰Ð°ÐµÑ‚ÑÑ Ð¾Ñ‚Ñ‹Ð³Ñ€Ñ‹Ð²Ð°Ñ‚ÑŒ Ð»ÑŽÐ±Ñ‹Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð²ÐºÐ»ÑŽÑ‡Ð°ÑŽÑ‚ Ð² ÑÐµÐ±Ñ Ð¾Ñ‚Ñ‹Ð³Ñ€Ñ‹Ñˆ, Ð½Ðµ ÑÐ¾Ð²Ð¿Ð°Ð´Ð°ÑŽÑ‰Ð¸Ð¹ Ñ Ñ‚Ð¾Ð½Ð¾Ð¼ ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸Ð¸.</p>
 </details>
 <details>
-<summary>1.8 | NonRP Time <span class="rule-new">НОВОЕ</span></summary>
-<p>Строго запрещено намеренно срывать РП-процесс путём NonRP-речи и действий, которые влекут за собой выход игроков из РП-процесса или наносят вред действиям оставшихся в нём игроков.</p>
+<summary>1.8 | NonRP Time <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð¡Ñ‚Ñ€Ð¾Ð³Ð¾ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð½Ð°Ð¼ÐµÑ€ÐµÐ½Ð½Ð¾ ÑÑ€Ñ‹Ð²Ð°Ñ‚ÑŒ Ð ÐŸ-Ð¿Ñ€Ð¾Ñ†ÐµÑÑ Ð¿ÑƒÑ‚Ñ‘Ð¼ NonRP-Ñ€ÐµÑ‡Ð¸ Ð¸ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ð¹, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð²Ð»ÐµÐºÑƒÑ‚ Ð·Ð° ÑÐ¾Ð±Ð¾Ð¹ Ð²Ñ‹Ñ…Ð¾Ð´ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ð¸Ð· Ð ÐŸ-Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ° Ð¸Ð»Ð¸ Ð½Ð°Ð½Ð¾ÑÑÑ‚ Ð²Ñ€ÐµÐ´ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸ÑÐ¼ Ð¾ÑÑ‚Ð°Ð²ÑˆÐ¸Ñ…ÑÑ Ð² Ð½Ñ‘Ð¼ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð².</p>
 </details>
 <details>
-<summary>1.9 | AFK <span class="rule-new">НОВОЕ</span></summary>
-<p>Запрещено стоять на месте и бездействовать на территории чужой страны более трёх минут.</p>
+<summary>1.9 | AFK <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ ÑÑ‚Ð¾ÑÑ‚ÑŒ Ð½Ð° Ð¼ÐµÑÑ‚Ðµ Ð¸ Ð±ÐµÐ·Ð´ÐµÐ¹ÑÑ‚Ð²Ð¾Ð²Ð°Ñ‚ÑŒ Ð½Ð° Ñ‚ÐµÑ€Ñ€Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸ Ñ‡ÑƒÐ¶Ð¾Ð¹ ÑÑ‚Ñ€Ð°Ð½Ñ‹ Ð±Ð¾Ð»ÐµÐµ Ñ‚Ñ€Ñ‘Ñ… Ð¼Ð¸Ð½ÑƒÑ‚.</p>
 </details>
 <details>
-<summary>2.0 | Читы / багоюз / абуз правил <span class="rule-new">НОВОЕ</span></summary>
-<p>Использование любых читов, лазеек в коде, изменений файлов кода, багов, недостатков игры, движка или правил сервера строго запрещено.</p>
+<summary>2.0 | Ð§Ð¸Ñ‚Ñ‹ / Ð±Ð°Ð³Ð¾ÑŽÐ· / Ð°Ð±ÑƒÐ· Ð¿Ñ€Ð°Ð²Ð¸Ð» <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð»ÑŽÐ±Ñ‹Ñ… Ñ‡Ð¸Ñ‚Ð¾Ð², Ð»Ð°Ð·ÐµÐµÐº Ð² ÐºÐ¾Ð´Ðµ, Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¹ Ñ„Ð°Ð¹Ð»Ð¾Ð² ÐºÐ¾Ð´Ð°, Ð±Ð°Ð³Ð¾Ð², Ð½ÐµÐ´Ð¾ÑÑ‚Ð°Ñ‚ÐºÐ¾Ð² Ð¸Ð³Ñ€Ñ‹, Ð´Ð²Ð¸Ð¶ÐºÐ° Ð¸Ð»Ð¸ Ð¿Ñ€Ð°Ð²Ð¸Ð» ÑÐµÑ€Ð²ÐµÑ€Ð° ÑÑ‚Ñ€Ð¾Ð³Ð¾ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾.</p>
 </details>
 <details>
-<summary>2.1 | Обход наказания <span class="rule-new">НОВОЕ</span></summary>
-<p>Попытки обойти полученное наказание путём создания нового аккаунта, переподключения к серверу, подключения к другому серверу после получения бана или смены IP строго запрещены. Также запрещена игра с другого аккаунта при наличии аккаунта в Списке Злостных Нарушителей.</p>
+<summary>2.1 | ÐžÐ±Ñ…Ð¾Ð´ Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ñ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>ÐŸÐ¾Ð¿Ñ‹Ñ‚ÐºÐ¸ Ð¾Ð±Ð¾Ð¹Ñ‚Ð¸ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ð¾Ðµ Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ Ð¿ÑƒÑ‚Ñ‘Ð¼ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚Ð°, Ð¿ÐµÑ€ÐµÐ¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ðº ÑÐµÑ€Ð²ÐµÑ€Ñƒ, Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ðº Ð´Ñ€ÑƒÐ³Ð¾Ð¼Ñƒ ÑÐµÑ€Ð²ÐµÑ€Ñƒ Ð¿Ð¾ÑÐ»Ðµ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ñ Ð±Ð°Ð½Ð° Ð¸Ð»Ð¸ ÑÐ¼ÐµÐ½Ñ‹ IP ÑÑ‚Ñ€Ð¾Ð³Ð¾ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹. Ð¢Ð°ÐºÐ¶Ðµ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð° Ð¸Ð³Ñ€Ð° Ñ Ð´Ñ€ÑƒÐ³Ð¾Ð³Ð¾ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚Ð° Ð¿Ñ€Ð¸ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ð¸ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚Ð° Ð² Ð¡Ð¿Ð¸ÑÐºÐµ Ð—Ð»Ð¾ÑÑ‚Ð½Ñ‹Ñ… ÐÐ°Ñ€ÑƒÑˆÐ¸Ñ‚ÐµÐ»ÐµÐ¹.</p>
 </details>
 <details>
-<summary>2.2 | Помеха работе администрации <span class="rule-new">НОВОЕ</span></summary>
-<p>Запрещено покидать сервер во время разборок или препятствовать работе администрации: кричать в микрофон, переходить в режим наблюдателя, перезаходить на сервер с изменением никнейма, провоцировать, повторять одни и те же вопросы после получения ответа, намеренно стоять AFK на разборках и так далее.</p>
+<summary>2.2 | ÐŸÐ¾Ð¼ÐµÑ…Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ðµ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð¿Ð¾ÐºÐ¸Ð´Ð°Ñ‚ÑŒ ÑÐµÑ€Ð²ÐµÑ€ Ð²Ð¾ Ð²Ñ€ÐµÐ¼Ñ Ñ€Ð°Ð·Ð±Ð¾Ñ€Ð¾Ðº Ð¸Ð»Ð¸ Ð¿Ñ€ÐµÐ¿ÑÑ‚ÑÑ‚Ð²Ð¾Ð²Ð°Ñ‚ÑŒ Ñ€Ð°Ð±Ð¾Ñ‚Ðµ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸: ÐºÑ€Ð¸Ñ‡Ð°Ñ‚ÑŒ Ð² Ð¼Ð¸ÐºÑ€Ð¾Ñ„Ð¾Ð½, Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´Ð¸Ñ‚ÑŒ Ð² Ñ€ÐµÐ¶Ð¸Ð¼ Ð½Ð°Ð±Ð»ÑŽÐ´Ð°Ñ‚ÐµÐ»Ñ, Ð¿ÐµÑ€ÐµÐ·Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑŒ Ð½Ð° ÑÐµÑ€Ð²ÐµÑ€ Ñ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸ÐµÐ¼ Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼Ð°, Ð¿Ñ€Ð¾Ð²Ð¾Ñ†Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ, Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÑÑ‚ÑŒ Ð¾Ð´Ð½Ð¸ Ð¸ Ñ‚Ðµ Ð¶Ðµ Ð²Ð¾Ð¿Ñ€Ð¾ÑÑ‹ Ð¿Ð¾ÑÐ»Ðµ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ñ Ð¾Ñ‚Ð²ÐµÑ‚Ð°, Ð½Ð°Ð¼ÐµÑ€ÐµÐ½Ð½Ð¾ ÑÑ‚Ð¾ÑÑ‚ÑŒ AFK Ð½Ð° Ñ€Ð°Ð·Ð±Ð¾Ñ€ÐºÐ°Ñ… Ð¸ Ñ‚Ð°Ðº Ð´Ð°Ð»ÐµÐµ.</p>
 </details>
 <details>
-<summary>2.3 | Язык <span class="rule-new">НОВОЕ</span></summary>
-<p>На сервере запрещено общение на других языках, кроме русского, если это создаёт проблемы другим игрокам или не вписывается в РП-процесс.</p>
+<summary>2.3 | Ð¯Ð·Ñ‹Ðº <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>ÐÐ° ÑÐµÑ€Ð²ÐµÑ€Ðµ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ð½Ð° Ð´Ñ€ÑƒÐ³Ð¸Ñ… ÑÐ·Ñ‹ÐºÐ°Ñ…, ÐºÑ€Ð¾Ð¼Ðµ Ñ€ÑƒÑÑÐºÐ¾Ð³Ð¾, ÐµÑÐ»Ð¸ ÑÑ‚Ð¾ ÑÐ¾Ð·Ð´Ð°Ñ‘Ñ‚ Ð¿Ñ€Ð¾Ð±Ð»ÐµÐ¼Ñ‹ Ð´Ñ€ÑƒÐ³Ð¸Ð¼ Ð¸Ð³Ñ€Ð¾ÐºÐ°Ð¼ Ð¸Ð»Ð¸ Ð½Ðµ Ð²Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÑ‚ÑÑ Ð² Ð ÐŸ-Ð¿Ñ€Ð¾Ñ†ÐµÑÑ.</p>
 </details>
 <details>
-<summary>2.4 | Никнеймы <span class="rule-new">НОВОЕ</span></summary>
-<p>Никнейм должен состоять из читаемых букв, цифр или других символов. В нём не должно быть прямых или завуалированных оскорблений, унижения игроков, схожих или одинаковых никнеймов других игроков либо администраторов, «пустых» символов или нарушений других правил сервера. Никнейм должен легко читаться большинством пользователей, чтобы к вам можно было обратиться при необходимости.</p>
+<summary>2.4 | ÐÐ¸ÐºÐ½ÐµÐ¹Ð¼Ñ‹ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>ÐÐ¸ÐºÐ½ÐµÐ¹Ð¼ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÑÐ¾ÑÑ‚Ð¾ÑÑ‚ÑŒ Ð¸Ð· Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼Ñ‹Ñ… Ð±ÑƒÐºÐ², Ñ†Ð¸Ñ„Ñ€ Ð¸Ð»Ð¸ Ð´Ñ€ÑƒÐ³Ð¸Ñ… ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð². Ð’ Ð½Ñ‘Ð¼ Ð½Ðµ Ð´Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ñ€ÑÐ¼Ñ‹Ñ… Ð¸Ð»Ð¸ Ð·Ð°Ð²ÑƒÐ°Ð»Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ñ… Ð¾ÑÐºÐ¾Ñ€Ð±Ð»ÐµÐ½Ð¸Ð¹, ÑƒÐ½Ð¸Ð¶ÐµÐ½Ð¸Ñ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð², ÑÑ…Ð¾Ð¶Ð¸Ñ… Ð¸Ð»Ð¸ Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ñ‹Ñ… Ð½Ð¸ÐºÐ½ÐµÐ¹Ð¼Ð¾Ð² Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ð»Ð¸Ð±Ð¾ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð¾Ð², Â«Ð¿ÑƒÑÑ‚Ñ‹Ñ…Â» ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² Ð¸Ð»Ð¸ Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ð¹ Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð¿Ñ€Ð°Ð²Ð¸Ð» ÑÐµÑ€Ð²ÐµÑ€Ð°. ÐÐ¸ÐºÐ½ÐµÐ¹Ð¼ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð»ÐµÐ³ÐºÐ¾ Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒÑÑ Ð±Ð¾Ð»ÑŒÑˆÐ¸Ð½ÑÑ‚Ð²Ð¾Ð¼ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¹, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ðº Ð²Ð°Ð¼ Ð¼Ð¾Ð¶Ð½Ð¾ Ð±Ñ‹Ð»Ð¾ Ð¾Ð±Ñ€Ð°Ñ‚Ð¸Ñ‚ÑŒÑÑ Ð¿Ñ€Ð¸ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ÑÑ‚Ð¸.</p>
 </details>
 <details>
-<summary>2.5 | Споры <span class="rule-new">НОВОЕ</span></summary>
-<p>Запрещены продолжительные и (или) агрессивные споры в голосовом чате, если игроков это раздражает. Также запрещено любое обсуждение политики.</p>
+<summary>2.5 | Ð¡Ð¿Ð¾Ñ€Ñ‹ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð¸ (Ð¸Ð»Ð¸) Ð°Ð³Ñ€ÐµÑÑÐ¸Ð²Ð½Ñ‹Ðµ ÑÐ¿Ð¾Ñ€Ñ‹ Ð² Ð³Ð¾Ð»Ð¾ÑÐ¾Ð²Ð¾Ð¼ Ñ‡Ð°Ñ‚Ðµ, ÐµÑÐ»Ð¸ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² ÑÑ‚Ð¾ Ñ€Ð°Ð·Ð´Ñ€Ð°Ð¶Ð°ÐµÑ‚. Ð¢Ð°ÐºÐ¶Ðµ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð»ÑŽÐ±Ð¾Ðµ Ð¾Ð±ÑÑƒÐ¶Ð´ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð»Ð¸Ñ‚Ð¸ÐºÐ¸.</p>
 </details>
 <details>
-<summary>2.6 | Токсичное поведение <span class="rule-new">НОВОЕ</span></summary>
-<p>На сервере строго запрещены любые NonRP-оскорбления в адрес игроков, сервера или администрации. Оскорбления при отыгрыше без РП-причины также запрещены.</p>
+<summary>2.6 | Ð¢Ð¾ÐºÑÐ¸Ñ‡Ð½Ð¾Ðµ Ð¿Ð¾Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>ÐÐ° ÑÐµÑ€Ð²ÐµÑ€Ðµ ÑÑ‚Ñ€Ð¾Ð³Ð¾ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹ Ð»ÑŽÐ±Ñ‹Ðµ NonRP-Ð¾ÑÐºÐ¾Ñ€Ð±Ð»ÐµÐ½Ð¸Ñ Ð² Ð°Ð´Ñ€ÐµÑ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð², ÑÐµÑ€Ð²ÐµÑ€Ð° Ð¸Ð»Ð¸ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ð¸. ÐžÑÐºÐ¾Ñ€Ð±Ð»ÐµÐ½Ð¸Ñ Ð¿Ñ€Ð¸ Ð¾Ñ‚Ñ‹Ð³Ñ€Ñ‹ÑˆÐµ Ð±ÐµÐ· Ð ÐŸ-Ð¿Ñ€Ð¸Ñ‡Ð¸Ð½Ñ‹ Ñ‚Ð°ÐºÐ¶Ðµ Ð·Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ñ‹.</p>
 </details>
 <details>
-<summary>2.7 | Неадекватное поведение <span class="rule-new">НОВОЕ</span></summary>
-<p>Если игрок ведёт себя неадекватно и не может идти на адекватный диалог, администрация вправе выдать наказание без разъяснения причины.</p>
+<summary>2.7 | ÐÐµÐ°Ð´ÐµÐºÐ²Ð°Ñ‚Ð½Ð¾Ðµ Ð¿Ð¾Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð•ÑÐ»Ð¸ Ð¸Ð³Ñ€Ð¾Ðº Ð²ÐµÐ´Ñ‘Ñ‚ ÑÐµÐ±Ñ Ð½ÐµÐ°Ð´ÐµÐºÐ²Ð°Ñ‚Ð½Ð¾ Ð¸ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð¸Ð´Ñ‚Ð¸ Ð½Ð° Ð°Ð´ÐµÐºÐ²Ð°Ñ‚Ð½Ñ‹Ð¹ Ð´Ð¸Ð°Ð»Ð¾Ð³, Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ð²Ð¿Ñ€Ð°Ð²Ðµ Ð²Ñ‹Ð´Ð°Ñ‚ÑŒ Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ Ð±ÐµÐ· Ñ€Ð°Ð·ÑŠÑÑÐ½ÐµÐ½Ð¸Ñ Ð¿Ñ€Ð¸Ñ‡Ð¸Ð½Ñ‹.</p>
 </details>
 <details>
-<summary>2.8 | Клевета <span class="rule-new">НОВОЕ</span></summary>
-<p>Запрещено вводить администрацию и игроков сервера в заблуждение или клеветать на других людей вне РП-процесса.</p>
+<summary>2.8 | ÐšÐ»ÐµÐ²ÐµÑ‚Ð° <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð²Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸ÑŽ Ð¸ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² ÑÐµÑ€Ð²ÐµÑ€Ð° Ð² Ð·Ð°Ð±Ð»ÑƒÐ¶Ð´ÐµÐ½Ð¸Ðµ Ð¸Ð»Ð¸ ÐºÐ»ÐµÐ²ÐµÑ‚Ð°Ñ‚ÑŒ Ð½Ð° Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð»ÑŽÐ´ÐµÐ¹ Ð²Ð½Ðµ Ð ÐŸ-Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ°.</p>
 </details>
 <details>
-<summary>2.9 | Раздражительные звуки <span class="rule-new">НОВОЕ</span></summary>
-<p>Запрещено издавать громкие или раздражительные звуки. Администрация самостоятельно определяет, какие звуки являются раздражительными.</p>
+<summary>2.9 | Ð Ð°Ð·Ð´Ñ€Ð°Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð·Ð²ÑƒÐºÐ¸ <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð¾ Ð¸Ð·Ð´Ð°Ð²Ð°Ñ‚ÑŒ Ð³Ñ€Ð¾Ð¼ÐºÐ¸Ðµ Ð¸Ð»Ð¸ Ñ€Ð°Ð·Ð´Ñ€Ð°Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð·Ð²ÑƒÐºÐ¸. ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ ÑÐ°Ð¼Ð¾ÑÑ‚Ð¾ÑÑ‚ÐµÐ»ÑŒÐ½Ð¾ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÑ‚, ÐºÐ°ÐºÐ¸Ðµ Ð·Ð²ÑƒÐºÐ¸ ÑÐ²Ð»ÑÑŽÑ‚ÑÑ Ñ€Ð°Ð·Ð´Ñ€Ð°Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼Ð¸.</p>
 </details>
 <details>
-<summary>3.0 | Реклама <span class="rule-new">НОВОЕ</span></summary>
-<p>Запрещена любая реклама других серверов Minecraft, а также любых социальных сетей и других каналов, рулеток, казино, кейсов, читов и прочих сомнительных сайтов или серверов по любым играм.</p>
+<summary>3.0 | Ð ÐµÐºÐ»Ð°Ð¼Ð° <span class="rule-new">ÐÐžÐ’ÐžÐ•</span></summary>
+<p>Ð—Ð°Ð¿Ñ€ÐµÑ‰ÐµÐ½Ð° Ð»ÑŽÐ±Ð°Ñ Ñ€ÐµÐºÐ»Ð°Ð¼Ð° Ð´Ñ€ÑƒÐ³Ð¸Ñ… ÑÐµÑ€Ð²ÐµÑ€Ð¾Ð² Minecraft, Ð° Ñ‚Ð°ÐºÐ¶Ðµ Ð»ÑŽÐ±Ñ‹Ñ… ÑÐ¾Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ñ… ÑÐµÑ‚ÐµÐ¹ Ð¸ Ð´Ñ€ÑƒÐ³Ð¸Ñ… ÐºÐ°Ð½Ð°Ð»Ð¾Ð², Ñ€ÑƒÐ»ÐµÑ‚Ð¾Ðº, ÐºÐ°Ð·Ð¸Ð½Ð¾, ÐºÐµÐ¹ÑÐ¾Ð², Ñ‡Ð¸Ñ‚Ð¾Ð² Ð¸ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ… ÑÐ¾Ð¼Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… ÑÐ°Ð¹Ñ‚Ð¾Ð² Ð¸Ð»Ð¸ ÑÐµÑ€Ð²ÐµÑ€Ð¾Ð² Ð¿Ð¾ Ð»ÑŽÐ±Ñ‹Ð¼ Ð¸Ð³Ñ€Ð°Ð¼.</p>
 </details>
 </div>
 </section>
     <section id="history">
 <div class="history-top">
 <div>
-<h2 class="section-title">История изменений правил</h2>
-<p class="section-copy">Здесь сохраняются все важные изменения, чтобы игроки всегда видели актуальную версию правил.</p>
+<h2 class="section-title">Ð˜ÑÑ‚Ð¾Ñ€Ð¸Ñ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¹ Ð¿Ñ€Ð°Ð²Ð¸Ð»</h2>
+<p class="section-copy">Ð—Ð´ÐµÑÑŒ ÑÐ¾Ñ…Ñ€Ð°Ð½ÑÑŽÑ‚ÑÑ Ð²ÑÐµ Ð²Ð°Ð¶Ð½Ñ‹Ðµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¸Ð³Ñ€Ð¾ÐºÐ¸ Ð²ÑÐµÐ³Ð´Ð° Ð²Ð¸Ð´ÐµÐ»Ð¸ Ð°ÐºÑ‚ÑƒÐ°Ð»ÑŒÐ½ÑƒÑŽ Ð²ÐµÑ€ÑÐ¸ÑŽ Ð¿Ñ€Ð°Ð²Ð¸Ð».</p>
 </div>
 </div>
 <div class="history-card">
 <article class="history-entry">
 <div class="history-date">04.08.2026</div>
 <div>
-<h3>Обновление сайта и правил <span class="history-new">НОВОЕ</span></h3>
-<p>Подача заявок перенесена в Discord через бота Appy. Правила Discord переработаны: теперь каждый пункт отображается отдельной карточкой в стиле правил Minecraft.</p>
+<h3>ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÐ°Ð¹Ñ‚Ð° Ð¸ Ð¿Ñ€Ð°Ð²Ð¸Ð» <span class="history-new">ÐÐžÐ’ÐžÐ•</span></h3>
+<p>ÐŸÐ¾Ð´Ð°Ñ‡Ð° Ð·Ð°ÑÐ²Ð¾Ðº Ð¿ÐµÑ€ÐµÐ½ÐµÑÐµÐ½Ð° Ð² Discord Ñ‡ÐµÑ€ÐµÐ· Ð±Ð¾Ñ‚Ð° Appy. ÐŸÑ€Ð°Ð²Ð¸Ð»Ð° Discord Ð¿ÐµÑ€ÐµÑ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ñ‹: Ñ‚ÐµÐ¿ÐµÑ€ÑŒ ÐºÐ°Ð¶Ð´Ñ‹Ð¹ Ð¿ÑƒÐ½ÐºÑ‚ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶Ð°ÐµÑ‚ÑÑ Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ð¾Ð¹ ÐºÐ°Ñ€Ñ‚Ð¾Ñ‡ÐºÐ¾Ð¹ Ð² ÑÑ‚Ð¸Ð»Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð» Minecraft.</p>
 </div>
 </article>
 </div>
 </section>
   </main>
-<footer class="wrap">© 2026 Подвал Пригожина · Версия правил 1.2</footer>
-<button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button>
-<script src="assets/site.js?v=1.7" defer></script>
+<footer class="wrap">Â© 2026 ÐŸÐ¾Ð´Ð²Ð°Ð» ÐŸÑ€Ð¸Ð³Ð¾Ð¶Ð¸Ð½Ð° Â· Ð’ÐµÑ€ÑÐ¸Ñ Ð¿Ñ€Ð°Ð²Ð¸Ð» 1.2</footer>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="ÐÐ°Ð²ÐµÑ€Ñ…" title="ÐÐ°Ð²ÐµÑ€Ñ…">â†‘</button>
+<script src="assets/site.js?v=1.8" defer></script>
 </body>
 </html>
+
 
