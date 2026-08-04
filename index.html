@@ -40,14 +40,17 @@
     #rules details em { display:inline-flex; align-items:flex-start; gap:7px; margin-top:11px; padding:7px 10px; border:1px solid rgba(255,116,134,.24); border-radius:8px; color:#ffacb7; background:rgba(255,78,103,.09); font-style:normal; font-size:13px; font-weight:650; line-height:1.45; } #rules details em::before { content:"⚠"; color:#ff7587; line-height:1.45; }
     #rules .rule-note { display:block; margin-top:12px; padding:11px 13px 11px 15px; border:1px solid rgba(93,232,156,.24); border-left:3px solid #5ce89b; border-radius:0 10px 10px 0; color:#c9f6d9; background:linear-gradient(90deg,rgba(63,208,123,.13),rgba(63,208,123,.035)); font-size:13px; font-weight:550; line-height:1.55; } #rules .rule-note::before { content:"✓  ПРИМЕЧАНИЕ"; display:block; margin-bottom:4px; color:#73efa8; font-size:10px; font-weight:850; letter-spacing:.11em; }
     #rp { display:none; } #minecraft { padding-top:40px; } .minecraft-intro { position:relative; overflow:hidden; padding:44px; border:1px solid rgba(87,217,165,.3); border-radius:24px; background:linear-gradient(135deg,rgba(20,67,53,.64),rgba(14,29,42,.96) 60%,rgba(18,56,61,.7)); box-shadow:0 20px 52px rgba(0,0,0,.22),inset 0 1px 0 rgba(213,255,239,.08); } .minecraft-intro::before { content:""; position:absolute; inset:0; opacity:.34; background-image:linear-gradient(90deg,rgba(120,247,194,.09) 1px,transparent 1px),linear-gradient(rgba(120,247,194,.09) 1px,transparent 1px); background-size:28px 28px; mask-image:linear-gradient(to bottom,black,transparent); } .minecraft-intro > * { position:relative; } .minecraft-tag { display:inline-flex; align-items:center; gap:9px; padding:7px 11px; border:1px solid rgba(124,243,195,.38); border-radius:999px; color:var(--minecraft-soft); background:rgba(87,217,165,.1); font-size:12px; font-weight:850; letter-spacing:.11em; } .minecraft-tag span { width:8px; height:8px; border-radius:2px; background:var(--minecraft); box-shadow:0 0 14px var(--minecraft); } .minecraft-intro h2 { margin:16px 0 8px; color:#edfff7; font-size:clamp(32px,4vw,48px); line-height:1.05; letter-spacing:-.04em; } .minecraft-intro > p { max-width:790px; margin:0; color:#c8ded5; font-size:16px; } .minecraft-important { margin-top:20px; padding:14px 16px; border-left:3px solid var(--minecraft); border-radius:0 11px 11px 0; color:#d3f7e5; background:rgba(87,217,165,.085); font-size:14px; } .minecraft-rules { display:grid; gap:17px; margin-top:18px; } .minecraft-rules details { padding:0 19px 19px; border-color:rgba(87,217,165,.19); background:linear-gradient(135deg,rgba(22,57,61,.91),rgba(13,25,40,.98)); box-shadow:inset 0 1px 0 rgba(255,255,255,.04); } .minecraft-rules details[open] { border-color:rgba(87,217,165,.45); box-shadow:0 17px 46px rgba(0,0,0,.23), 0 0 0 1px rgba(87,217,165,.05), inset 0 1px 0 rgba(255,255,255,.05); } .minecraft-rules summary { padding:21px 34px 19px 0; color:#effff8; font-size:18px; font-weight:780; letter-spacing:-.012em; } .minecraft-rules summary::after { top:17px; color:var(--minecraft-soft); border-color:rgba(124,243,195,.31); background:rgba(87,217,165,.08); } .minecraft-rules p { margin:0 0 10px; padding:16px 18px; border:1px solid rgba(205,255,235,.09); border-radius:12px; background:rgba(6,18,31,.48); color:#c3d0d3; line-height:1.65; } .minecraft-rules p:last-child { margin-bottom:0; } .minecraft-rules p b { display:block; margin:0 0 7px; color:#f2fff8; font-size:15px; } .minecraft-rules p:hover { border-color:rgba(112,237,186,.24); background:rgba(10,33,43,.65); } .minecraft-rules .minecraft-note { display:block; margin-top:11px; padding:10px 13px; border:1px solid rgba(93,232,156,.22); border-left:3px solid #5ce89b; border-radius:0 9px 9px 0; color:#c9f6d9; background:rgba(63,208,123,.09); font-size:13px; } .minecraft-rules .minecraft-note::before { content:"✓  ВАЖНО"; display:block; margin-bottom:4px; color:#73efa8; font-size:10px; font-weight:850; letter-spacing:.11em; } .minecraft-examples { margin-top:12px; padding:13px 15px; border:1px solid rgba(112,237,186,.2); border-radius:10px; color:#ccece1; background:rgba(87,217,165,.065); font-size:13px; } .minecraft-examples strong { color:#bdf7dc; } .minecraft-examples ul { margin:7px 0 0; padding-left:19px; } .minecraft-examples li { margin:3px 0; }
-    .ip-row { display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin-top:6px; } .ip-value { color:#e9f7ff; font:600 14px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; } .copy-ip { appearance:none; border:1px solid rgba(96,230,255,.34); border-radius:8px; padding:7px 10px; color:#d9fbff; background:rgba(96,230,255,.1); font:700 12px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .16s ease,background .16s ease,border-color .16s ease; } .copy-ip:hover { transform:translateY(-1px); border-color:rgba(96,230,255,.72); background:rgba(96,230,255,.17); } .copy-ip.copied { border-color:rgba(93,232,156,.6); color:#c9f6d9; background:rgba(63,208,123,.14); }
+    .ip-row { display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin-top:6px; } .ip-value { color:#e9f7ff; font:600 14px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; } .copy-ip { appearance:none; border:1px solid rgba(96,230,255,.34); border-radius:8px; padding:7px 10px; color:#d9fbff; background:rgba(96,230,255,.1); font:700 12px/1 Inter,ui-sans-serif,system-ui,sans-serif; cursor:pointer; transition:transform .16s ease,background .16s ease,border-color .16s ease; } .copy-ip:hover { transform:translateY(-1px); border-color:rgba(96,230,255,.72); background:rgba(96,230,255,.17); } .copy-ip.copied { border-color:rgba(93,232,156,.6); color:#c9f6d9; background:rgba(63,208,123,.14); } .server-state.status-maintenance { color:#ffc1ca!important; } .server-state.status-maintenance .dot { background:#ff7e91; box-shadow:0 0 12px #ff7e91; } .server-state.status-soon { color:#c6efff!important; } .server-state.status-soon .dot { background:#77cfff; box-shadow:0 0 12px #77cfff; }
     #updates { padding-top:28px; } .updates-top, .history-top { display:flex; align-items:end; justify-content:space-between; gap:22px; margin-bottom:28px; } .updates-top .section-copy, .history-top .section-copy { margin-bottom:0; } .last-update { flex:0 0 auto; padding:9px 12px; border:1px solid rgba(122,231,255,.26); border-radius:10px; color:#c6efff; background:rgba(91,185,255,.08); font-size:12px; font-weight:700; } .last-update b { color:#7ae7ff; }
     .news-grid { display:grid; grid-template-columns:1.35fr 1fr; gap:16px; } .news-card { position:relative; overflow:hidden; min-height:190px; padding:26px; border:1px solid rgba(122,231,255,.18); border-radius:19px; background:linear-gradient(135deg,rgba(29,55,90,.78),rgba(18,24,48,.94)); box-shadow:inset 0 1px 0 rgba(255,255,255,.045); } .news-card::after { content:""; position:absolute; width:190px; height:190px; right:-70px; top:-92px; border-radius:50%; background:rgba(122,231,255,.11); filter:blur(12px); pointer-events:none; } .news-card > * { position:relative; } .news-label { display:inline-flex; padding:5px 8px; border-radius:6px; color:#7ae7ff; background:rgba(122,231,255,.1); font-size:10px; font-weight:850; letter-spacing:.11em; } .news-card h3 { margin:12px 0 7px; font-size:22px; line-height:1.16; letter-spacing:-.025em; } .news-card p { max-width:590px; margin:0; color:#b9c8de; font-size:14px; } .news-card.secondary { border-color:rgba(153,118,255,.2); background:linear-gradient(135deg,rgba(54,43,94,.7),rgba(17,24,47,.96)); } .news-card.secondary .news-label { color:#d4c9ff; background:rgba(153,118,255,.12); }
     #history { padding-top:28px; } .history-card { padding:0; overflow:hidden; border:1px solid rgba(132,147,255,.23); border-radius:18px; background:linear-gradient(135deg,rgba(34,42,75,.78),rgba(14,20,41,.97)); } .history-entry { display:grid; grid-template-columns:156px 1fr; gap:22px; padding:22px 24px; } .history-entry + .history-entry { border-top:1px solid rgba(255,255,255,.08); } .history-date { color:#b8c2ff; font-size:13px; font-weight:820; letter-spacing:.04em; } .history-entry h3 { margin:0 0 5px; font-size:17px; } .history-entry p { margin:0; color:#b9c4da; font-size:14px; } .history-new { display:inline-flex; align-items:center; margin-left:8px; padding:3px 6px; border-radius:5px; color:#bfefff; background:rgba(122,231,255,.12); font-size:9px; font-weight:900; letter-spacing:.1em; vertical-align:2px; }
     .rule-new { display:inline-flex; align-items:center; margin-left:8px; padding:4px 7px; border:1px solid rgba(122,231,255,.3); border-radius:6px; color:#bfefff; background:rgba(122,231,255,.1); font-size:9px; font-weight:900; letter-spacing:.1em; vertical-align:2px; } .minecraft-update-note { margin-top:15px; color:#bceeff; font-size:12px; font-weight:650; } .minecraft-update-note span { color:#7ae7ff; }
+    #search { padding:38px 0 24px; } .search-card { position:relative; overflow:hidden; padding:29px; border:1px solid rgba(122,231,255,.24); border-radius:22px; background:linear-gradient(125deg,rgba(21,54,80,.76),rgba(18,24,49,.97) 66%,rgba(44,35,81,.68)); box-shadow:0 19px 48px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06); } .search-card::before { content:"⌕"; position:absolute; right:25px; top:-40px; color:rgba(122,231,255,.12); font-size:178px; font-family:ui-serif,Georgia,serif; line-height:1; pointer-events:none; } .search-card > * { position:relative; } .search-kicker { color:#9de9ff; font-size:10px; font-weight:900; letter-spacing:.14em; } .search-card h2 { margin:6px 0; font-size:29px; letter-spacing:-.035em; } .search-card p { max-width:670px; margin:0 0 18px; color:#b7c9dc; font-size:14px; } .search-box { display:flex; align-items:center; gap:10px; max-width:720px; padding:7px 8px 7px 15px; border:1px solid rgba(154,233,255,.28); border-radius:13px; background:rgba(5,12,29,.59); } .search-box span { color:#7ae7ff; font-size:20px; } .search-box input { width:100%; min-width:0; border:0; outline:0; color:#f3fbff; background:transparent; font:15px/1.4 Inter,ui-sans-serif,system-ui,sans-serif; } .search-box input::placeholder { color:#71849f; } .search-result { min-height:20px; margin-top:12px!important; margin-bottom:0!important; color:#c7effa!important; font-size:12px!important; }
+    #applications { padding-top:42px; } .application-shell { overflow:hidden; border:1px solid rgba(153,118,255,.28); border-radius:24px; background:linear-gradient(135deg,rgba(49,38,91,.82),rgba(16,24,46,.98) 55%,rgba(17,65,65,.72)); box-shadow:0 22px 56px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.06); } .application-top { padding:34px 34px 25px; border-bottom:1px solid rgba(255,255,255,.08); } .application-label { color:#d6ccff; font-size:10px; font-weight:900; letter-spacing:.14em; } .application-top h2 { margin:7px 0; font-size:33px; letter-spacing:-.04em; } .application-top p { max-width:750px; margin:0; color:#c4c8dc; } .apply-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:22px 34px; background:rgba(7,12,31,.28); } .apply-step { display:flex; align-items:flex-start; gap:11px; color:#c4cade; font-size:13px; } .apply-step b { display:grid; flex:0 0 25px; width:25px; height:25px; place-items:center; border:1px solid rgba(153,118,255,.42); border-radius:50%; color:#d8ceff; background:rgba(153,118,255,.12); font-size:11px; } .application-form { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:30px 34px 34px; } .application-form label { display:grid; gap:7px; color:#d6daeb; font-size:12px; font-weight:720; } .application-form label.full { grid-column:1 / -1; } .application-form input, .application-form select, .application-form textarea { width:100%; border:1px solid rgba(201,207,255,.17); border-radius:10px; outline:0; padding:12px 13px; color:#f5f5ff; background:rgba(6,11,28,.54); font:14px/1.45 Inter,ui-sans-serif,system-ui,sans-serif; } .application-form textarea { min-height:104px; resize:vertical; } .application-form input:focus, .application-form select:focus, .application-form textarea:focus { border-color:rgba(132,147,255,.65); box-shadow:0 0 0 3px rgba(132,147,255,.11); } .application-form select option { color:#17203a; } .application-actions { grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:11px; margin-top:3px; } .application-submit, .discord-apply { display:inline-flex; align-items:center; justify-content:center; min-height:43px; padding:11px 15px; border-radius:10px; font:780 13px/1 Inter,ui-sans-serif,system-ui,sans-serif; text-decoration:none; cursor:pointer; } .application-submit { border:0; color:#090d23; background:#b9abff; box-shadow:0 10px 24px rgba(153,118,255,.2); } .discord-apply { border:1px solid rgba(96,230,255,.34); color:#caf7ff; background:rgba(96,230,255,.08); } .application-status { flex:1 1 250px; margin:0; color:#b7c5db; font-size:12px; } .application-status.success { color:#baf1d1; } .application-status.error { color:#ffc0ca; } .application-help { grid-column:1 / -1; margin:2px 0 0; color:#a9b6cf; font-size:12px; } .application-help b { color:#e6e8ff; }
+    .back-to-top { position:fixed; z-index:4; right:22px; bottom:22px; display:grid; width:46px; height:46px; place-items:center; border:1px solid rgba(122,231,255,.38); border-radius:14px; color:#d8f9ff; background:rgba(14,24,50,.88); box-shadow:0 12px 30px rgba(0,0,0,.28); backdrop-filter:blur(14px); cursor:pointer; opacity:0; pointer-events:none; transform:translateY(12px); transition:opacity .18s ease,transform .18s ease,background .18s ease; font-size:22px; } .back-to-top:hover { background:rgba(33,68,96,.95); } .back-to-top.is-visible { opacity:1; pointer-events:auto; transform:translateY(0); }
     .contact { text-align:center; border:1px solid var(--line); background:linear-gradient(125deg,rgba(96,230,255,.10),rgba(153,118,255,.11)); padding:58px 24px; border-radius:24px; } .contact h2 { margin:0 0 8px; font-size:34px; } .contact p { color:var(--muted); margin:0 0 23px; }
     footer { padding:25px 0 35px; color:#7783a2; font-size:13px; text-align:center; }
-    @media (max-width:760px) { .links { display:none; } .hero { grid-template-columns:1fr; padding:65px 0 54px; gap:35px; min-height:0; } .grid, .news-grid { grid-template-columns:1fr; } section { padding:48px 0; } h1 { font-size:52px; } #rules details { padding:0 13px 13px; } #rules details p { padding:14px; } #rules summary { font-size:16px; } .minecraft-intro { padding:31px 21px; } .minecraft-rules details { padding:0 13px 13px; } .minecraft-rules p { padding:14px; } .minecraft-rules summary { font-size:16px; } .updates-top, .history-top { display:block; } .last-update { display:inline-flex; margin-top:14px; } .news-card { min-height:0; } .history-entry { grid-template-columns:1fr; gap:7px; padding:19px; } }
+    @media (max-width:760px) { .links { display:none; } .hero { grid-template-columns:1fr; padding:65px 0 54px; gap:35px; min-height:0; } .grid, .news-grid, .apply-steps, .application-form { grid-template-columns:1fr; } section { padding:48px 0; } h1 { font-size:52px; } #rules details { padding:0 13px 13px; } #rules details p { padding:14px; } #rules summary { font-size:16px; } .minecraft-intro { padding:31px 21px; } .minecraft-rules details { padding:0 13px 13px; } .minecraft-rules p { padding:14px; } .minecraft-rules summary { font-size:16px; } .updates-top, .history-top { display:block; } .last-update { display:inline-flex; margin-top:14px; } .news-card { min-height:0; } .history-entry { grid-template-columns:1fr; gap:7px; padding:19px; } .search-card, .application-top { padding:26px 20px; } .apply-steps, .application-form { padding:20px; } .application-form label.full { grid-column:auto; } .back-to-top { right:15px; bottom:15px; } }
   </style>
 </head>
 <body>
@@ -64,6 +67,7 @@
 <div class="links">
 <a href="#about">Важно</a>
 <a href="#updates">Новости</a>
+<a href="#applications">Заявки</a>
 <a href="#rules">Discord</a>
 <a href="#minecraft">Minecraft</a>
 <a href="#help">Ссылки</a>
@@ -83,9 +87,10 @@
       <aside class="status">
 <p>Статус Minecraft-сервера</p>
 <strong>ПОДВАЛ ПРИГОЖИНА</strong>
-<p class="online">
+<!-- Статус меняется одним словом: active, maintenance или soon -->
+<p class="online server-state" data-server-status="active">
 <span class="dot">
-</span> Сервер активен</p>
+</span> <span class="server-status-label">Сервер активен</span></p>
 <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
 <p>
 <b>Версия:</b> 1.20.1 Minecraft<br>
@@ -157,6 +162,53 @@
 </h3>
 <p>Руководитель Проекта.</p>
 </article>
+</div>
+</section>
+    <section id="applications">
+<div class="application-shell">
+<div class="application-top">
+<div class="application-label">ПРИЁМ ЗАЯВОК</div>
+<h2>Стать частью проекта</h2>
+<p>Заполните короткую анкету — сайт подготовит её и скопирует в буфер обмена. Затем откройте Discord и передайте текст руководству либо в канал <b>📝・заявки</b>, когда он появится.</p>
+</div>
+<div class="apply-steps">
+<div class="apply-step"><b>1</b><span>Выберите, на что подаёте заявку.</span></div>
+<div class="apply-step"><b>2</b><span>Заполните анкету без личных данных.</span></div>
+<div class="apply-step"><b>3</b><span>Скопируйте текст и отправьте его в Discord.</span></div>
+</div>
+<form id="application-form" class="application-form">
+<label>Тип заявки
+<select id="application-type" required>
+<option value="Вступление в администрацию">Вступление в администрацию</option>
+<option value="Создание страны">Создание страны</option>
+<option value="Создание фракции">Создание фракции</option>
+</select>
+</label>
+<label>Ваш никнейм в Discord
+<input id="application-name" type="text" maxlength="64" placeholder="Например: iordans" required>
+</label>
+<label class="full">Название страны или фракции <span style="color:var(--muted);font-weight:500">(для заявки в администрацию можно указать «—»)</span>
+<input id="application-project" type="text" maxlength="80" placeholder="Например: Северный союз" required>
+</label>
+<label class="full">Расскажите о своей идее или опыте
+<textarea id="application-message" maxlength="900" placeholder="Коротко опишите планы, опыт и почему ваша заявка будет полезна проекту." required></textarea>
+</label>
+<div class="application-actions">
+<button class="application-submit" type="submit">Скопировать анкету</button>
+<a class="discord-apply" href="https://discord.gg/6nmUzs5dmq" target="_blank" rel="noreferrer">Открыть Discord</a>
+<p id="application-status" class="application-status" aria-live="polite">Анкеты не хранятся на сайте — они копируются только на вашем устройстве.</p>
+</div>
+<p class="application-help"><b>Куда отправить:</b> в канал <b>📝・заявки</b>, когда администрация его создаст, либо в личные сообщения руководству проекта: <b>iordans</b> или <b>ukt0001</b>.</p>
+</form>
+</div>
+</section>
+    <section id="search">
+<div class="search-card">
+<div class="search-kicker">БЫСТРЫЙ ПОИСК</div>
+<h2>Найти правило</h2>
+<p>Введите слово или номер: например, «реклама», «бан», «1.3», «токсичность» или «читы». Подходящие пункты раскроются автоматически.</p>
+<label class="search-box" for="rule-search"><span>⌕</span><input id="rule-search" type="search" autocomplete="off" placeholder="Поиск по правилам Discord и Minecraft"></label>
+<p id="search-result" class="search-result" role="status">Введите запрос, чтобы найти нужный пункт.</p>
 </div>
 </section>
     <section id="rules">
@@ -421,7 +473,8 @@
 </section>
   </main>
 <footer class="wrap">© 2026 Подвал Пригожина · Версия правил 1.1</footer>
-<script src="assets/site.js?v=1.2" defer></script>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button>
+<script src="assets/site.js?v=1.3" defer></script>
 </body>
 </html>
 
