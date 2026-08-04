@@ -499,16 +499,29 @@ const atlasPlanet = document.querySelector('.atlas-planet');
 const atlasDanger = document.querySelector('[data-atlas-danger]');
 const atlasDoNotClick = document.querySelector('[data-atlas-do-not-click]');
 const atlasClickCount = document.querySelector('[data-atlas-click-count]');
-const atlasResult = document.querySelector('[data-atlas-result]');
+const atlasCracks = [...document.querySelectorAll('[data-atlas-crack-stage]')];
 
-if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCount && atlasResult) {
+if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCount) {
   const clickLimit = 1000;
   let clicks = 0;
   let destroyed = false;
+  let damageStage = 0;
+
+  const showNewCracks = () => {
+    const nextStage = Math.min(9, Math.floor(clicks / 100));
+    if (nextStage <= damageStage) return;
+
+    damageStage = nextStage;
+    atlasPlanet.dataset.damage = String(damageStage);
+    atlasCracks.forEach((crack) => {
+      crack.classList.toggle('is-visible', Number(crack.dataset.atlasCrackStage) <= damageStage);
+    });
+  };
 
   const updateWarning = () => {
     atlasClickCount.textContent = String(clicks);
     atlasDoNotClick.setAttribute('aria-label', `Не кликай. Нажато ${clicks} из ${clickLimit}`);
+    showNewCracks();
 
     if (clicks >= 900 && clicks < clickLimit) {
       atlasDanger.classList.add('is-critical');
@@ -525,7 +538,6 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
     atlasDoNotClick.textContent = 'СЛИШКОМ ПОЗДНО';
     atlasDanger.classList.remove('is-critical');
     atlasDanger.classList.add('is-spent');
-    atlasResult.textContent = 'ЗЕМЛЯ РАЗРУШЕНА';
     atlasPlanet.classList.add('is-exploding');
 
     let finished = false;
@@ -534,7 +546,6 @@ if (atlasScene && atlasPlanet && atlasDanger && atlasDoNotClick && atlasClickCou
       finished = true;
       atlasPlanet.classList.add('is-destroyed');
       atlasScene.classList.add('is-destroyed');
-      atlasResult.textContent = 'ЗЕМЛЯ РАЗРУШЕНА · ОБНОВИ СТРАНИЦУ';
     };
 
     const explosion = atlasPlanet.querySelector('.atlas-explosion');
