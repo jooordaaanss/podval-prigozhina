@@ -625,6 +625,123 @@ if (backToTop) {
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
+const supportDialog = document.querySelector('#support-dialog');
+const supportOpen = document.querySelector('#support-open');
+const supportWallet = document.querySelector('#support-wallet');
+const supportCloseControls = document.querySelectorAll('[data-support-close]');
+const supportCurrencies = document.querySelectorAll('[data-support-currency]');
+const supportAmounts = document.querySelectorAll('[data-support-amount]');
+const supportCustomAmount = document.querySelector('#support-custom-amount');
+const supportSummaryValue = document.querySelector('#support-summary-value');
+const supportConfirm = document.querySelector('#support-confirm');
+const supportResult = document.querySelector('#support-result');
+const supportSheet = supportDialog?.querySelector('.support-sheet');
+
+if (supportDialog && supportOpen && supportSummaryValue && supportConfirm && supportResult) {
+  let selectedCurrency = 'RUB';
+  let selectedSymbol = '₽';
+  let selectedAmount = 100;
+
+  const formattedSupportValue = () => `${selectedAmount.toLocaleString('ru-RU')} ${selectedSymbol}`;
+
+  const updateSupportChoices = () => {
+    supportCurrencies.forEach((currency) => {
+      currency.setAttribute('aria-pressed', String(currency.dataset.supportCurrency === selectedCurrency));
+    });
+    supportAmounts.forEach((amount) => {
+      const isSelected = Number(amount.dataset.supportAmount) === selectedAmount && !supportCustomAmount?.value;
+      amount.setAttribute('aria-pressed', String(isSelected));
+    });
+    document.querySelectorAll('[data-support-symbol]').forEach((symbol) => {
+      symbol.textContent = selectedSymbol;
+    });
+    supportSummaryValue.textContent = formattedSupportValue();
+  };
+
+  const openSupportDialog = () => {
+    supportDialog.classList.add('is-open');
+    supportDialog.setAttribute('aria-hidden', 'false');
+    window.setTimeout(() => supportSheet?.focus({ preventScroll: true }), 80);
+  };
+
+  const closeSupportDialog = () => {
+    supportDialog.classList.remove('is-open');
+    supportDialog.setAttribute('aria-hidden', 'true');
+    supportOpen.focus({ preventScroll: true });
+  };
+
+  const showMoneyBurst = () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    document.querySelector('.support-money-burst')?.remove();
+    const burst = document.createElement('div');
+    burst.className = 'support-money-burst';
+    burst.setAttribute('aria-hidden', 'true');
+    const symbols = ['💸', '💰', '🪙', '✨'];
+
+    for (let index = 0; index < 18; index += 1) {
+      const piece = document.createElement('span');
+      piece.className = 'support-money-piece';
+      piece.textContent = symbols[index % symbols.length];
+      piece.style.setProperty('--money-x', `${-170 + ((index * 47) % 330)}px`);
+      piece.style.setProperty('--money-y', `${75 + ((index * 29) % 200)}px`);
+      piece.style.setProperty('--money-size', `${18 + ((index * 3) % 15)}px`);
+      piece.style.setProperty('--money-delay', `${(index % 6) * 0.055}s`);
+      piece.style.setProperty('--money-duration', `${1.55 + ((index % 4) * 0.16)}s`);
+      piece.style.setProperty('--money-rotate', `${-150 + ((index * 67) % 300)}deg`);
+      burst.append(piece);
+    }
+
+    document.body.append(burst);
+    window.setTimeout(() => burst.remove(), 2800);
+  };
+
+  supportOpen.addEventListener('click', openSupportDialog);
+  supportCloseControls.forEach((control) => control.addEventListener('click', closeSupportDialog));
+  supportWallet?.addEventListener('click', openSupportDialog);
+
+  supportCurrencies.forEach((currency) => {
+    currency.addEventListener('click', () => {
+      selectedCurrency = currency.dataset.supportCurrency || 'RUB';
+      selectedSymbol = currency.dataset.supportSymbol || '₽';
+      updateSupportChoices();
+    });
+  });
+
+  supportAmounts.forEach((amount) => {
+    amount.addEventListener('click', () => {
+      selectedAmount = Number(amount.dataset.supportAmount) || 100;
+      if (supportCustomAmount) supportCustomAmount.value = '';
+      updateSupportChoices();
+    });
+  });
+
+  supportCustomAmount?.addEventListener('input', () => {
+    const amount = Math.floor(Number(supportCustomAmount.value));
+    if (amount > 0) {
+      selectedAmount = Math.min(amount, 100000);
+      updateSupportChoices();
+    }
+  });
+
+  supportConfirm.addEventListener('click', () => {
+    supportResult.hidden = false;
+    supportResult.textContent = `Выбрано: ${formattedSupportValue()}. Безопасная оплата появится после подключения платёжной ссылки.`;
+    supportWallet.hidden = false;
+    supportWallet.dataset.currency = selectedSymbol;
+    supportWallet.setAttribute('aria-label', `Открыть поддержку: выбрано ${formattedSupportValue()}`);
+    supportWallet.classList.remove('is-ready');
+    window.requestAnimationFrame(() => supportWallet.classList.add('is-ready'));
+    showMoneyBurst();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && supportDialog.classList.contains('is-open')) closeSupportDialog();
+  });
+
+  updateSupportChoices();
+}
+
 const revealTargets = [
   ...document.querySelectorAll('.card, .notice, .news-card, .search-card, #rules details, .minecraft-intro, .minecraft-rules details, .history-card, .world-panel, .contact'),
 ];
